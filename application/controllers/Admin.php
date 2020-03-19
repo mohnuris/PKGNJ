@@ -3,12 +3,49 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Admin extends CI_Controller
 {
-
+  public function login()
+  {
+    $tittle['subtittle'] = "login";
+    $tittle['dashboard'] = "user";
+    $this->load->view('template/header', $tittle);
+    $this->load->view('template/navbar');
+    $this->load->view('controllers/login');
+    $this->load->view('template/footer');
+  }
   public function index()
   {
-    $this->load->view('template/header');
+    $tittle['subtittle'] = "DASBOARD";
+    $tittle['dashboard'] = "MENU";
+    $this->load->view('template/header', $tittle);
     $this->load->view('template/navbar');
     $this->load->view('template/Admin');
+    $this->load->view('template/footer');
+  }
+  public function charts()
+  {
+    $tittle['subtittle'] = "CHARTS";
+    $tittle['dashboard'] = "charts";
+    $this->load->view('template/header', $tittle);
+    $this->load->view('template/navbar');
+    $this->load->view('template/charts');
+    $this->load->view('template/footer');
+  }
+  public function table()
+  {
+    $tittle['subtittle'] = "TABLE";
+    $tittle['dashboard'] = "Table";
+    $this->load->view('template/header', $tittle);
+    $this->load->view('template/navbar');
+    $this->load->view('template/tables');
+    $this->load->view('template/footer');
+  }
+  public function user()
+  {
+    $tittle['subtittle'] = "Users";
+    $tittle['dashboard'] = "user";
+    $this->load->view('template/header', $tittle);
+    $this->load->view('template/navbar');
+    $this->load->view('template/user');
     $this->load->view('template/footer');
   }
 }
