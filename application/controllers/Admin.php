@@ -75,4 +75,13 @@ class Admin extends CI_Controller
     $this->load->view('template/t_pengguna');
     $this->load->view('template/footer');
   }
+  public function soal()
+  {
+    $tittle['subtittle'] = "Halaman Soal";
+    $tittle['dashboard'] = "Soal ";
+    $this->load->view('template/header', $tittle);
+    $this->load->view('template/navbar');
+    $this->load->view('template/soal');
+    $this->load->view('template/footer');
+  }
 }
