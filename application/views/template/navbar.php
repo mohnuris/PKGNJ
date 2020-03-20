@@ -11,25 +11,23 @@
           </a>
           <!-- interface -->
 
-
-
           <div class="sb-sidenav-menu-heading">Interface</div>
-          <a class="nav-link" href="<?= base_url('admin/pengajar') ?>">
+          <a class="nav-link" href="<?= base_url('admin/t_pengajar') ?>">
             <div class="sb-nav-link-icon"><i class="fas fa-user-tie"></i></div>
             Pengajar
           </a>
 
-          <a class="nav-link" href="<?= base_url('admin/siswa') ?>">
+          <a class="nav-link" href="<?= base_url('admin/t_siswa') ?>">
             <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
             Siswa
           </a>
 
-          <a class="nav-link" href="<?= base_url('admin/engguna') ?>">
+          <a class="nav-link" href="<?= base_url('admin/t_pengguna') ?>">
             <div class="sb-nav-link-icon"><i class="fas fa-chalkboard-teacher"></i></div>
             Pengguna
           </a>
 
-          <a class="nav-link" href="<?= base_url('admin/pengguna') ?>">
+          <a class="nav-link" href="<?= base_url('admin/t_prestasi') ?>">
             <div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i></div>
             Prestasi
           </a>
@@ -85,7 +83,7 @@
             Tables
           </a>
           <div class="sb-sidenav-menu-heading">Auth</div>
-          <a class="nav-link" href="<?= base_url('admin/user') ?>">
+          <a class="nav-link" href="<?= base_url('admin/t_user') ?>">
             <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
             Users
           </a>
@@ -94,11 +92,15 @@
             </div>
             Login
           </a>
+          <a class="nav-link" href="login.html">
+            <div class="sb-nav-link-icon"><i class="fas fa-sign-out-alt"></i> Logout
+          </a>
         </div>
       </div>
-      <!-- <div class="sb-sidenav-footer">
+  </div>
+  <!-- <div class="sb-sidenav-footer">
         <div class="small">Logged in as:</div>
         Start Bootstrap
       </div> -->
-    </nav>
-  </div>
+  </nav>
+</div>

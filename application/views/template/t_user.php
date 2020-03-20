@@ -1,10 +1,10 @@
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid">
-            <h1 class="mt-4">users</h1>
+            <h1 class="mt-4">Tables Users</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href=" <?= base_url('admin') ?>">Dashboard</a></li>
-                <li class="breadcrumb-item active">Users</li>
+                <li class="breadcrumb-item active">Tables Users</li>
             </ol>
 
             <!-- Button trigger modal -->
