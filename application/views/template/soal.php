@@ -1,21 +1,39 @@
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid">
-            <h1 class="mt-4">Tables Users</h1>
+            <h1 class="mt-4">Soal Siswa</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href=" <?= base_url('admin') ?>">Dashboard</a></li>
-                <li class="breadcrumb-item active">Tables Users</li>
+                <li class="breadcrumb-item active">Soal Siswa</li>
             </ol>
 
-            <!-- Button trigger modal -->
-            <div class="content">
-                <button class="mt-1 btn btn-primary" data-toggle="modal" data-target="#tambahData"><i class="fa fa-plus-circle"></i> Tambah Data </button>
-                <a class="mt-1 btn btn-success float-right" href="  "><i class="fa fa-upload"></i> Export Data </a>
+            <div class="card-body">
+
+                <div class="form-group">
+
+                    <label for="" class="">soal pertama</label><br>
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label for="exampleCheck1">Check me out</label>
+
+                    <input type="checkbox" id="exampleCheck1">
+                    <label for="exampleCheck1">Check me out</label>
+
+                    <input type="checkbox" id="exampleCheck1">
+                    <label for="exampleCheck1">Check me out</label>
+
+                    <input type="checkbox" id="exampleCheck1">
+                    <label for="exampleCheck1">Check me out</label>
+
+
+                </div>
+                <!-- <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+
+                    </div> -->
+                </p>
             </div>
-
-            </b>
-
         </div>
+    </main>
 </div>
-</main>
 </div>
