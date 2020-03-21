@@ -39,11 +39,8 @@
         <a class="nav-link dropdown-toggle text-white" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
 
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-
-
           <a class="dropdown-item" href="#">
             <i class="ace-icon fa fa-user"></i> Profil</a>
-
 
           <a class="dropdown-item" href="#">
             <i class="ace-icon fa fa-cog"></i> Settings</a>

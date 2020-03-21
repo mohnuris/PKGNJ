@@ -1,7 +1,7 @@
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid">
-            <h1 class="mt-4">Tables Users</h1>
+            <h1 class="mt-4"></h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href=" <?= base_url('admin') ?>">Dashboard</a></li>
                 <li class="breadcrumb-item active">Tables Users</li>
@@ -9,11 +9,11 @@
 
             <!-- Button trigger modal -->
             <div class="content">
-                <button class="mt-1 btn btn-primary" data-toggle="modal" data-target="#tambahData"><i class="fa fa-plus-circle"></i> Tambah Data </button>
-                <a class="mt-1 btn btn-success float-right" href="  "><i class="fa fa-upload"></i> Export Data </a>
+                <button class=" btn btn-primary" data-toggle="modal" data-target="#tambahData"><i class="fa fa-plus-circle"></i> Tambah Data </button>
+                <a class="btn btn-success float-right" href="  "><i class="fa fa-upload"></i> Export Data </a>
             </div>
 
-            </b>
+            </br>
 
             <!-- Modal -->
             <div class="modal fade bd-example-modal-lg" id="tambahData" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -86,35 +86,36 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="card mb-4">
-            <!-- <div class="card-header"><i class="fas fa-table mr-1"></i>DataTable Example</div> -->
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                        <thead>
-                            <tr class="bg-primary text-light">
-                                <th>Name</th>
-                                <th>Lembaga</th>
-                                <th>Jabatan</th>
-                                <th>Mata Pelajaran</th>
-                                <th>Foto</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
 
-                        <tfoot>
-                            <tr>
-                                <th>Name</th>
-                                <th>Lembaga</th>
-                                <th>Jabatan</th>
-                                <th>Mata Pelajaran</th>
-                                <th>Foto</th>
-                                <th>action</th>
-                            </tr>
-                        </tfoot>
-                    </table>
+            <div class="card mb-4">
+                <!-- <div class="card-header"><i class="fas fa-table mr-1"></i>DataTable Example</div> -->
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr class="bg-primary text-light">
+                                    <th>Name</th>
+                                    <th>Lembaga</th>
+                                    <th>Jabatan</th>
+                                    <th>Mata Pelajaran</th>
+                                    <th>Foto</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tfoot>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Lembaga</th>
+                                    <th>Jabatan</th>
+                                    <th>Mata Pelajaran</th>
+                                    <th>Foto</th>
+                                    <th>action</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

@@ -75,6 +75,15 @@ class Admin extends CI_Controller
     $this->load->view('template/t_pengguna');
     $this->load->view('template/footer');
   }
+  public function t_prestasi()
+  {
+    $tittle['subtittle'] = "Table Pengguna";
+    $tittle['dashboard'] = "Pengguna";
+    $this->load->view('template/header', $tittle);
+    $this->load->view('template/navbar');
+    $this->load->view('template/t_prestasi');
+    $this->load->view('template/footer');
+  }
   public function soal()
   {
     $tittle['subtittle'] = "Halaman Soal";
