@@ -93,4 +93,13 @@ class Admin extends CI_Controller
     $this->load->view('template/soal');
     $this->load->view('template/footer');
   }
+  public function formulir()
+  {
+    $tittle['subtittle'] = "Halaman formulir";
+    $tittle['dashboard'] = "formulir ";
+    $this->load->view('template/header', $tittle);
+    $this->load->view('template/navbar');
+    $this->load->view('template/formulir');
+    $this->load->view('template/footer');
+  }
 }
