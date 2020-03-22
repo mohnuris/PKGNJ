@@ -71,10 +71,10 @@
 
                         </div>
                         <div class="card-body">
-                            <i class="align-left"></i> Prestasi</div>
+                            <i class="align-left"></i>Rekap</div>
 
                         <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link" href="<?= base_url('admin/t_prestasi') ?>">View Details</a>
+                            <a class="small text-white stretched-link" href="<?= base_url('admin/rekap') ?>">View Details</a>
 
                         </div>
                     </div>
