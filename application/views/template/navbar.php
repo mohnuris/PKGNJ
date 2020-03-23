@@ -36,7 +36,7 @@
             Prestasi
           </a>
 
-          <a class="nav-link" href="<?= base_url('admin/total') ?>">
+          <a class="nav-link" href="<?= base_url('admin/t_rekap') ?>">
             <div class="sb-nav-link-icon"><i class="fas fa fa-database"></i></div>
             Rekap
           </a>

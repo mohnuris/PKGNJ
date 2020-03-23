@@ -102,7 +102,7 @@ class Admin extends CI_Controller
     $this->load->view('template/formulir');
     $this->load->view('template/footer');
   }
-  public function rekap()
+  public function t_rekap()
   {
     $tittle['subtittle'] = "Halaman Rekap";
     $tittle['dashboard'] = "Rekap Nilai ";
