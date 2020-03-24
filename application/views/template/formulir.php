@@ -26,7 +26,24 @@
 
                 <div class="modal-body">
                     <label for="nama" class="alert-link">Nama Lengkap</label>
-                    <input class="form-control form-control-lg" type="text" placeholder="Nama Lengkap">
+                    <input class="form-control form-control-lg" type="text" placeholder="Nama Lengkap"></br>
+
+
+
+                    <label form="" class="alert-link">Jenis Kelamin</label><br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                            Laki-Laki
+                        </label>
+                        <br>
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                        <label class="form-check-label" for="exampleRadios2">
+                            Perempuan
+                        </label>
+                    </div>
+
+
                 </div>
 
                 <div class="modal-body">
