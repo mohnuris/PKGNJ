@@ -20,7 +20,7 @@
 
 <body class="sb-nav-fixed">
   <nav class="sb-topnav navbar navbar-expand navbar-info bg-primary">
-    <a class="navbar-brand text-white text-bol" href="<?= base_url('admin') ?>">BirPenNJ</a>
+    <a class="navbar-brand text-white text-bol" href="<?= base_url('admin') ?>">BirPendNJ</a>
     <button class="btn btn-primary btn-sm order-1 bg-link order-lg-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars">
       </i></button>
