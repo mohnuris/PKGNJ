@@ -3,6 +3,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Admin extends CI_Controller
 {
+  public function index()
+  {
+    $tittle['subtittle'] = "DASBOARD";
+    $tittle['dashboard'] = "MENU";
+    $this->load->view('template/header', $tittle);
+    $this->load->view('template/navbar');
+    $this->load->view('template/home');
+    $this->load->view('template/footer');
+  }
   public function login()
   {
     $tittle['subtittle'] = "login";
@@ -12,15 +21,7 @@ class Admin extends CI_Controller
     $this->load->view('controllers/login');
     $this->load->view('template/footer');
   }
-  public function index()
-  {
-    $tittle['subtittle'] = "DASBOARD";
-    $tittle['dashboard'] = "MENU";
-    $this->load->view('template/header', $tittle);
-    $this->load->view('template/navbar');
-    $this->load->view('template/Admin');
-    $this->load->view('template/footer');
-  }
+
   public function charts()
   {
     $tittle['subtittle'] = "CHARTS";
