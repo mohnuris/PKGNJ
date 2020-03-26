@@ -115,23 +115,9 @@
                     </select>
                 </div>
 
-                <div class="modal-body">
-                    <label for="nama" class="alert-link">Nama Lengkap</label>
-                    <input class="form-control form-control-lg" type="text" placeholder="Nama Lengkap">
-                </div>
-
-                <div class="modal-body">
-                    <label for="nama" class="alert-link">Nama Lengkap</label>
-                    <input class="form-control form-control-lg" type="text" placeholder="Nama Lengkap">
-                </div>
-
-                <div class="modal-body">
-                    <label for="nama" class="alert-link">Nama Lengkap</label>
-                    <input class="form-control form-control-lg" type="text" placeholder="Nama Lengkap">
-                </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
                     <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>

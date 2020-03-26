@@ -7,6 +7,15 @@
                 <li class="breadcrumb-item"><a href=" <?= base_url('admin/t_siswa') ?>">Tables</a></li>
 
             </ol>
+            <!-- Button trigger modal -->
+            <div class="content">
+
+
+                <button class=" btn btn-primary" data-toggle="modal" data-target="#tambahData"><i class="fa fa-plus-circle"></i> Tambah Data </button>
+                <a class="btn btn-success float-right" href="  "><i class="fa fa-upload"></i> Export Data </a>
+            </div>
+            <br>
+
             <!-- <div class="card mb-4">
                 <div class="card-body">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>.</div>
             </div> -->
