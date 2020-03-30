@@ -10,8 +10,7 @@
             <!-- Button trigger modal -->
             <div class="content">
 
-
-                <button class=" btn btn-primary" data-toggle="modal" data-target="#tambahData"><i class="fa fa-plus-circle"></i> Tambah Data </button>
+                <a class="btn btn-primary" href=" <?= base_url('admin/formulir') ?>"><i class="fa fa-plus-circle"></i> Tambah Siswa </a>
                 <a class="btn btn-success float-right" href=""><i class="fa fa-upload"></i> Export Data </a>
             </div>
             <br>
