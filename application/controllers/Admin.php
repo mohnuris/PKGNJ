@@ -7,6 +7,18 @@ class Admin extends CI_Controller
   {
     $tittle['subtittle'] = "DASBOARD";
     $tittle['dashboard'] = "MENU";
+    $data['si'] = $this->db->get('tb_siswa')->num_rows();
+    $data['gr'] = $this->db->get('tb_guru')->num_rows();
+    $data['tw'] = $this->db->get('tb_triwulan')->num_rows(); //triwulan
+    $data['pr'] = $this->db->get('tb_prestasi')->num_rows(); //prestasi
+    $data['jr'] = $this->db->get('tb_jurusan')->num_rows(); //jurusan
+    $data['kl'] = $this->db->get('tb_kelas')->num_rows(); //kelas
+    $data['mp'] = $this->db->get('tb_mapel')->num_rows(); //mata pelajaran
+    $data['ni'] = $this->db->get('tb_nilai')->num_rows(); //table
+    $data['cr'] = $this->db->get('charts')->num_rows(); //charts
+    $data['tb'] = $this->db->get('tables')->num_rows(); //table
+    $data['us'] = $this->db->get('user')->num_rows(); //user
+    // $data['sl'] = $this->db->get('soal')->num_rows(); //soal
     $this->load->view('template/header', $tittle);
     $this->load->view('template/navbar');
     $this->load->view('template/home');
@@ -35,6 +47,15 @@ class Admin extends CI_Controller
     // // } else {
     // }
   }
+  public function tb_users()
+  {
+    $tittle['subtittle'] = "Tambah users";
+    $tittle['dashboard'] = "form users ";
+    $this->load->view('dasbor/header', $tittle);
+    $this->load->view('form_users');
+    $this->load->view('dasbor/footer');
+  }
+
 
   public function charts()
   {
@@ -124,7 +145,7 @@ class Admin extends CI_Controller
     $tittle['dashboard'] = "Rekap ";
     $this->load->view('template/header', $tittle);
     $this->load->view('template/navbar');
-    $this->load->view('template/tables');
+    $this->load->view('template/t_rekap');
     $this->load->view('template/footer');
   }
 }
