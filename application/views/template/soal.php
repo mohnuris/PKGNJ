@@ -7,31 +7,31 @@
                 <li class="breadcrumb-item active">Soal Siswa</li>
             </ol>
 
-            <div class="card-body">
-
-                <div class="form-group">
-
-                    <label for="" class="">soal pertama</label><br>
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label for="exampleCheck1">Check me out</label>
-
-                    <input type="checkbox" id="exampleCheck1">
-                    <label for="exampleCheck1">Check me out</label>
-
-                    <input type="checkbox" id="exampleCheck1">
-                    <label for="exampleCheck1">Check me out</label>
-
-                    <input type="checkbox" id="exampleCheck1">
-                    <label for="exampleCheck1">Check me out</label>
+            <div class="card  mb-4">
+                <div class="card-body">
 
 
+                    <div class="form-group">
+                        <h5>1 Soal </h5>
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label for="exampleCheck1">Check me out</label>
+
+                        <input type="checkbox" id="exampleCheck1">
+                        <label for="exampleCheck1">Check me out</label>
+
+                        <input type="checkbox" id="exampleCheck1">
+                        <label for="exampleCheck1">Check me out</label>
+
+                        <input type="checkbox" id="exampleCheck1">
+                        <label for="exampleCheck1">Check me out</label>
+
+                    </div>
                 </div>
                 <!-- <div class="form-group form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">Check me out</label>
 
                     </div> -->
-                </p>
             </div>
         </div>
     </main>
