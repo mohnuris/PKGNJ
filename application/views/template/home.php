@@ -16,7 +16,7 @@
                         <div class="card-body">
 
                             <i class="align-right"></i>
-                            <h5>Data Pengajar</h5>
+                            <h5>GURU</h5>
                         </div>
 
                         <div class="card-footer d-flex align-items-center justify-content-between">
@@ -43,7 +43,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-3">
+                <!-- <div class="col-md-3">
                     <div class="card bg-warning text-white mb-4 ">
                         <div class="col-xl-5 align-left">
                             <i style="margin-left: auto; margin-top: 15px" class="fas fa-chalkboard-teacher fa-4x text-gray"></i>
@@ -58,7 +58,7 @@
 
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="col-md-3">
                     <div class="card bg-danger text-white mb-4 ">
@@ -102,7 +102,7 @@
 
                         <div class="card-body">
                             <i class="align-left"></i>
-                            <h5>Data Siswa </h5>
+                            <h5>Presensi Guru</h5>
                         </div>
 
                         <div class="card-footer d-flex align-items-center justify-content-between">
