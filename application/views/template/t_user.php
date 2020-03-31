@@ -33,7 +33,7 @@
                         </div>
 
                         <div class="modal-body">
-                            <label for="" class="alert-link">Kelas Lembaga</label>
+                            <label for="" class="alert-link">Pilih Lembaga</label>
                             <label class="mr-sm-2 sr-only form-control-lg" for="inlineFormCustomSelect">Preference</label>
                             <select class="custom-select" id="inlineFormCustomSelect">
                                 <option selected>Pilih</option>

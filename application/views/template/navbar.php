@@ -8,79 +8,73 @@
           <a class="nav-link" href="<?= base_url('admin') ?>">
             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
             Dashboard
-
-            <!-- soal -->
-
-            <a class="nav-link" href="<?= base_url('admin/soal') ?>">
-              <div class="sb-nav-link-icon"><i class="fas fa-file"></i></div>
-              Soal
-
-              <!-- formulir -->
-
-              <a class="nav-link" href="<?= base_url('admin/formulir') ?>">
-                <div class="sb-nav-link-icon"><i class="fas fa-file-alt"></i></div>
-                Formulir
-              </a>
+            <a class="nav-link" href="<?= base_url('admin/formulir') ?>">
+              <div class="sb-nav-link-icon"><i class="fas fa-file-alt"></i></div>
+              Formulir
             </a>
-            <!-- interface -->
+          </a>
+          <!-- interface -->
 
-            <div class="sb-sidenav-menu-heading">Interface</div>
-            <a class="nav-link" href="<?= base_url('admin/t_pengajar') ?>">
-              <div class="sb-nav-link-icon"><i class="fas fa-user-tie"></i></div>
-              GURU
-            </a>
+          <div class="sb-sidenav-menu-heading">Interface</div>
+          <a class="nav-link" href="<?= base_url('admin/t_pengajar') ?>">
+            <div class="sb-nav-link-icon"><i class="fas fa-user-tie"></i></div>
+            Pengajar
+          </a>
 
-            <a class="nav-link" href="<?= base_url('admin/t_siswa') ?>">
-              <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
-              Siswa
-            </a>
+          <a class="nav-link" href="<?= base_url('admin/t_siswa') ?>">
+            <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+            Siswa
+          </a>
 
-            <!-- <a class="nav-link" href="<?= base_url('admin/t_pengguna') ?>">
+          <a class="nav-link" href="<?= base_url('admin/t_pengguna') ?>">
             <div class="sb-nav-link-icon"><i class="fas fa-chalkboard-teacher"></i></div>
             Pengguna
-          </a> -->
+          </a>
 
-            <a class="nav-link" href="<?= base_url('admin/t_prestasi') ?>">
-              <div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i></div>
-              Prestasi
-            </a>
+          <a class="nav-link" href="<?= base_url('admin/t_prestasi') ?>">
+            <div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i></div>
+            Prestasi
+          </a>
 
-            <a class="nav-link" href="<?= base_url('admin/table') ?>">
-              <div class="sb-nav-link-icon"><i class="fas fa fa-database"></i></div>
-              Rekap
-            </a>
-
-
+          <a class="nav-link" href="<?= base_url('admin/t_rekap') ?>">
+            <div class="sb-nav-link-icon"><i class="fas fa fa-database"></i></div>
+            Rekap
+          </a>
 
 
-            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
-              <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-              </nav>
-            </div>
+          <a class="nav-link" href="<?= base_url('admin/soal') ?>">
+            <div class="sb-nav-link-icon"><i class="fas fa-file"></i></div>
+            Soal
+          </a>
 
-            <div class="sb-sidenav-menu-heading">Addons</div>
+          <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+            </nav>
+          </div>
 
-            <a class="nav-link" href="<?= base_url('admin/charts') ?>">
-              <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-              Charts
-            </a>
-            <a class="nav-link" href="<?= base_url('admin/table') ?>">
-              <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-              Tables
-            </a>
-            <div class="sb-sidenav-menu-heading">Auth</div>
-            <a class="nav-link" href="<?= base_url('admin/users') ?>">
-              <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-              Users
-            </a>
-            <!-- <a class="nav-link" href="<?= base_url('login') ?>">
+          <div class="sb-sidenav-menu-heading">Addons</div>
+
+          <a class="nav-link" href="<?= base_url('admin/charts') ?>">
+            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+            Charts
+          </a>
+          <a class="nav-link" href="<?= base_url('admin/table') ?>">
+            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+            Tables
+          </a>
+          <div class="sb-sidenav-menu-heading">Auth</div>
+          <a class="nav-link" href="<?= base_url('admin/t_user') ?>">
+            <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+            Users
+          </a>
+          <a class="nav-link" href="<?= base_url('login') ?>">
             <div class="sb-nav-link-icon"><i class="far fa-id-badge"></i>
             </div>
             Login
-          </a> -->
-            <a class="nav-link" href="login.html">
-              <div class="sb-nav-link-icon"><i class="fas fa-sign-out-alt"></i> Logout
-            </a>
+          </a>
+          <a class="nav-link" href="login.html">
+            <div class="sb-nav-link-icon"><i class="fas fa-sign-out-alt"></i> Logout
+          </a>
         </div>
       </div>
   </div>

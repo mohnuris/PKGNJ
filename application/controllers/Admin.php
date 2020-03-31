@@ -3,15 +3,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Admin extends CI_Controller
 {
-  public function index()
-  {
-    $tittle['subtittle'] = "DASBOARD";
-    $tittle['dashboard'] = "MENU";
-    $this->load->view('template/header', $tittle);
-    $this->load->view('template/navbar');
-    $this->load->view('template/home');
-    $this->load->view('template/footer');
-  }
   public function login()
   {
     $tittle['subtittle'] = "login";
@@ -21,21 +12,15 @@ class Admin extends CI_Controller
     $this->load->view('controllers/login');
     $this->load->view('template/footer');
   }
-
-  public function users()
+  public function index()
   {
-    // if ($this->sesion->userdata('level') == 'admin') {
-    $tittle['subtittle'] = "halaman Admin";
-    $tittle['dashboard'] = "Admin";
-    // $data['users']
+    $tittle['subtittle'] = "DASBOARD";
+    $tittle['dashboard'] = "MENU";
     $this->load->view('template/header', $tittle);
     $this->load->view('template/navbar');
-    $this->load->view('template/t_user');
+    $this->load->view('template/Admin');
     $this->load->view('template/footer');
-    // // } else {
-    // }
   }
-
   public function charts()
   {
     $tittle['subtittle'] = "CHARTS";
@@ -47,14 +32,22 @@ class Admin extends CI_Controller
   }
   public function table()
   {
-    $tittle['subtittle'] = "Tables Rekap Triwulan";
+    $tittle['subtittle'] = "TABLE";
     $tittle['dashboard'] = "Table";
     $this->load->view('template/header', $tittle);
     $this->load->view('template/navbar');
     $this->load->view('template/tables');
     $this->load->view('template/footer');
   }
-
+  public function t_user()
+  {
+    $tittle['subtittle'] = "Tables Users";
+    $tittle['dashboard'] = "user";
+    $this->load->view('template/header', $tittle);
+    $this->load->view('template/navbar');
+    $this->load->view('template/t_user');
+    $this->load->view('template/footer');
+  }
   public function t_pengajar()
   {
     $tittle['subtittle'] = "Table Pengajar";
@@ -65,15 +58,6 @@ class Admin extends CI_Controller
     $this->load->view('template/footer');
   }
   public function t_siswa()
-  {
-    $tittle['subtittle'] = "Table Siswa";
-    $tittle['dashboard'] = "Siswa";
-    $this->load->view('template/header', $tittle);
-    $this->load->view('template/navbar');
-    $this->load->view('template/t_siswa');
-    $this->load->view('template/footer');
-  }
-  public function tambah_siswa()
   {
     $tittle['subtittle'] = "Table Siswa";
     $tittle['dashboard'] = "Siswa";
@@ -121,10 +105,10 @@ class Admin extends CI_Controller
   public function t_rekap()
   {
     $tittle['subtittle'] = "Halaman Rekap";
-    $tittle['dashboard'] = "Rekap ";
+    $tittle['dashboard'] = "Rekap Nilai ";
     $this->load->view('template/header', $tittle);
     $this->load->view('template/navbar');
-    $this->load->view('template/tables');
+    $this->load->view('template/t_rekap');
     $this->load->view('template/footer');
   }
 }

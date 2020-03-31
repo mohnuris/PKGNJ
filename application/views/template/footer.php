@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="d-flex align-items-center justify-content-between small">
       <div class="text-muted">
-        </i>Copyright &copy;BiroPendidikanNurulJadid</div>
+        </i>Copyright &copy;PKGNJ</div>
       <div>
         <i class="fab fa-github"></i>
         <a href="https://github.com/mohnuris">mohnuris</a>
