@@ -148,4 +148,23 @@ class Admin extends CI_Controller
     $this->load->view('template/t_rekap');
     $this->load->view('template/footer');
   }
+  public function c_triwulan1()
+  {
+    $tittle['subtittle'] = "Halaman Rekap";
+    $tittle['dashboard'] = "Rekap ";
+    $this->load->view('template/header', $tittle);
+    $this->load->view('template/navbar');
+    $this->load->view('template/c_triwulan1');
+    $this->load->view('template/footer');
+  }
+
+  public function coba()
+  {
+    $tittle['subtittle'] = "Halaman Rekap";
+    $tittle['dashboard'] = "charts ";
+    $this->load->view('template/header', $tittle);
+    $this->load->view('template/navbar');
+    $this->load->view('charts/coba');
+    $this->load->view('template/footer');
+  }
 }
