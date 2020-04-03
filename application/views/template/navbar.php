@@ -25,9 +25,9 @@
             <!-- interface -->
 
             <div class="sb-sidenav-menu-heading">Interface</div>
-            <a class="nav-link" href="<?= base_url('admin/t_pengajar') ?>">
+            <a class="nav-link" href="<?= base_url('admin/guru') ?>">
               <div class="sb-nav-link-icon"><i class="fas fa-user-tie"></i></div>
-              GURU
+              Guru  
             </a>
 
             <a class="nav-link" href="<?= base_url('admin/t_siswa') ?>">
@@ -35,23 +35,10 @@
               Siswa
             </a>
 
-            <!-- <a class="nav-link" href="<?= base_url('admin/t_pengguna') ?>">
-            <div class="sb-nav-link-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-            Pengguna
-          </a> -->
-
             <a class="nav-link" href="<?= base_url('admin/t_prestasi') ?>">
               <div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i></div>
               Prestasi
             </a>
-
-            <a class="nav-link" href="<?= base_url('admin/table') ?>">
-              <div class="sb-nav-link-icon"><i class="fas fa fa-database"></i></div>
-              Rekap
-            </a>
-
-
-
 
             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
               <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
@@ -59,6 +46,10 @@
             </div>
 
             <div class="sb-sidenav-menu-heading">Addons</div>
+            <a class="nav-link" href="<?= base_url('admin/t_rekap') ?>">
+              <div class="sb-nav-link-icon"><i class="fas fa fa-database"></i></div>
+              Rekap
+            </a>
 
             <a class="nav-link" href="<?= base_url('admin/charts') ?>">
               <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
