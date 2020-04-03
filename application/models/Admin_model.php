@@ -29,8 +29,8 @@ class Admin_model extends CI_Model
   public function joinsiswa()
   {
     $query = $this->db->select('*')
-      ->from('siswa')
-      ->join('tahun_pelajaran', 'siswa.id_tahun_pelajaran=tahun_pelajaran.id_tahun_pelajaran', 'left')
+      ->from('tb_siswa')
+      ->join('tb_guru', 'tb_siswa.id_guru=tb_guru.id_guru', 'left')
       ->order_by('id_siswa', 'DESC')
       ->get();
 
@@ -38,11 +38,11 @@ class Admin_model extends CI_Model
   }
   public function comboxdinamis()
   {
-    $query = $this->db->get('tahun_pelajaran');
-    $tambah[set_value('id_tahun_pelajaran')] = "---isi Tahun Pelajaran---";
+    $query = $this->db->get('tb_guru');
+    $tambah[set_value('id_guru')] = "---Pilih Guru---";
     if ($query->num_rows() > 0) {
       foreach ($query->result() as $row) {
-        $tambah[$row->id_tahun_pelajaran] = $row->tahun_pelajaran;
+        $tambah[$row->id_guru] = $row->guru;
       }
     }
     return $tambah;

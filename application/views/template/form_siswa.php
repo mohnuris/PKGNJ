@@ -13,9 +13,9 @@
                 <div class="modal-header bg-primary text-white">
                     <h3 class="modal-title" id="exampleModalLabel">Form Formulir</h3>
                 </div>
-
+                <?php echo form_open_multipart('Admin/simpan_siswa'); ?>
                 <div class="modal-body">
-                    <label for="nama" class="alert-link">Nama Lengkap</label>
+                    <label for="nm_siswa" class="alert-link">Nama Lengkap</label>
                     <?php echo form_input("nm_siswa", set_value('nm_siswa'), array('class' => 'form-control', 'id' => 'ns', 'placeholder' => 'Nama Lengkap')); ?>
 
                     <small class="text-danger">
@@ -26,18 +26,13 @@
 
 
 
-                <label form="" class="alert-link">Jenis Kelamin</label><br>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Laki-Laki
-                    </label>
-                    <br>
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                    <label class="form-check-label" for="exampleRadios2">
-                        Perempuan
-                    </label>
-                </div>
+                <label form="jk_siswa" class="alert-link">Jenis Kelamin</label><br>
+                <?php echo form_radio('jk_siswa', 'laki-laki', set_value('jk_siswa')) ?>Laki-Laki
+                <?php echo form_radio('jk_siswa', 'perempuan', set_value('jk_siswa')) ?>Perempuan
+                <br>
+                <small class="text-danger">
+                    <?php echo form_error('jk_siswa', ' '); ?>
+                </small>
 
 
             </div>
@@ -71,7 +66,16 @@
 
 
             <div class="modal-body">
-                <label for="" class="alert-link">Pilih Guru</label>
+                <div class="from-grup">
+                    <label for="gr" class="alert-link">Tahun Pelajaran</label>
+                    <?php echo form_dropdown("gr", $combo, set_value('gr'), array('class' => 'form-control', 'id' => 'gr')); ?>
+                    <small class="text-danger">
+                        <?php echo form_error('gr', ' '); ?>
+                    </small>
+                </div>
+                <br>
+
+                <!-- <label for="" class="alert-link">Pilih Guru</label>
                 <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
                 <select class="custom-select" id="inlineFormCustomSelect">
                     <option selected>------Pilih-----</option>
@@ -108,28 +112,10 @@
                     <option value="3">Ainul Mustafid</option>
                     <option value="3">Hairul Umam</option>
 
-                </select>
+                </select> -->
             </div>
 
-            <div class="modal-body">
-                <label for="nama" class="alert-link">Nama Lengkap</label>
-                <input class="form-control form-control-lg" type="text" placeholder="Nama Lengkap">
-            </div>
 
-            <div class="modal-body">
-                <label for="nama" class="alert-link">Nama Lengkap</label>
-                <input class="form-control form-control-lg" type="text" placeholder="Nama Lengkap">
-            </div>
-
-            <div class="modal-body">
-                <label for="nama" class="alert-link">Nama Lengkap</label>
-                <input class="form-control form-control-lg" type="text" placeholder="Nama Lengkap">
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
         </div>
 </div>
 
