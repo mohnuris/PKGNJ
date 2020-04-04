@@ -48,7 +48,7 @@
 
                 <div class="modal-body">
                     <label for="" class="alert-link">Pilih Kelas</label>
-                    <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                    <label class="mr-sm-2 sr-only" for="inlineFormCAustomSelect">Preference</label>
                     <select class="custom-select" id="inlineFormCustomSelect">
                         <option selected>Pilih</option>
                         <option value="1">X </option>
