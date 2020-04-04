@@ -27,7 +27,7 @@
             <div class="sb-sidenav-menu-heading">Interface</div>
             <a class="nav-link" href="<?= base_url('admin/guru') ?>">
               <div class="sb-nav-link-icon"><i class="fas fa-user-tie"></i></div>
-              Guru  
+              Guru
             </a>
 
             <a class="nav-link" href="<?= base_url('admin/t_siswa') ?>">
@@ -35,10 +35,17 @@
               Siswa
             </a>
 
+            <a class="nav-link" href="<?= base_url('admin/t_kelas') ?>">
+              <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
+              Kelas
+            </a>
+
             <a class="nav-link" href="<?= base_url('admin/t_prestasi') ?>">
               <div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i></div>
               Prestasi
             </a>
+
+
 
             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
               <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
@@ -59,6 +66,8 @@
               <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
               Tables
             </a>
+
+
             <div class="sb-sidenav-menu-heading">Auth</div>
             <a class="nav-link" href="<?= base_url('admin/users') ?>">
               <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
