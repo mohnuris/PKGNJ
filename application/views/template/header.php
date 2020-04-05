@@ -49,13 +49,13 @@
     <!-- Navbar-->
     <ul class="navbar-nav ml-auto ml-md-0">
       <li class="nav-item dropdown">
-      <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+      <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user ">
           <img src="<?= base_url('icon/pria.png') ?>" alt="" width="30px">
           <div class="d-sm-none d-lg-inline-block text-white">Hi, Ujang Maman</div>
         </a>
 
 
-        <div class="dropdown-menu dropdown-menu-right shadow btn-white">
+        <div class="dropdown-menu dropdown-menu-right shadow btn-white active">
           <!-- <div class="card mb-5  bg-white rounded"> -->
           <div class="dropdown-title"></div>
           <a href="features-profile.html" class="dropdown-item has-icon">
@@ -76,22 +76,22 @@
       </li>
       </li>
     </ul>
-    <!-- 
-      <ul class="navbar-nav ml-auto ml-md-0">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-white" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
 
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-            <a class="dropdown-item" href="#">
-              <i class="ace-icon fa fa-user"></i> Profil</a>
+    <!-- <ul class="navbar-nav ml-auto ml-md-0">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-white" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
 
-            <a class="dropdown-item" href="#">
-              <i class="ace-icon fa fa-cog"></i> Settings</a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+          <a class="dropdown-item" href="#">
+            <i class="ace-icon fa fa-user"></i> Profil</a>
 
-            <a class="dropdown-item" href="login.html">
-              <i class="fas fa-sign-out-alt"></i> Logout</a>
-            <!-- <i class="ace-icon fa fa-power-off"></i> -->
-    </div>
-    </li>
-    </ul>
+          <a class="dropdown-item" href="#">
+            <i class="ace-icon fa fa-cog"></i> Settings</a>
+
+          <a class="dropdown-item" href="login.html">
+            <i class="fas fa-sign-out-alt"></i> Logout</a>
+          <i class="ace-icon fa fa-power-off"></i>
+        </div>
+      </li>
+    </ul> -->
   </nav>
