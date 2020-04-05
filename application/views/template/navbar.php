@@ -73,14 +73,18 @@
               <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
               Users
             </a>
-            <!-- <a class="nav-link" href="<?= base_url('login') ?>">
-            <div class="sb-nav-link-icon"><i class="far fa-id-badge"></i>
-            </div>
-            Login
-          </a> -->
+
             <a class="nav-link" href="login.html">
               <div class="sb-nav-link-icon"><i class="fas fa-sign-out-alt"></i> Logout
             </a>
+
+
+            <!-- <a class="nav-link" href="<?= base_url('login') ?>">
+              <div class="sb-nav-link-icon"><i class="far fa-id-badge"></i>
+              </div>
+              Login
+            </a> -->
+          </a>
         </div>
       </div>
   </div>
