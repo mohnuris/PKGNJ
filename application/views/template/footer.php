@@ -32,6 +32,10 @@
 <script src="<?= base_url('template/assets/demo/chart-pie-demo.js') ?>"></script>
 <script src="<?= base_url('template/assets/demo/custom.js') ?>"></script>
 
+<!-- sweartalert -->
+<!-- <script src="<?= base_url('template/assets/js/myjs.js') ?>"></script> -->
+
+
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script>
   google.charts.load('current', {
