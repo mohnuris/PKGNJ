@@ -24,7 +24,7 @@
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
-                                    <tr class="bg-primary text-light">
+                                    <tr class="text-black">
                                         <th>No</th>
                                         <th>Name Lengkap</th>
                                         <th>Mapel</th>
