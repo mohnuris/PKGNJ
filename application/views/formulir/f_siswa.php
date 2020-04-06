@@ -1,10 +1,10 @@
 <div id="layoutSidenav_content">
   <main>
     <div class="container-fluid">
-      <h3 class="mt-5">Formulir Siswa</h3>
+      <h3 class="mt-5">Form Siswa</h3>
       <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href=" <?= base_url('admin/t_siswa') ?>">Siswa</a></li>
-        <li class="breadcrumb-item active">Formulir</li>
+        <li class="breadcrumb-item active">Form Siswa</li>
       </ol>
 
 
@@ -16,22 +16,24 @@
         </div> -->
 
         <div class="modal-body">
-          <label for="nama" class="alert-link">Nama Lengkap</label>
-          <input class="form-control form-control-lg" type="text" placeholder="Nama Lengkap"></br>
+          <?php echo form_open('admin/sm_siswa'); ?>
+          <div class="form-group">
+            <label for="si" class="alert-link">Nama Lengkap</label>
+            <?php echo form_input("si", "", array('class' => 'form-control', 'id' => 'si', 'placeholder' => 'Nama Lengkap')); ?>
 
+            <br>
+            <label form="" class="alert-link">Jenis Kelamin</label><br>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" checked>
+              <label class="form-check-label" for="exampleRadios1">
+                Laki-Laki
+                </br>
 
-          <label form="" class="alert-link">Jenis Kelamin</label><br>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" checked>
-            <label class="form-check-label" for="exampleRadios1">
-              Laki-Laki
-              </br>
-
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" <label class="form-check-label" for="exampleRadios2">
-              Perempuan
-            </label>
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" <label class="form-check-label" for="exampleRadios2">
+                Perempuan
+              </label>
+            </div>
           </div>
-
         </div>
 
         <div class="modal-body">
@@ -104,7 +106,9 @@
 
 
           <div class="modal-footer">
-            <button type="submit" id="simpan" onclick="Swal.fire('SUKSES','Edit Data','success')" class="btn btn-primary mb-3 ">SIMPAN</button>
+            <?php echo form_submit('save', 'SIMPAN', array('class' => 'btn btn-primary mt-4 pr-4 pl-4')) ?>
+            <?php echo form_close(); ?>
+
             <script>
               const tombol = document.querySelector('#edit');
               tombol.addEventListener('click', function() {
@@ -115,7 +119,6 @@
                 })
               });
             </script>
-
           </div>
         </div>
       </div>
