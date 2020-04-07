@@ -16,8 +16,6 @@
         <!-- <div class="content"> -->
         <?php
         if ($this->session->flashdata('info')) {
-
-
         ?>
           <div class="alert alert-primary alert-dismissible fade show" role="alert">
             <strong>
@@ -68,7 +66,7 @@
                           <ul class="d-flex justify-content-center">
                             <li class="mr-3"><a href="<?= base_url('' . $k->id_kelas) ?>" class="text-success"><i class="fa fa-edit"></i></a></li>
 
-                            <li><a href="<?= base_url('admin/hs_kelas' . $k->id_kelas) ?>" class="text-danger tombol-hapus" onclick="return confirm('yakin menghapus data.?')"><i class="fa fa-trash-alt"></i></a></li>
+                            <li><a href="<?= base_url('Admin/hs_kelas' . $k->id_kelas) ?>" class="text-danger" onclick="return confirm('yakin menghapus data?')"><i class="fa fa-trash-alt"></i></a></li>
                           </ul>
                         </td>
                         <!-- <td>$86,500</td> -->
