@@ -80,28 +80,12 @@
                     // tidak ada data
                     ?>
 
-                    <!-- <td colspan="7" align="center">
-                                        DATA KOSONG
-                                    </td> -->
-
                   <?php
 
                   }
                   ?>
 
                 </tbody>
-
-                <!-- <tfoot>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama Lengkap</th>
-                                    <th>Jenis Kelamin</th>
-                                    <th>Kelas</th>
-                                    <th>Mata Pelajaran</th>
-                                    <th>Jurusan</th>
-                                </tr>
-                            </tfoot> -->
-
               </table>
             </div>
           </div>
