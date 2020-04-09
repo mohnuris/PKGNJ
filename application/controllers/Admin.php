@@ -352,7 +352,7 @@ class Admin extends CI_Controller
     $this->Admin_model->hapusdata('tb_kelas', $id, 'id_kelas');
     if ($this->db->affected_rows()) {
       $this->session->set_flashdata('info', 'Data Tahun Pelajaran Berhasil Dihapus');
-      redirect('admin/t_kelas');
+      redirect('a dmin/t_kelas');
     } else {
       $this->session->set_flashdata('error', 'Data Tahun Pelajaran Gagal Terhapus');
       redirect('admin/t_kelas');
