@@ -4,10 +4,14 @@
             <h1 class="mt-4">Tables</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href=" <?= base_url('admin') ?>">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href=" <?= base_url('admin/coba') ?>">Tables</a></li>
+                <li class="breadcrumb-item">Rekap</li>
+                <li class="breadcrumb-item"><a href=" <?= base_url('admin/coba') ?>">Detail</a></li>
+                <li class="breadcrumb-item"><a href=" <?= base_url('admin/charts') ?>">Chart</a></li>
 
             </ol>
 
+
+            <!-- Contents -->
             <div class="row justify-content-around">
                 <div class="col-4 col-md-4 ml-5">
                     <div class="card">
