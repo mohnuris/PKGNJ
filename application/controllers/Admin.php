@@ -36,12 +36,21 @@ class Admin extends CI_Controller
   {
     $tittle['subtittle'] = "login";
     $tittle['dashboard'] = "user";
+    // $this->load->view('template/header', $tittle);
+    // $this->load->view('template/navbar');
+    $this->load->view('auth/login');
+    // $this->load->view('template/footer');
+  }
+  public function profil()
+  {
+    $tittle['subtittle'] = "halaman Profil";
+    $tittle['dashboard'] = "Profil";
+
     $this->load->view('template/header', $tittle);
     $this->load->view('template/navbar');
-    $this->load->view('controllers/login');
+    $this->load->view('users/profil');
     $this->load->view('template/footer');
   }
-
   public function users()
   {
     // if ($this->sesion->userdata('level') == 'admin') {
@@ -108,7 +117,7 @@ class Admin extends CI_Controller
   }
 
 
-  public function t_siswa()
+  public function siswa()
   {
     $tittle['subtittle'] = "Table Siswa";
     $tittle['dashboard'] = "Siswa";
@@ -253,7 +262,7 @@ class Admin extends CI_Controller
     $this->load->view('template/t_pengguna');
     $this->load->view('template/footer');
   }
-  public function t_prestasi()
+  public function prestasi()
   {
     $tittle['subtittle'] = "Table Pengguna";
     $tittle['dashboard'] = "Pengguna";
@@ -301,7 +310,7 @@ class Admin extends CI_Controller
     $this->load->view('template/footer');
   }
 
-  public function t_kelas()
+  public function kelas()
   {
     $tittle['subtittle'] = "Table kelas";
     $tittle['dashboard'] = "kelas";
@@ -352,10 +361,10 @@ class Admin extends CI_Controller
     $this->Admin_model->hapusdata('tb_kelas', $id, 'id_kelas');
 
     if ($this->db->affected_rows()) {
-      $this->session->set_flashdata('info', 'Data Tahun Pelajaran Berhasil Dihapus');
+      $this->session->set_flashdata('info', 'Data Kelas Berhasil Dihapus');
       redirect('admin/t_kelas');
     } else {
-      $this->session->set_flashdata('error', 'Data Tahun Pelajaran Gagal Terhapus');
+      $this->session->set_flashdata('error', 'Data Kelas Gagal Terhapus');
       redirect('admin/t_kelas');
     }
   }
