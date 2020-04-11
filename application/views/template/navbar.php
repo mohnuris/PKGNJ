@@ -30,12 +30,12 @@
               Guru
             </a>
 
-            <a class="nav-link" href="<?= base_url('admin/t_siswa') ?>">
+            <a class="nav-link" href="<?= base_url('admin/siswa') ?>">
               <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
               Siswa
             </a>
 
-            <a class="nav-link" href="<?= base_url('admin/t_kelas') ?>">
+            <a class="nav-link" href="<?= base_url('admin/kelas') ?>">
               <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
               Kelas
             </a>
@@ -72,6 +72,11 @@
             <a class="nav-link" href="<?= base_url('admin/users') ?>">
               <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
               Users
+            </a>
+
+            <a class="nav-link" href="<?= base_url('admin/login') ?>">
+              <div class="sb-nav-link-icon"><i class="fas fa-sign-in-alt"></i></div>
+              Login
             </a>
 
             <a class="nav-link" href="login.html">
