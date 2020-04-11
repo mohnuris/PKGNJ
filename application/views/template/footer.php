@@ -31,6 +31,7 @@
 <script src="<?= base_url('template/assets/demo/datatables-demo.js') ?>"></script>
 <script src="<?= base_url('template/assets/demo/chart-pie-demo.js') ?>"></script>
 <script src="<?= base_url('template/assets/demo/custom.js') ?>"></script>
+<script src="<?= base_url('template/assets/demo/stisla.js') ?>"></script>
 
 <!-- sweartalert -->
 <!-- <script src="<?= base_url('template/assets/js/myjs.js') ?>"></script> -->
