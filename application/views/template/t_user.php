@@ -5,7 +5,8 @@
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href=" <?= base_url('admin') ?>">Dashboard</a></li>
                 <li class="breadcrumb-item active">Tables Users</li>
-                <li class="breadcrumb-item"><a href=" <?= base_url('admin') ?>">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href=" <?= base_url('admin/profil') ?>">Dashboard</a></li>
+                <!-- <li class="breadcrumb-item"><a href=" <?= base_url('admin') ?>">Dashboard</a></li> -->
             </ol>
 
             <!-- Button trigger modal -->
