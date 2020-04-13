@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <h3 class="mt-5">Form Tambah Kelas</h3>
       <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href=" <?= base_url('admin/t_kelas') ?>">Kelas</a></li>
+        <li class="breadcrumb-item"><a href=" <?= base_url('admin/kelas') ?>">Kelas</a></li>
         <li class="breadcrumb-item active">Form Tambah Kelas</li>
       </ol>
 
