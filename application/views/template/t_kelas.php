@@ -6,7 +6,7 @@
       <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href=" <?= base_url('admin') ?>">Dashboard</a></li>
         <li class="breadcrumb-item">Kelas</a></li>
-        <li class="breadcrumb-item"><a href=" <?= base_url('admin/f_Kelas') ?>">Form Kelas</a></li>
+        <li class="breadcrumb-item"><a href=" <?= base_url('admin/f_Kelas') ?>">Tambah Kelas</a></li>
 
 
       </ol>
@@ -64,7 +64,7 @@
 
                         <td>
                           <ul class="d-flex justify-content-center">
-                            <li class="mr-3"><a href="<?= base_url('' . $k->id_kelas) ?>" class="text-success"><i class="fa fa-edit"></i></a></li>
+                            <li class="mr-3"><a href="<?= base_url('Admin/edkelas/' . $k->id_kelas) ?>" class="text-success"><i class="fa fa-edit"></i></a></li>
 
                             <li><a href="<?= base_url('Admin/hapuskelas/' . $k->id_kelas) ?>" class="text-danger" onclick="return confirm('yakin menghapus data?')"><i class="fa fa-trash-alt"></i></a></li>
                           </ul>

@@ -25,13 +25,14 @@
       ?> -->
       <div class="card mb-5 shadow p-3 mb-5 bg-white rounded">
         <div class="modal-body align-center">
-          <?php echo form_open('admin/sm_kelas'); ?>
+          <?php echo form_open('admin/ed_kelas'); ?>
+          <?php echo form_hidden('id', $ek->id_kelas); ?>
           <label for="kl" class="alert-link">Kelas</label>
 
-          <?php echo form_input("kl", $ek->tb_kelas, array('class' => 'form-control', 'id' => 'kl', 'placeholder' => 'Kelas dan Jurusan')); ?>
+          <?php echo form_input("kl", $ek->kelas_jurusan, array('class' => 'form-control', 'id' => 'kl', 'placeholder' => 'Kelas dan Jurusan')); ?>
 
           <div class="modal-footer">
-            <?php echo form_submit('save', 'SIMPAN', array('class' => 'btn btn-primary  mt-4 pr-4 pl-4')); ?>
+            <?php echo form_submit('edit', 'EDIT', array('class' => 'btn btn-primary  mt-4 pr-4 pl-4')); ?>
             <?php echo form_close(); ?>
 
             <script>
