@@ -36,10 +36,18 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD:application/views/template/admin.php
                 <div class="col-md-3">
                     <div class="card bg-info text-white mb-4 ">
                         <div class="col-xl-5 align-right">
                             <i style="margin-left: 150px; margin-top: 15px" class="fas fa-chalkboard-teacher fa-5x text-gray"></i>
+=======
+
+                <div class="col-md-3">
+                    <div class="card bg-warning text-white mb-4 ">
+                        <div class="col-xl-5 align-left">
+                            <i style="margin-left: auto; margin-top: 15px" class="fas fa-chalkboard-teacher fa-4x text-gray"></i>
+>>>>>>> master:application/views/template/home.php
                         </div>
                         <div class="card-body">
                             <i class="align-left"></i> Data Pengguna</div>
@@ -50,6 +58,10 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD:application/views/template/admin.php
+=======
+
+>>>>>>> master:application/views/template/home.php
                 <div class="col-md-3">
                     <div class="card bg-danger text-white mb-4 ">
                         <div class="col-xl-5 align-right">
@@ -104,7 +116,11 @@
                             <i class="align-left"></i> Prestasi</div>
 
                         <div class="card-footer d-flex align-items-center justify-content-between">
+<<<<<<< HEAD:application/views/template/admin.php
                             <a class="small text-white stretched-link" href="#">View Details</a>
+=======
+                            <a class="small text-white stretched-link" href="<?= base_url('admin/siswa') ?>">View Details</a>
+>>>>>>> master:application/views/template/home.php
 
                         </div>
                     </div>
@@ -124,6 +140,10 @@
                     </div>
                 </div>
 
+<<<<<<< HEAD:application/views/template/admin.php
+=======
+
+>>>>>>> master:application/views/template/home.php
                 <b>
                     <main>
                         <div class="container-fluid">
