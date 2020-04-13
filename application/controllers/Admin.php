@@ -51,6 +51,17 @@ class Admin extends CI_Controller
     $this->load->view('users/profil');
     $this->load->view('template/footer');
   }
+  public function editprofil()
+  {
+    $tittle['subtittle'] = "halaman Profil";
+    $tittle['dashboard'] = "Profil";
+
+    $this->load->view('template/header', $tittle);
+    $this->load->view('template/navbar');
+    $this->load->view('users/editprofil');
+    $this->load->view('template/footer');
+  }
+
   public function users()
   {
     // if ($this->sesion->userdata('level') == 'admin') {
@@ -310,7 +321,7 @@ class Admin extends CI_Controller
     $this->load->view('template/footer');
   }
 
-  public function kelas()
+  public function t_kelas()
   {
     $tittle['subtittle'] = "Table kelas";
     $tittle['dashboard'] = "kelas";
@@ -365,6 +376,33 @@ class Admin extends CI_Controller
       redirect('admin/t_kelas');
     } else {
       $this->session->set_flashdata('error', 'Data Kelas Gagal Terhapus');
+      redirect('admin/t_kelas');
+    }
+  }
+  public function edkelas($id)
+  {
+    $tittle['subtittle'] = "Halaman Edit Kelas";
+    $tittle['dashboard'] = "Form Edit Kelas ";
+    $data['ek'] = $this->Admin_model->formedit('tb_kelas', 'id_kelas', $id);
+    $this->load->view('template/header', $tittle);
+    $this->load->view('template/navbar');
+    $this->load->view('formulir/E_kelas', $data);
+    $this->load->view('template/footer');
+  }
+
+  public function ed_kelas()
+  {
+    $id = $this->input->post('id');
+    $data = array(
+      'kelas_jurusan' => $this->input->post('kl')
+    );
+    $query = $this->Admin_model->editdata('tb_kelas', 'id_kelas', $id, $data);
+
+    if ($query) {
+      $this->session->set_flashdata('info', 'Data Teredit');
+      redirect('admin/t_kelas');
+    } else {
+      $this->session->set_flashdata('danger', 'Gagal Teredit');
       redirect('admin/t_kelas');
     }
   }
