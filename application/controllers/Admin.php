@@ -343,7 +343,7 @@ class Admin extends CI_Controller
   }
   public function sm_kelas()
   {
-    $this->form_validation->set_rules('kl', 'kelas', 'required');
+    $this->form_validation->set_rules('kelas_jurusan', 't_kelas', 'required');
     if ($this->form_validation->run() == FALSE) {
       # code...
       $tittle['subtittle'] = "Halaman form Kelas";
@@ -370,6 +370,7 @@ class Admin extends CI_Controller
   public function hapuskelas($id)
   {
     $this->Admin_model->hapusdata('tb_kelas', $id, 'id_kelas');
+    // $this->Admin_modal->hapusdata('tb_kelas', '$id', 'id_kelas');
 
     if ($this->db->affected_rows()) {
       $this->session->set_flashdata('info', 'Data Kelas Berhasil Dihapus');
