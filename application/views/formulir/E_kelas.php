@@ -32,7 +32,7 @@
           <?php echo form_input("kl", $ek->kelas_jurusan, array('class' => 'form-control', 'id' => 'kl', 'placeholder' => 'Kelas dan Jurusan')); ?>
 
           <div class="modal-footer">
-            <?php echo form_submit('edit', 'EDIT', array('class' => 'btn btn-primary  mt-4 pr-4 pl-4')); ?>
+            <button type="submit" id="edit" onclick="Swal.fire('SUKSES','Data Tersimpan','success')" class="btn btn-primary">EDIT</button>
             <?php echo form_close(); ?>
 
             <script>
