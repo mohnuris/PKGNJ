@@ -118,11 +118,16 @@
                         </div>
                         <div class="card-body">
                             <i class="align-left"></i>
-                            <h5>Data Siswa </h5>
+                            <h5>KELAS JURUSAN </h5>
+
+                            <div class="d-flex justify-content-between pb-2">
+                                <!-- <h2><?= $kl ?></h2> -->
+                            </div>
+
                         </div>
 
                         <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link" href="<?= base_url('admin/siswa') ?>">View Details</a>
+                            <a class="small text-white stretched-link" href="<?= base_url('admin/t_kelas') ?>">View Details</a>
 
                         </div>
                     </div>
