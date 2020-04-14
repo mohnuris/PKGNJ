@@ -34,7 +34,9 @@
 <script src="<?= base_url('template/assets/demo/stisla.js') ?>"></script>
 
 <!-- sweartalert -->
-<!-- <script src="<?= base_url('template/assets/js/myjs.js') ?>"></script> -->
+<script src="<?= base_url('template/js/myjs.js') ?>"></script>
+<script src="<?= base_url('template/js/sweetalert2.all.min.js') ?>"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
