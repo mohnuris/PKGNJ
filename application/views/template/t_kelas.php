@@ -14,20 +14,8 @@
       <div class="card mb-5 shadow p-3 mb-5 bg-white rounded">
 
         <!-- <div class="content"> -->
-        <?php
-        if ($this->session->flashdata('info')) {
-        ?>
-          <div class="alert alert-primary alert-dismissible fade show" role="alert">
-            <strong>
-              Data Tersimpan
-              <?php echo $this->session->flashdata('info'); ?>
-            </strong>
-            <button type="button" class="close" data-dismiss="alert" aria-label="close"> <span class="fa fa-times"></span></button>
-          </div>
-        <?php
+        <div class="flash-data" data-flashdata="<?= $this->session->flashdata('info') ?>"></div>
 
-        }
-        ?>
 
 
         <!-- <a class="btn btn-primary" href=" <?= base_url('admin/f_Kelas') ?>"><i class="fa fa-plus-circle"></i> Tambah Kelas </a>
@@ -42,6 +30,8 @@
           <!-- <div class="card-header"><i class="fas fa-table mr-1"></i>DataTable Example</div> -->
           <div class="card-body">
             <div class="table-responsive">
+              <div class="flash-data" data-flashdata="<?= $this->session->flashdata('info') ?>"></div>
+
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr class="text-black">
@@ -66,10 +56,10 @@
                           <ul class="d-flex justify-content-center">
                             <li class="mr-3"><a href="<?= base_url('Admin/edkelas/' . $k->id_kelas) ?>" class="text-success"><i class="fa fa-edit"></i></a></li>
 
-                            <li><a href="<?= base_url('Admin/hapuskelas/' . $k->id_kelas) ?>" class="text-danger" onclick="return confirm('yakin menghapus data?')"><i class="fa fa-trash-alt"></i></a></li>
+                            <li><a href="<?= base_url('Admin/hapuskelas/' . $k->id_kelas) ?>" class="text-danger tombol-hapus"><i class="fa fa-trash"></i></a></li>
+
                           </ul>
                         </td>
-                        <!-- <td>$86,500</td> -->
                       </tr>
                     <?php
                       $no++;
@@ -77,7 +67,9 @@
                   } else {
                     // tidak ada data
                     ?>
-
+                    <tr>
+                      <td colspan="7" align="center">DATA KOSONG</td>
+                    </tr>
                   <?php
 
                   }
