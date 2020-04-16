@@ -35,7 +35,7 @@
               Siswa
             </a>
 
-            <a class="nav-link" href="<?= base_url('admin/kelas') ?>">
+            <a class="nav-link" href="<?= base_url('admin/t_kelas') ?>">
               <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
               Kelas
             </a>
