@@ -121,7 +121,7 @@
                             <h5>KELAS JURUSAN </h5>
 
                             <div class="d-flex justify-content-between pb-2">
-                                <!-- <h2><?= $kl ?></h2> -->
+                                <!-- <h2><?= $k ?></h2> -->
                             </div>
 
                         </div>
