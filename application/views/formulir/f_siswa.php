@@ -18,11 +18,15 @@
         <div class="modal-body">
           <?php echo form_open('admin/sm_siswa'); ?>
           <div class="form-group">
-            <label for="si" class="alert-link">Nama Lengkap</label>
-            <?php echo form_input("si", "", array('class' => 'form-control', 'id' => 'si', 'placeholder' => 'Nama Lengkap')); ?>
+            <label for="s" class="alert-link">Nama Siswa</label>
+
+            <?php echo form_input("nm_siswa", set_value('nm_siswa'), array('class' => 'form-control', 'id' => 's', 'placeholder' => 'Nama Lengkap')); ?>
+            <small class="text-danger">
+              <?php echo form_error('nm_siswa', ' '); ?>
+            </small>
 
             <br>
-            <label form="" class="alert-link">Jenis Kelamin</label><br>
+            <label form="jk" class="alert-link">Jenis Kelamin</label><br>
             <div class="form-check">
               <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" checked>
               <label class="form-check-label" for="exampleRadios1">
@@ -36,7 +40,7 @@
           </div>
         </div>
 
-        <div class="modal-body">
+        <!-- <div class="modal-body">
           <label for="" class="alert-link">Pilih Kelas</label>
           <label class="mr-sm-2 sr-only" for="inlineFormCAustomSelect">Preference</label>
           <select class="custom-select" id="inlineFormCustomSelect">
@@ -45,20 +49,20 @@
             <option value="3">XI</option>
             <option value="3">XII</option>
           </select>
-        </div>
+        </div> -->
 
         <div class="modal-body">
-          <label for="" class="alert-link">Jurusan</label>
-          <label class="mr-sm-2 sr-only form-control-lg" for="inlineFormCustomSelect">Preference</label>
+          <label for="" class="alert-link">Kelas dan Jurusan</label>
+          <label class="mr-sm-2 sr-only form-control-lg" for="inlineFormCustomSelect"></label>
           <select class="custom-select" id="inlineFormCustomSelect">
-            <option selected>Pilih</option>
+            <option selected>------Pilih-----</option>
             <option value="1">MULTIMEDIA 1</option>
             <option value="1">MULTIMEDIA 2</option>
             <option value="2">Rekayasa Perangkat Lunak (RPL) 1</option>
             <option value="3">Teknik Komputer Jaringan (TKJ) 1</option>
             <option value="3"> Teknik Pembangkit Tenaga Listrik (TPTL)</option>
             <option value="3"> Agribisnis Pengolahan Hasil Perikanan (APHP)</option>
-            <option value="3">Tata Busana(TB)</option>
+            <option value="3">Tata Busana (TB)</option>
 
           </select>
         </div>
@@ -66,8 +70,8 @@
 
         <div class="modal-body">
           <label for="" class="alert-link">Pilih Guru</label>
-          <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-          <select class="custom-select" id="inlineFormCustomSelect">
+          <label class="mr-sm-2 sr-only form-control" for="inlineFormCustomSelect1"></label>
+          <select class="custom-select" id="inlineFormCustomSelect1">
             <option selected>------Pilih-----</option>
             <option value="1">Mujiburrohman</option>
             <option value="2">Maziyyatus Sholihah</option>
@@ -102,11 +106,17 @@
             <option value="3">Ainul Mustafid</option>
             <option value="3">Hairul Umam</option>
 
-          </select>
-
+          </select><br>
+          <br>
+          <form>
+            <div class="form-group">
+              <label for="exampleFormControlFile1" class="alert-link">Foto Siswa</label>
+              <input type="file" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+          </form>
 
           <div class="modal-footer">
-            <?php echo form_submit('save', 'SIMPAN', array('class' => 'btn btn-primary mt-4 pr-4 pl-4')) ?>
+            <button type="submit" id="simpan" onclick="Swal.fire('SUKSES','Data Tersimpan','success')" class="btn btn-primary">SIMPAN</button>
             <?php echo form_close(); ?>
 
             <script>
