@@ -7,7 +7,7 @@ class siswa extends CI_Controller
   public function __construct()
   {
     parent::__construct();
-    check_login();
+    // check_login();
     $this->load->model('siswa_model', 'siswa');
     $this->load->library('pagination');
   }
@@ -106,4 +106,13 @@ class siswa extends CI_Controller
     $this->load->view('siswa/tidak_lulus', $data);
     $this->load->view('templates_admin/footer');
   }
+
+  // public funtion detail()
+  // {
+  //   $this->load->view('templates/header', $data);
+  //   $this->load->view('templates/sidebar', $data);
+  //   $this->load->view('templates/topbar', $data);
+  //   $this->load->view('siswa/siswa', $data);
+  //   $this->load->view('templates_admin/footer');
+  // }
 }
