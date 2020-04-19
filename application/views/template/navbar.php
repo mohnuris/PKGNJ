@@ -30,7 +30,7 @@
               Guru
             </a>
 
-            <a class="nav-link" href="<?= base_url('admin/siswa') ?>">
+            <a class="nav-link" href="<?= base_url('admin/t_siswa') ?>">
               <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
               Siswa
             </a>
