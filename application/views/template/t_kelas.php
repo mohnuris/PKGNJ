@@ -2,14 +2,13 @@
   <main>
     <div class="container-fluid">
       <title><?= $subtittle ?></title>
-      <h3 class="mt-4">Halaman Kelas</h3>
+      <h3 class="mt-5"></h3>
       <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href=" <?= base_url('admin') ?>">Dashboard</a></li>
         <li class="breadcrumb-item">Kelas</a></li>
         <li class="breadcrumb-item"><a href=" <?= base_url('admin/f_Kelas') ?>">Tambah Kelas</a></li>
-
-
       </ol>
+      <h2 class="mt-4">Data Kelas</h2>
       <!-- Button trigger modal -->
       <div class="card mb-5 shadow p-3 mb-5 bg-white rounded">
 
