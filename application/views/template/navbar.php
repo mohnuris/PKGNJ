@@ -40,13 +40,6 @@
               Kelas
             </a>
 
-            <a class="nav-link" href="<?= base_url('admin/t_prestasi') ?>">
-              <div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i></div>
-              Prestasi
-            </a>
-
-
-
             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
               <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
               </nav>
@@ -69,6 +62,11 @@
 
 
             <div class="sb-sidenav-menu-heading">Auth</div>
+            <a class="nav-link" href="<?= base_url('admin/t_kepalasekolah') ?>">
+              <div class="sb-nav-link-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+              Kepala Sekolah
+            </a>
+            
             <a class="nav-link" href="<?= base_url('admin/users') ?>">
               <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
               Users
