@@ -18,8 +18,8 @@ class Admin extends CI_Controller
     $data['si'] = $this->db->get('tb_siswa')->num_rows();
     $data['gr'] = $this->db->get('tb_guru')->num_rows();
     $data['tw'] = $this->db->get('tb_triwulan')->num_rows(); //triwulan
-    $data['pr'] = $this->db->get('tb_prestasi')->num_rows(); //prestasi
-    $data['jr'] = $this->db->get('tb_jurusan')->num_rows(); //jurusan
+    $data['ks'] = $this->db->get('tb_kepalasekolah')->num_rows(); //prestasi
+    // $data['jr'] = $this->db->get('tb_jurusan')->num_rows(); //jurusan
     $data['kl'] = $this->db->get('tb_kelas')->num_rows(); //kelas
     $data['mp'] = $this->db->get('tb_mapel')->num_rows(); //mata pelajaran
     $data['ni'] = $this->db->get('tb_nilai')->num_rows(); //table
@@ -32,6 +32,10 @@ class Admin extends CI_Controller
     $this->load->view('template/home');
     $this->load->view('template/footer');
   }
+
+
+
+
   public function login()
   {
     $tittle['subtittle'] = "login";
@@ -105,6 +109,95 @@ class Admin extends CI_Controller
     $this->load->view('template/footer');
   }
 
+  // KEPALA SEKOLAH
+  public function t_kepalasekolah()
+  {
+    $tittle['subtittle'] = "Halaman Data Kepala Sekolah";
+    $data['ks'] = $this->Admin_model->tampildata('tb_kepalasekolah', 'id_kepala_sekolah');
+    $this->load->view('template/header', $tittle);
+    $this->load->view('template/navbar');
+    $this->load->view('template/t_kepalasekolah', $data);
+    $this->load->view('template/footer');
+  }
+  public function f_kepalasekolah()
+  {
+
+    $tittle['subtittle'] = "Halaman Form Kepala Sekolah";
+    $tittle['dashboard'] = "Form Kepala Sekolah ";
+    $this->load->view('template/header', $tittle);
+    $this->load->view('template/navbar');
+    $this->load->view('formulir/f_kepalasekolah');
+    $this->load->view('template/footer');
+  }
+  public function sm_kepalasekolah()
+  {
+    $this->form_validation->set_rules('nl', 'Nama Lengkap', 'required');
+    $this->form_validation->set_rules('ks', 'Kepala Sekolah', 'required');
+    if ($this->form_validation->run() == FALSE) {
+      # code...
+      $tittle['subtittle'] = "Halaman form Kepala Sekolah";
+      $tittle['dashboard'] = "Form Kepala Sekolah ";
+      $this->load->view('template/header', $tittle);
+      $this->load->view('template/navbar');
+      $this->load->view('formulir/f_kepalasekolah');
+      $this->load->view('template/footer');
+    } else {
+      $data = array(
+        'nm_kepala' => $this->input->post('nl'),
+        'kepala_sekolah' => $this->input->post('ks')
+      );
+      $query = $this->Admin_model->simpandata('tb_kepalasekolah', $data);
+
+      if ($query) {
+        $this->session->set_flashdata('info', 'Data Tersimpan');
+        redirect('admin/t_kepalasekolah');
+      } else {
+        $this->session->set_flashdata('danger', 'Gagal Tersimpan');
+        redirect('admin/t_kepalasekolah');
+      }
+    }
+  }
+  public function hapuskepalasekolah($id)
+  {
+    $this->Admin_model->hapusdata('tb_kepalasekolah', $id, 'id_kepala_sekolah');
+    if ($this->db->affected_rows()) {
+      $this->session->set_flashdata('info', 'Data kepalasekolah Berhasil Dihapus');
+      redirect('admin/t_kepalasekolah');
+    } else {
+      $this->session->set_flashdata('error', 'Data Kepala Sekolah Gagal Terhapus');
+      redirect('admin/t_kepalasekolah');
+    }
+  }
+  public function edkepalasekolah($id)
+  {
+    $tittle['subtittle'] = "Halaman Edit Sepala Sekolah";
+    $tittle['dashboard'] = "Form Edit Kepala Sekolah ";
+    $data['eks'] = $this->Admin_model->formedit('tb_kepalasekolah', 'id_kepala_sekolah', $id);
+    $this->load->view('template/header', $tittle);
+    $this->load->view('template/navbar');
+    $this->load->view('formulir/E_kepalasekolah', $data);
+    $this->load->view('template/footer');
+  }
+
+  public function ed_kepalasekolah()
+  {
+    $id = $this->input->post('id');
+    $data = array(
+      'nm_kepala' => $this->input->post('nm'),
+      'kepala_sekolah' => $this->input->post('ks')
+    );
+    $query = $this->Admin_model->editdata('tb_kepalasekolah', 'id_kepala_sekolah', $id, $data);
+
+    if ($query) {
+      $this->session->set_flashdata('info', 'Data Teredit');
+      redirect('admin/t_kepalasekolah');
+    } else {
+      $this->session->set_flashdata('danger', 'Gagal Teredit');
+      redirect('admin/t_kepalasekolah');
+    }
+  }
+
+  // GURU
   public function guru()
   {
     $tittle['subtittle'] = "Halaman Guru";
@@ -116,11 +209,20 @@ class Admin extends CI_Controller
     $this->load->view('template/footer');
   }
 
+  public function sm_guru()
+  {
+    if ($_FILES['foto']['name']) {
+      echo "Gambar atau File ada";
+    } else {
+      echo "Gambar atau File tidak ada";
+    }
+  }
+
   public function f_guru()
   {
-    $tittle['subtittle'] = "Halaman formulir";
-    $tittle['dashboard'] = "formulir ";
-    $tittle['dashboard'] = "formulir ";
+    $tittle['subtittle'] = " Tambah Guru";
+    $tittle['dashboard'] = "Tambah Guru ";
+    // $tittle['dashboard'] = "formulir ";
     $this->load->view('template/header', $tittle);
     $this->load->view('template/navbar', $tittle);
     $this->load->view('formulir/f_guru');
@@ -130,7 +232,7 @@ class Admin extends CI_Controller
 
   public function t_siswa()
   {
-    $tittle['subtittle'] = "Table Siswa";
+    $tittle['subtittle'] = "Halaman Data Siswa";
     $tittle['dashboard'] = "Siswa";
     $data['si'] = $this->Admin_model->tampildata('tb_siswa', 'id_siswa');
 
@@ -141,9 +243,11 @@ class Admin extends CI_Controller
   }
   public function f_siswa()
   {
-    $tittle['subtittle'] = "Halaman formulir";
-    $tittle['dashboard'] = "formulir ";
+    $tittle['subtittle'] = "Halaman Tambah Siswa";
+    $tittle['dashboard'] = "formulir";
     $this->load->view('template/header', $tittle);
+    // $data['combo'] = $this->Admin_model->comboxdinamis();
+    // $data['error'] = "";
     $this->load->view('template/navbar');
     $this->load->view('formulir/f_siswa');
     $this->load->view('template/footer');
@@ -207,7 +311,7 @@ class Admin extends CI_Controller
           $tittle['subtittle'] = "Halaman Tambah Siswa";
           $tittle['dashboard'] = "form Tambah Siswa ";
           $this->load->view('dasbor/header', $tittle);
-          $this->load->view('form_siswa', $error);
+          $this->load->view('formulir/f_siswa', $error);
           $this->load->view('dasbor/footer');
         } else {
           $gbr = $this->upload->data();
@@ -227,40 +331,40 @@ class Admin extends CI_Controller
           $foto = $gbr['file_name'];
           // simpan
           $data = array(
-            'id_tahun_pelajaran' => $this->input->post('th'),
-            'nisn' => $this->input->post('nisn'),
             'nm_siswa' => $this->input->post('nm_siswa'),
+            'id_kelas' => $this->input->post('k'),
+            'id_guru' => $this->input->post('gr'),
             'jk_siswa' => $this->input->post('jk_siswa'),
-            'alt_siswa' => $this->input->post('alt_siswa'),
+            // 'alt_siswa' => $this->input->post('alt_siswa'),
             'ft_siswa' => $foto
           );
           $query = $this->Admin_model->simpandata('siswa', $data);
 
           if ($query) {
             $this->session->set_flashdata('info', 'Data siswa Berhasil Tersimpan');
-            redirect('Admin/siswa');
+            redirect('Admin/t_siswa');
           } else {
             $this->session->set_flashdata('info', 'Data siswa Gagal Tersimpan');
-            redirect('Admin/siswa');
+            redirect('Admin/t_siswa');
           }
         }
       } else {
 
         $data = array(
-          'id_tahun_pelajaran' => $this->input->post('th'),
-          'nisn' => $this->input->post('nisn'),
           'nm_siswa' => $this->input->post('nm_siswa'),
+          'id_kelas' => $this->input->post('k'),
+          'id_guru' => $this->input->post('gr'),
           'jk_siswa' => $this->input->post('jk_siswa'),
-          'alt_siswa' => $this->input->post('alt_siswa')
+          // 'alt_siswa' => $this->input->post('alt_siswa')
         );
-        $query = $this->Admin_model->simpandata('siswa', $data);
+        $query = $this->Admin_model->simpandata('t_siswa', $data);
 
         if ($query) {
           $this->session->set_flashdata('info', 'Data siswa Berhasil Tersimpan');
-          redirect('Admin/siswa');
+          redirect('Admin/t_siswa');
         } else {
           $this->session->set_flashdata('info', 'Data siswa Gagal Tersimpan');
-          redirect('Admin/siswa');
+          redirect('Admin/t_siswa');
         }
       }
     }
@@ -284,7 +388,7 @@ class Admin extends CI_Controller
     $this->load->view('template/t_pengguna');
     $this->load->view('template/footer');
   }
-  public function prestasi()
+  public function t_prestasi()
   {
     $tittle['subtittle'] = "Table Pengguna";
     $tittle['dashboard'] = "Pengguna";
@@ -334,8 +438,7 @@ class Admin extends CI_Controller
 
   public function t_kelas()
   {
-    $tittle['subtittle'] = "Table kelas";
-    $tittle['dashboard'] = "kelas";
+    $tittle['subtittle'] = "Halaman Data Kelas";
     $data['kl'] = $this->Admin_model->tampildata('tb_kelas', 'id_kelas');
     $this->load->view('template/header', $tittle);
     $this->load->view('template/navbar');
