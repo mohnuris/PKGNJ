@@ -50,11 +50,11 @@
                         </div>
                         <div class="card-body">
                             <i class="align-left"></i>
-                            <h5>Data Pengguna </h5>
+                            <h5>Kepala Sekolah </h5>
                         </div>
 
                         <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link" href="<?= base_url('admin/t_pengguna') ?>">View Details</a>
+                            <a class="small text-white stretched-link" href="<?= base_url('admin/t_kepalasekolah') ?>">View Details</a>
 
                         </div>
                     </div>
