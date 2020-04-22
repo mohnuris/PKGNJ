@@ -35,62 +35,62 @@
 <body>
     <div id="app">
         <section class="section">
-            <div class="container mt-5 col-10 align-left">
+            <div class="container mt-4 col-10 align-center">
                 <div class="row ">
                     <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
                         <div class="login-brand">
 
 
-                        </div>
 
-                        <div class="card card-primary card mb-4 mt-5">
+                            <div class="card card-primary card mb-4 mt-5  shadow bg-white rounded ">
+                                <!-- 
+                                    <div>
+                                        <!-- <li class="login100-form-title p-b-20 align-center"> -->
+                                <a>
+                                    <img src="../template/icons/logo.png" alt="logo" width="80" class="center" style="display: block; margin: auto;  margin-top:20px">
+                                </a>
 
-                            <div>
-                                <li class="login100-form-title p-b-20"><a href="#">
-                                        <img width="90px" src="<?= base_url() . 'template/icons/logo.png' ?>"></a></li>
+                                <div class="center" style="display: block; margin: auto; margin-top:20px">
+                                    <h5>LOGIN PKGNJ</h5>
+                                </div>
 
-                                <!-- <img src="../template/icons/logo.png" alt="logo" width="70" class="shadow-light rounded-circle align-center"> -->
-                            </div>
-                            <!-- <div class="card">
-                                <h4>Login</h4>
-                            </div> -->
-
-                            <div class="card-body">
-                                <form method="POST" action="#" class="needs-validation" novalidate="">
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
-                                        <div class="invalid-feedback">
-                                            Please fill in your email
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <div class="d-block">
-                                            <label for="password" class="control-label">Password</label>
-                                            <div class="float-right">
-                                                <a href="auth-forgot-password.html" class="text-small">
-                                                    Forgot Password?
-                                                </a>
+                                <div class="card-body">
+                                    <form method="POST" action="#" class="needs-validation" novalidate="">
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
+                                            <div class="invalid-feedback">
+                                                Please fill in your email
                                             </div>
                                         </div>
-                                        <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
-                                        <div class="invalid-feedback">
-                                            please fill in your password
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
-                                            Login
-                                        </button>
-                                    </div>
-                                </form>
 
-                                <div class="mt-5 text-muted text-center">
-                                    <!-- Don't have an account? <a href="auth-register.html">Create One</a> -->
-                                    BirPenNJ &copy;2020
-                                </div>
-                                <div class="simple-footer align-center">
+                                        <div class="form-group">
+                                            <div class="d-block">
+                                                <label for="password" class="control-label">Password</label>
+                                                <div class="float-right">
+                                                    <a href="auth-forgot-password.html" class="text-small">
+                                                        Forgot Password?
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
+                                            <div class="invalid-feedback">
+                                                please fill in your password
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
+                                                Login
+                                            </button>
+                                        </div>
+                                    </form>
+
+                                    <div class="mt-5 text-muted text-center">
+                                        <!-- Don't have an account? <a href="auth-register.html">Create One</a> -->
+                                        BirPenNJ &copy;2020
+                                    </div>
+                                    <div class="simple-footer align-center">
+                                    </div>
                                 </div>
                             </div>
                         </div>
