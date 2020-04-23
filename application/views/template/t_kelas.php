@@ -35,6 +35,7 @@
                 <thead>
                   <tr class="text-black">
                     <th>No</th>
+                    <th>SEKOLAH / LEMBAGA</th>
                     <th>KELAS Jurusan</th>
                     <th>Action</th>
 
@@ -47,15 +48,19 @@
                     $no = 1;
                     foreach ($kl->result_object() as $k) {
                   ?>
-                      <tr>
+                      <tr id="<?php echo $k->id_kelas; ?>">
                         <th scope="row"><?= $no ?></th>
+                        <td><?= $k->sekolah ?></td>
                         <td><?= $k->kelas_jurusan ?></td>
 
                         <td>
                           <ul class="d-flex justify-content-center">
                             <li class="mr-3"><a href="<?= base_url('Admin/edkelas/' . $k->id_kelas) ?>" class="text-success"><i class="fa fa-edit"></i></a></li>
 
-                            <li><a href="<?= base_url('Admin/hapuskelas/' . $k->id_kelas) ?>" class="text-danger tombol-hapus"><i class="fa fa-trash"></i></a></li>
+                            <li>
+                              <a href="<?= base_url('Admin/hapuskelas/' . $k->id_kelas) ?>" class="text-danger tombol-hapus"><i class="fa fa-trash"></i></a>
+                              <!-- <button type="submit" class="text-danger tombol-hapus" id="hapusKelas"> Hapus</button> -->
+                            </li>
 
                           </ul>
                         </td>
@@ -66,9 +71,9 @@
                   } else {
                     // tidak ada data
                     ?>
-                    <tr>
-                      <td colspan="7" align="center">DATA KOSONG</td>
-                    </tr>
+                    <!-- <tr>
+                      <td colspan="4" align="center">DATA KOSONG</td>
+                    </tr> -->
                   <?php
 
                   }
