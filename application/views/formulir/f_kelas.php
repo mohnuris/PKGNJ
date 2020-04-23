@@ -17,6 +17,12 @@
         <div class="modal-body align-center">
           <?php echo form_open('admin/sm_kelas'); ?>
           <!-- form input -->
+          <label for="sk" class="alert-link">Lembaga / Sekolah</label>
+          <?php echo form_input("sk", "", array('class' => 'form-control', 'id' => 'sk', 'placeholder' => 'Sekolah / Lembaga')); ?>
+          <small class="text-danger">
+            <?php echo form_error('sk', ' '); ?>
+          </small>
+          <br>
           <label for="kl" class="alert-link">Kelas</label>
           <?php echo form_input("kl", "", array('class' => 'form-control', 'id' => 'kl', 'placeholder' => 'Kelas dan Jurusan')); ?>
           <small class="text-danger">
