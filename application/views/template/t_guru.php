@@ -13,9 +13,18 @@
             <div class="card mb-5 shadow p-3 mb-5 bg-white rounded">
 
                 <div class="content">
-
-                    <a class="btn btn-primary" href=" <?= base_url('admin/f_guru') ?>"><i class="fa fa-plus-circle"></i> Tambah Guru </a>
-                    <a class="btn btn-success float-right" href=""><i class="fa fa-upload"></i> Export Data </a>
+                    <div class="dropdown float-right dropleft">
+                        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Exports Data <i class="fa fa-file-download"></i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Excel</a>
+                            <a class="dropdown-item" href="#">PDF</a>
+                            <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+                        </div>
+                    </div>
+                    <!-- <a class="btn btn-primary" href=" <?= base_url('admin/f_guru') ?>"><i class="fa fa-plus-circle"></i> Tambah Guru </a> -->
+                    <!-- <a class="btn btn-success float-right" href=""><i class="fa fa-upload"></i> Export Data </a> -->
                 </div>
                 <br>
                 <div class="card mb-4">
@@ -27,8 +36,9 @@
                                     <tr class="text-black">
                                         <th>No</th>
                                         <th>Name Lengkap</th>
-                                        <th>Mapel</th>
-                                        <th>kelas</th>
+                                        <th>Mata Pelajaran</th>
+                                        <th>Sekolah</th>
+                                        <th>kelas dan Jurusan</th>
                                         <th>Jenis Kelamin</th>
                                         <th>Foto</th>
                                         <th>Action</th>
@@ -45,8 +55,8 @@
                                                 <th scope="row"><?= $no ?></th>
                                                 <td><?= $g->nm_guru ?></td>
                                                 <td><?= $g->mapel ?></td>
-                                                <td><?= $g->kelas ?></td>
-
+                                                <td><?= $g->sekolah ?></td>
+                                                <td><?= $g->kelas_jurusan ?></td>
                                                 <td><?= $g->jk_guru ?></td>
                                                 <td align="center">
                                                     <?php
