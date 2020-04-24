@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <h3 class="mt-5">Form Edit Kelas</h3>
       <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href=" <?= base_url('admin/kelas') ?>">Kelas</a></li>
+        <li class="breadcrumb-item"><a href=" <?= base_url('admin/t_kelas') ?>">Kelas</a></li>
         <li class="breadcrumb-item active">Form Edit Kelas</li>
       </ol>
 
@@ -27,8 +27,12 @@
         <div class="modal-body align-center">
           <?php echo form_open('admin/ed_kelas'); ?>
           <?php echo form_hidden('id', $ek->id_kelas); ?>
-          <label for="kl" class="alert-link">Kelas</label>
+          <label for="kl" class="alert-link">Sekolah</label>
 
+          <?php echo form_input("sk", $ek->sekolah, array('class' => 'form-control', 'id' => 'sk', 'placeholder' => 'Sekolah ')); ?>
+          <br>
+
+          <label for="sk" class="alert-link">Kelas </label>
           <?php echo form_input("kl", $ek->kelas_jurusan, array('class' => 'form-control', 'id' => 'kl', 'placeholder' => 'Kelas dan Jurusan')); ?>
 
           <div class="modal-footer">
