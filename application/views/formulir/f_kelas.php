@@ -24,9 +24,15 @@
           </small>
           <br>
           <label for="kl" class="alert-link">Kelas</label>
-          <?php echo form_input("kl", "", array('class' => 'form-control', 'id' => 'kl', 'placeholder' => 'Kelas dan Jurusan')); ?>
+          <?php echo form_input("kl", "", array('class' => 'form-control', 'id' => 'kl', 'placeholder' => 'Kelas')); ?>
           <small class="text-danger">
             <?php echo form_error('kl', ' '); ?>
+            <br>
+          </small>
+          <label for="j" class="alert-link">Jurusan</label>
+          <?php echo form_input("j", "", array('class' => 'form-control', 'id' => 'j', 'placeholder' => ' Jurusan')); ?>
+          <small class="text-danger">
+            <?php echo form_error('j', ' '); ?>
           </small>
 
 
