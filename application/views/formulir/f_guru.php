@@ -1,25 +1,21 @@
 <div id="layoutSidenav_content">
   <main>
     <div class="container-fluid">
-      <h3 class="mt-4">Formulir Guru</h3>
+      <h3 class="mt-4"></h3>
       <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href=" <?= base_url('admin/guru') ?>">Guru</a></li>
         <li class="breadcrumb-item active">Formulir Guru</li>
       </ol>
 
-
+      <h3 class="mt-4">Formulir Guru</h3><br>
+      <?php echo form_open('admin/sm_guru'); ?>
+      <div class="flash-data" data-flashdata="<?= $this->session->flashdata('info') ?>"></div>
       <div class="card mb-5 shadow p-3 mb-5 bg-white rounded">
-
-        <!-- <div class="modal-header bg-primary text-white">
-          <h3 class="modal-title" id="exampleModalLabel">Form Formulir</h3>
-        </div> -->
-
-        <div class="modal-body">
+        <div class=" modal-body">
           <label for="nama" class="alert-link">Nama Lengkap</label>
           <input class="form-control form-control-lg" type="text" placeholder="Nama Lengkap"></br>
 
           <label form="" class="alert-link">Jenis Kelamin</label><br>
-
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
             <label class="form-check-label" for="inlineRadio1">Laki-Laki</label>
@@ -28,8 +24,10 @@
             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
             <label class="form-check-label" for="inlineRadio2">Perempuan</label>
           </div>
-        </div>
 
+
+
+        </div>
         <div class="modal-body">
           <label for="" class="alert-link">Pilih Kelas</label>
           <label class="mr-sm-2 sr-only" for="inlineFormCAustomSelect">Preference</label>
@@ -54,10 +52,15 @@
             <option value="3"> Agribisnis Pengolahan Hasil Perikanan (APHP)</option>
             <option value="3">Tata Busana(TB)</option>
 
-          </select>
-        </div>
+          </select><br>
+          <br>
+          <form>
+            <div class="form-group">
+              <label for="exampleFormControlFile1" class="alert-link">Foto Guru</label>
+              <input type="file" class="form-control-file" id="exampleFormControlFile1">
+            </div>
 
-        <!-- 
+            <!-- 
         <div class="modal-body">
           <label for="" class="alert-link">Pilih Guru</label>
           <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
@@ -100,13 +103,16 @@
         </div> -->
 
 
-        <div class="modal-footer">
+            <div class="modal-footer">
 
-          <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
         </div>
+
+        </form>
       </div>
     </div>
-
+</div>
 </div>
 </div>
 </main>
