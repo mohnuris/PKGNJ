@@ -44,11 +44,11 @@ class Admin_model extends CI_Model
 
   public function comboxdinamis()
   {
-    $query = $this->db->get('tb_guru');
-    $tambah[set_value('id_guru')] = "---Pilih Guru---";
+    $query = $this->db->get('tb_siswa');
+    $tambah[set_value('s_guru')] = "---Pilih Guru---";
     if ($query->num_rows() > 0) {
       foreach ($query->result() as $row) {
-        $tambah[$row->id_guru] = $row->guru;
+        $tambah[$row->s_guru] = $row->gr;
       }
     }
     return $tambah;
