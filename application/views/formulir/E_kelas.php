@@ -27,13 +27,17 @@
         <div class="modal-body align-center">
           <?php echo form_open('admin/ed_kelas'); ?>
           <?php echo form_hidden('id', $ek->id_kelas); ?>
-          <label for="kl" class="alert-link">Sekolah</label>
+          <label for="j" class="alert-link">Sekolah</label>
 
           <?php echo form_input("sk", $ek->sekolah, array('class' => 'form-control', 'id' => 'sk', 'placeholder' => 'Sekolah ')); ?>
           <br>
 
-          <label for="sk" class="alert-link">Kelas </label>
-          <?php echo form_input("kl", $ek->kelas_jurusan, array('class' => 'form-control', 'id' => 'kl', 'placeholder' => 'Kelas dan Jurusan')); ?>
+          <label for="kl" class="alert-link">Kelas </label>
+          <?php echo form_input("kl", $ek->kelas, array('class' => 'form-control', 'id' => 'kl', 'placeholder' => 'Kelas')); ?>
+
+          <br>
+          <label for="j" class="alert-link">Jurusan </label>
+          <?php echo form_input("j", $ek->jurusan, array('class' => 'form-control', 'id' => 'j', 'placeholder' => ' Jurusan')); ?>
 
           <div class="modal-footer">
             <button type="submit" id="edit" onclick="Swal.fire('SUKSES','Data Tersimpan','success')" class="btn btn-primary">EDIT</button>
