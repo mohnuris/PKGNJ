@@ -36,7 +36,8 @@
                   <tr class="text-black">
                     <th>No</th>
                     <th>SEKOLAH / LEMBAGA</th>
-                    <th>KELAS Jurusan</th>
+                    <th>KELAS</th>
+                    <th>JURUSAN</th>
                     <th>Action</th>
 
                   </tr>
@@ -51,7 +52,8 @@
                       <tr id="<?php echo $k->id_kelas; ?>">
                         <th scope="row"><?= $no ?></th>
                         <td><?= $k->sekolah ?></td>
-                        <td><?= $k->kelas_jurusan ?></td>
+                        <td><?= $k->kelas ?></td>
+                        <td><?= $k->jurusan ?></td>
 
                         <td>
                           <ul class="d-flex justify-content-center">
