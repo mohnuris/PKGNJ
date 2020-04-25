@@ -12,8 +12,19 @@
       <div class="flash-data" data-flashdata="<?= $this->session->flashdata('info') ?>"></div>
       <div class="card mb-5 shadow p-3 mb-5 bg-white rounded">
         <div class=" modal-body">
-          <label for="nama" class="alert-link">Nama Lengkap</label>
-          <input class="form-control form-control-lg" type="text" placeholder="Nama Lengkap"></br>
+          <label for="niup" class="alert-link">NIUP</label>
+          <?php echo form_input("niup", "", array('class' => 'form-control', 'id' => 'niup', 'placeholder' => 'NIUP')); ?>
+          <small class="text-danger">
+            <?php echo form_error('niup', ' '); ?>
+          </small>
+          <br>
+          <label for="nm" class="alert-link">Nama Lengkap</label>
+          <?php echo form_input("nm", "", array('class' => 'form-control', 'id' => 'nm', 'placeholder' => 'Nama Lengkap')); ?>
+          <small class="text-danger">
+            <?php echo form_error('nm', ' '); ?>
+          </small>
+          <br>
+
 
           <label form="" class="alert-link">Jenis Kelamin</label><br>
           <div class="form-check form-check-inline">
