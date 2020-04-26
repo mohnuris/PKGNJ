@@ -40,7 +40,7 @@
           <?php echo form_input("j", $ek->jurusan, array('class' => 'form-control', 'id' => 'j', 'placeholder' => ' Jurusan')); ?>
 
           <div class="modal-footer">
-            <button type="submit" id="edit" onclick="Swal.fire('SUKSES','Data Tersimpan','success')" class="btn btn-primary">EDIT</button>
+            <button type="submit" id="edit" onclick="Swal.fire('SUKSES','Teredit Tersimpan','success')" class="btn btn-primary">EDIT</button>
             <?php echo form_close(); ?>
 
             <script>
