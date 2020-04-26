@@ -6,7 +6,7 @@
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href=" <?= base_url('admin') ?>">Dashboard</a></li>
                 <li class="breadcrumb-item">Guru</a></li>
-                <li class="breadcrumb-item"><a href=" <?= base_url('admin/f_guru') ?>">Formulir</a></li>
+                <li class="breadcrumb-item"><a href=" <?= base_url('admin/f_guru') ?>">Tambah Data Guru</a></li>
 
             </ol>
 
@@ -35,10 +35,12 @@
                                 <thead>
                                     <tr class="text-black">
                                         <th>No</th>
+                                        <th>NIUP</th>
                                         <th>Name Lengkap</th>
-                                        <th>Mata Pelajaran</th>
                                         <th>Sekolah</th>
-                                        <th>kelas dan Jurusan</th>
+                                        <th>kelas </th>
+                                        <th>Jurusan</th>
+                                        <th>Mata Pelajaran</th>
                                         <th>Jenis Kelamin</th>
                                         <th>Foto</th>
                                         <th>Action</th>
@@ -53,21 +55,23 @@
                                     ?>
                                             <tr>
                                                 <th scope="row"><?= $no ?></th>
+                                                <td><?= $g->niup ?></td>
                                                 <td><?= $g->nm_guru ?></td>
-                                                <td><?= $g->mapel ?></td>
                                                 <td><?= $g->sekolah ?></td>
-                                                <td><?= $g->kelas_jurusan ?></td>
+                                                <td><?= $g->kelas ?></td>
+                                                <td><?= $g->jurusan ?></td>
+                                                <td><?= $g->mapel ?></td>
                                                 <td><?= $g->jk_guru ?></td>
                                                 <td align="center">
                                                     <?php
                                                     if (!$g->ft_guru) {
                                                         if ($g->jk_guru == 'laki-laki') {
                                                     ?>
-                                                            <img src="<?= base_url('icon/p.png') ?>" alt="" width="40px">
+                                                            <img src="<?= base_url('icon/pria.png') ?>" alt="" width="40px">
                                                         <?php
                                                         } else {
                                                         ?>
-                                                            <img src="<?= base_url('icon/w.png') ?>" alt="" width="40px">
+                                                            <img src="<?= base_url('icon/wanita.png') ?>" alt="" width="40px">
                                                         <?php
                                                         }
 
@@ -76,7 +80,7 @@
                                                     } else {
                                                     ?>
 
-                                                        <img src="<?= base_url('assets/siswa/' . $g->ft_guru) ?>" alt="" width="100px">
+                                                        <img src="<?= base_url('assets/guru/' . $g->ft_guru) ?>" alt="" width="100px">
                                                     <?php
                                                     }
 
