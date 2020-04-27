@@ -4,56 +4,61 @@
       <h3 class="mt-4"></h3>
       <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href=" <?= base_url('admin/guru') ?>">Guru</a></li>
-        <li class="breadcrumb-item active">Formulir Guru</li>
+        <li class="breadcrumb-item active">Tambah Guru</li>
       </ol>
 
       <h3 class="mt-4">Formulir Guru</h3><br>
-      <?php echo form_open('admin/sm_guru'); ?>
+      <?php echo form_open_multipart('Admin/sm_guru'); ?>
       <div class="flash-data" data-flashdata="<?= $this->session->flashdata('info') ?>"></div>
       <div class="card mb-5 shadow p-3 mb-5 bg-white rounded">
+
         <div class=" modal-body">
           <label for="niup" class="alert-link">NIUP</label>
-          <?php echo form_input("niup", "", array('class' => 'form-control', 'id' => 'niup', 'placeholder' => 'NIUP')); ?>
+          <?php echo form_input("niup", set_value('niup'), array('class' => 'form-control', 'id' => 'niup', 'placeholder' => 'Silahakan Inputkan NIUP Guru')); ?>
           <small class="text-danger">
             <?php echo form_error('niup', ' '); ?>
           </small>
           <br>
-          <label for="nm" class="alert-link">Nama Lengkap</label>
-          <?php echo form_input("nm", "", array('class' => 'form-control', 'id' => 'nm', 'placeholder' => 'Nama Lengkap')); ?>
+
+          <label for="nm_guru" class="alert-link">Nama Lengkap</label>
+          <?php echo form_input("nm_guru", set_value('nm_guru'), array('class' => 'form-control', 'id' => 'nm_guru', 'placeholder' => 'Nama Lengkap')); ?>
           <small class="text-danger">
-            <?php echo form_error('nm', ' '); ?>
+            <?php echo form_error('nm_guru', ' '); ?>
           </small>
           <br>
 
+          <!-- Pilih Kelas -->
+          <label for="sekolah" class="alert-link">Sekolah </label>
+          <?php echo form_input("sekolah", set_value('sekolah'), array('class' => 'form-control', 'id' => 'sekolah', 'placeholder' => 'Sekolah')); ?>
+          <small class="text-danger">
+            <?php echo form_error('sekolah', ' '); ?>
+          </small>
+          <br>
 
-          <label form="" class="alert-link">Jenis Kelamin</label><br>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-            <label class="form-check-label" for="inlineRadio1">Laki-Laki</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-            <label class="form-check-label" for="inlineRadio2">Perempuan</label>
-          </div>
+          <label for="kelas" class="alert-link">Kelas </label>
+          <?php echo form_input("kelas", set_value('kelas'), array('class' => 'form-control', 'id' => 'kelas', 'placeholder' => 'Silahkan isi jurusan')); ?>
+          <small class="text-danger">
+            <?php echo form_error('kelas', ' '); ?>
+          </small>
+          <br>
 
+          <!-- Pilih Jurusan -->
+          <label for="jurusan" class="alert-link">Jurusan </label>
+          <?php echo form_input("jurusan", set_value('jurusan'), array('class' => 'form-control', 'id' => 'jurusan', 'placeholder' => 'Silahkan isi jurusan')); ?>
+          <small class="text-danger">
+            <?php echo form_error('jurusan', ' '); ?>
+          </small>
+          <br>
 
-
-        </div>
-        <div class="modal-body">
-          <label for="" class="alert-link">Pilih Kelas</label>
-          <label class="mr-sm-2 sr-only" for="inlineFormCAustomSelect">Preference</label>
-          <select class="custom-select" id="inlineFormCustomSelect">
-            <option selected>Pilih</option>
-            <option value="1">X </option>
-            <option value="3">XI</option>
-            <option value="3">XII</option>
-          </select>
-        </div>
-
-        <div class="modal-body">
-          <label for="" class="alert-link">Jurusan</label>
-          <label class="mr-sm-2 sr-only form-control-lg" for="inlineFormCustomSelect">Preference</label>
-          <select class="custom-select" id="inlineFormCustomSelect">
+          <label for="mapel" class="alert-link">Mata Pelajaran </label>
+          <?php echo form_input("mapel", set_value('mapel'), array('class' => 'form-control', 'id' => 'mapel', 'placeholder' => 'Mata Pelajaran')); ?>
+          <small class="text-danger">
+            <?php echo form_error('mapel', ' '); ?>
+          </small>
+          <br>
+          <!-- <label for="j" class="alert-link">Jurusan</label>
+          <label class="mr-sm-2 sr-only form-control-lg" for="j">Preference</label>
+          <select class="custom-select" id="j">
             <option selected>Pilih</option>
             <option value="1">MULTIMEDIA 1</option>
             <option value="1">MULTIMEDIA 2</option>
@@ -62,16 +67,30 @@
             <option value="3"> Teknik Pembangkit Tenaga Listrik (TPTL)</option>
             <option value="3"> Agribisnis Pengolahan Hasil Perikanan (APHP)</option>
             <option value="3">Tata Busana(TB)</option>
+          </select>
+          <br> -->
 
-          </select><br>
+          <!-- Jenis Kelamin -->
+          <label for="jk_guru" class="alert-link">Jenis Kelamin</label><br>
+          <?php echo form_radio('jk_guru', 'laki-laki', set_value('jk_guru')) ?>Laki-Laki
+          <?php echo form_radio('jk_guru', 'perempuan', set_value('jk_guru')) ?>Perempuan
           <br>
-          <form>
-            <div class="form-group">
-              <label for="exampleFormControlFile1" class="alert-link">Foto Guru</label>
-              <input type="file" class="form-control-file" id="exampleFormControlFile1">
-            </div>
+          <small class="text-danger">
+            <?php echo form_error('jk_guru', ' '); ?>
+          </small>
+          </br>
 
-            <!-- 
+
+          <div class="from-grup">
+            <label for="foto" class="alert-link">Foto Guru</label><br>
+            <?php echo form_upload('foto', '', array('class' => 'foto')); ?>
+            <br>
+            <small class="text-danger">
+              <?php echo $error; ?>
+            </small>
+          </div>
+
+          <!-- 
         <div class="modal-body">
           <label for="" class="alert-link">Pilih Guru</label>
           <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
@@ -111,18 +130,19 @@
             <option value="3">Hairul Umam</option>
 
           </select>
-        </div> -->
+        <!-- </div> -->
 
-
-            <div class="modal-footer">
-
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
         </div>
-
-        </form>
+        <div class="modal-footer">
+          <button type="submit" id="simpan" onclick="Swal.fire('SUKSES','Data Tersimpan','success')" class="btn btn-primary">SIMPAN</button>
+          <!-- <?php echo form_submit('save', 'SIMPAN', array('class' => 'btn btn-primary  mt-4 pr-4 pl-4')); ?> -->
+          <?php echo form_close(); ?>
+        </div>
       </div>
+
+      </form>
     </div>
+</div>
 </div>
 </div>
 </div>
