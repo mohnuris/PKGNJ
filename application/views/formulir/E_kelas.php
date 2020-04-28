@@ -48,7 +48,7 @@
               tombol.addEventListener('click', function() {
                 Swal({
                   title: 'SUKSES',
-                  text: 'Edit Data Tahun',
+                  text: 'Edit Data Kelas',
                   type: 'success'
                 })
               });
