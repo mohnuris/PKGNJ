@@ -80,7 +80,7 @@
                                                     } else {
                                                     ?>
 
-                                                        <img src="<?= base_url('assets/guru/' . $g->ft_guru) ?>" alt="" width="100px">
+                                                        <img src="<?= base_url('assets/guru/' . $g->ft_guru) ?>" alt="" width="100px" height="100px">
                                                     <?php
                                                     }
 
@@ -88,9 +88,9 @@
                                                 </td>
                                                 <td>
                                                     <ul class="d-flex justify-content-center">
-                                                        <li class="mr-3"><a href="<?= base_url('' . $g->id_guru) ?>" class="text-success"><i class="fa fa-edit"></i></a></li>
+                                                        <li class="mr-3"><a href="<?= base_url('Admin/edguru/' . $g->id_guru) ?>" class="text-success"><i class="fa fa-edit"></i></a></li>
 
-                                                        <li><a href="<?= base_url('' . $g->id_guru) ?>" class="text-danger tombol-hapus"><i class="fa fa-trash-alt"></i></a></li>
+                                                        <li><a href="<?= base_url('Admin/hapusguru/' . $g->id_guru) ?>" class="text-danger tombol-hapus"><i class="fa fa-trash-alt"></i></a></li>
                                                     </ul>
                                                 </td>
                                                 <!-- <td>$86,500</td> -->
