@@ -43,7 +43,8 @@
                                         <th>Nama Lengkap</th>
                                         <th>Sekolah</th>
                                         <th>Guru</th>
-                                        <th>Kelas dan Jurusan</th>
+                                        <th>Kelas</th>
+                                        <th>Jurusan</th>
                                         <th>Jenis Kelamin</th>
                                         <th>foto</th>
                                         <th>Action</th>
@@ -59,9 +60,10 @@
                                             <tr>
                                                 <th scope="row"><?= $no ?></th>
                                                 <td><?= $s->nm_siswa ?></td>
-                                                <td><?= $s->s_sekolah ?></td>
-                                                <td><?= $s->s_guru ?></td>
-                                                <td><?= $s->s_kelas ?></td>
+                                                <td><?= $s->id_sekolah ?></td>
+                                                <td><?= $s->id_guru ?></td>
+                                                <td><?= $s->id_kelas ?></td>
+                                                <td><?= $s->id_jurusan ?></td>
                                                 <td><?= $s->jk_siswa ?></td>
                                                 <td align="center">
                                                     <?php
