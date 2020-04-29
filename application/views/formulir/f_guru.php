@@ -56,19 +56,6 @@
             <?php echo form_error('mapel', ' '); ?>
           </small>
           <br>
-          <!-- <label for="j" class="alert-link">Jurusan</label>
-          <label class="mr-sm-2 sr-only form-control-lg" for="j">Preference</label>
-          <select class="custom-select" id="j">
-            <option selected>Pilih</option>
-            <option value="1">MULTIMEDIA 1</option>
-            <option value="1">MULTIMEDIA 2</option>
-            <option value="2">Rekayasa Perangkat Lunak (RPL) 1</option>
-            <option value="3">Teknik Komputer Jaringan (TKJ) 1</option>
-            <option value="3"> Teknik Pembangkit Tenaga Listrik (TPTL)</option>
-            <option value="3"> Agribisnis Pengolahan Hasil Perikanan (APHP)</option>
-            <option value="3">Tata Busana(TB)</option>
-          </select>
-          <br> -->
 
           <!-- Jenis Kelamin -->
           <label for="jk_guru" class="alert-link">Jenis Kelamin</label><br>
