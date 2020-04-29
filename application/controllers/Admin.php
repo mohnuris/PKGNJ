@@ -208,11 +208,11 @@ class Admin extends CI_Controller
   {
     $this->form_validation->set_rules('niup', '', 'required', array('required' => ' niup WAJIB di ISI'));
     $this->form_validation->set_rules('nm_guru', '', 'required', array('required' => ' nama WAJIB di ISI'));
-    $this->form_validation->set_rules('sekolah', '', 'required', array('required' => ' jenis kelamin WAJIB di ISI'));
-    $this->form_validation->set_rules('kelas', '', 'required', array('required' => ' jenis kelamin WAJIB di ISI'));
-    $this->form_validation->set_rules('jurusan', '', 'required', array('required' => ' telpon WAJIB di ISI'));
-    $this->form_validation->set_rules('mapel', '', 'required', array('required' => ' telpon WAJIB di ISI'));
-    $this->form_validation->set_rules('jk_guru', '', 'required', array('required' => ' alamat WAJIB di ISI'));
+    $this->form_validation->set_rules('sekolah', '', 'required', array('required' => ' Sekolah WAJIB di ISI'));
+    $this->form_validation->set_rules('kelas', '', 'required', array('required' => ' Kelas WAJIB di ISI'));
+    $this->form_validation->set_rules('jurusan', '', 'required', array('required' => ' jurusan WAJIB di ISI'));
+    $this->form_validation->set_rules('mapel', '', 'required', array('required' => ' Mata Pelajaran WAJIB di ISI'));
+    $this->form_validation->set_rules('jk_guru', '', 'required', array('required' => ' Jenis Kelamin WAJIB di ISI'));
 
     if ($this->form_validation->run() == FALSE) {
       // gagal
@@ -228,11 +228,12 @@ class Admin extends CI_Controller
       if ($_FILES['foto']['name']) {
         $config['upload_path'] = './assets/guru/';
         $config['allowed_types'] = 'gif|png|jpg|JPG|PNG|jpeg';
-        $config['max_size'] = 100;
+        $config['max_size'] = 1024;
         // $config['max_width'] = 1600;
         // $config['max_height'] = 1500;
         $config['encrypt_name'] = True;
         $this->load->library('upload', $config);
+
         if (!$this->upload->do_upload('foto')) {
           $error = array('error' => $this->upload->display_errors(' '));
           $tittle['subtittle'] = "Halaman Guru";
@@ -243,8 +244,10 @@ class Admin extends CI_Controller
           $this->load->view('template/t_guru', $data);
           $this->load->view('template/footer');
         } else {
+
           $gbr = $this->upload->data();
           // $id = $this->input->post('gr');
+          $foto = $gbr['file_name'];
           // compress gambar
           $config['image_library'] = 'gd2';
           $config['source_image'] = './assets/guru/' . $gbr['file_name'];
@@ -269,7 +272,7 @@ class Admin extends CI_Controller
             'jk_guru' => $this->input->post('jk_guru'),
             'ft_guru' => $foto
           );
-          $query = $this->Admin_model->simpandata('guru', $data);
+          $query = $this->Admin_model->simpandata('tb_guru', $data);
           // $query = $this->Admin_model->editdata('guru', 'id_guru', $id, $data);
           if ($query) {
             $this->session->set_flashdata('info', 'Data guru Berhasil Tersimpan');
@@ -438,17 +441,19 @@ class Admin extends CI_Controller
 
   public function hapusguru($id)
   {
+    $data = $this->admin_model->formedit('tb_guru', 'id_guru', $id);
     $this->Admin_model->hapusdata('tb_guru', $id, 'id_guru');
-    $this->Admin_model->hapusdata('tb_guru', 'niup'); //permasalahgannya pada $id
-    $this->Admin_model->hapusdata('tb_guru', 'nm_guru'); //permasalahgannya pada $id
-    $this->Admin_model->hapusdata('tb_guru',  'sekolah');
-    $this->Admin_model->hapusdata('tb_guru',  'mapel');
-    $this->Admin_model->hapusdata('tb_guru',  'kelas');
-    $this->Admin_model->hapusdata('tb_guru',  'jurusan');
-    $this->Admin_model->hapusdata('tb_guru',  'jk_guru');
-    $this->Admin_model->hapusdata('tb_guru',  'ft_guru');
+    // $this->Admin_model->hapusdata('tb_guru', 'niup'); //permasalahgannya pada $id
+    // $this->Admin_model->hapusdata('tb_guru', 'nm_guru'); //permasalahgannya pada $id
+    // $this->Admin_model->hapusdata('tb_guru',  'sekolah');
+    // $this->Admin_model->hapusdata('tb_guru',  'mapel');
+    // $this->Admin_model->hapusdata('tb_guru',  'kelas');
+    // $this->Admin_model->hapusdata('tb_guru',  'jurusan');
+    // $this->Admin_model->hapusdata('tb_guru',  'jk_guru');
+    // $this->Admin_model->hapusdata('tb_guru',  'ft_guru');
 
     if ($this->db->affected_rows()) {
+      unlink("./assets/guru/" . $data->ft_guru);
       $this->session->set_flashdata('info', 'Data Kelas Berhasil Dihapus');
       redirect('admin/guru');
     } else {
