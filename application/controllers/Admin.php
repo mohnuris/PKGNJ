@@ -229,8 +229,8 @@ class Admin extends CI_Controller
         $config['upload_path'] = './assets/guru/';
         $config['allowed_types'] = 'gif|png|jpg|JPG|PNG|jpeg';
         $config['max_size'] = 1024;
-        // $config['max_width'] = 1600;
-        // $config['max_height'] = 1500;
+        // $config['max_width'] = 512;
+        // $config['max_height'] = 512;
         $config['encrypt_name'] = True;
         $this->load->library('upload', $config);
 
@@ -254,8 +254,8 @@ class Admin extends CI_Controller
           $config['create_thumb'] = FALSE;
           $config['maintain_ration'] = FALSE;
           $config['quality'] = '50%';
-          $config['width'] = 600;
-          $config['height'] = 600;
+          $config['width'] = 512;
+          $config['height'] = 512;
           $config['new_image'] = './assets/guru/' . $gbr['file_name'];
           $this->load->library('image_lib', $config);
           $this->image_lib->resize('file_name');
@@ -311,7 +311,6 @@ class Admin extends CI_Controller
   {
     $tittle['subtittle'] = " Tambah Guru";
     $tittle['dashboard'] = "Tambah Guru ";
-    // $tittle['dashboard'] = "formulir ";
     $this->load->view('template/header', $tittle);
     $this->load->view('template/navbar', $tittle);
     $this->load->view('formulir/f_guru', array('error' => ''));
@@ -320,66 +319,72 @@ class Admin extends CI_Controller
 
 
 
-  public function ed_guru($id)
+  public function edit_guru()
   {
 
-    // $this->form_validation->set_rules('niup', 'niup', 'required', array('required' => ' niup WAJIB di ISI'));
-    // $this->form_validation->set_rules('nm_guru', 'Nama Lengkap', 'required', array('required' => ' nama Lengkpa WAJIB di ISI'));
-    // $this->form_validation->set_rules('sekolah', 'Sekolah', 'required', array('required' => ' Sekolah  WAJIB di ISI'));
-    // $this->form_validation->set_rules('kelas', 'Kelas', 'required', array('required' => ' Kelas WAJIB di ISI'));
-    // $this->form_validation->set_rules('jurusan', 'Jurusan', 'required', array('required' => ' Jurusan WAJIB di ISI'));
-    // $this->form_validation->set_rules('mapel', 'Mata Pelajaran', 'required', array('required' => ' Mata Pelajaran WAJIB di ISI'));
-    // $this->form_validation->set_rules('jk_guru', 'Jenis Kelamin', 'required', array('required' => ' alamat WAJIB di ISI'));
+    $this->form_validation->set_rules('niup', '', 'required', array('required' => ' niup WAJIB di ISI'));
+    $this->form_validation->set_rules('nm_guru', '', 'required', array('required' => ' nama WAJIB di ISI'));
+    $this->form_validation->set_rules('sekolah', '', 'required', array('required' => ' Sekolah WAJIB di ISI'));
+    $this->form_validation->set_rules('kelas', '', 'required', array('required' => ' Kelas WAJIB di ISI'));
+    $this->form_validation->set_rules('jurusan', '', 'required', array('required' => ' jurusan WAJIB di ISI'));
+    $this->form_validation->set_rules('mapel', '', 'required', array('required' => ' Mata Pelajaran WAJIB di ISI'));
+    $this->form_validation->set_rules('jk_guru', '', 'required', array('required' => ' Jenis Kelamin WAJIB di ISI'));
 
-    $id = $this->input->post('gr');
-    $ft_guru = $this->input->post('foto');
+    $id = $this->input->post('id_guru');
+    $foto = $this->input->post('foto');
+    // $data['gr'] = $this->Admin_model->editdata('tb_guru', 'id_guru', $id);
     if ($this->form_validation->run() == FALSE) {
       // gagal
-      $tittle['subtittle'] = " Tambah Guru";
-      $tittle['dashboard'] = "Tambah Guru ";
-      // $tittle['dashboard'] = "formulir ";
+      $tittle['subtittle'] = "  Edit Guru";
+      $tittle['dashboard'] = "Edit data Guru ";
+      $data['gr'] = " ";
       $this->load->view('template/header', $tittle);
       $this->load->view('template/navbar', $tittle);
-      $this->load->view('template/t_guru', array('error' => ''));
+      $this->load->view('formulir/E_guru', array('errors' => '$data'));
       $this->load->view('template/footer');
     } else {
       //  berhasil
-
-
       if ($_FILES['foto']['name']) {
         $config['upload_path'] = './assets/guru/';
         $config['allowed_types'] = 'gif|png|jpg|JPG|PNG|jpeg';
         $config['max_size'] = 1024;
-        // $config['max_width'] = 1600;
-        // $config['max_height'] = 1500;
+        $config['max_width'] = 512;
+        $config['max_height'] = 512;
         $config['encrypt_name'] = True;
         $this->load->library('upload', $config);
+
         if (!$this->upload->do_upload('foto')) {
-          $tittle['subtittle'] = " Tambah Guru";
-          $tittle['dashboard'] = "Tambah Guru ";
-          // $tittle['dashboard'] = "formulir ";
+          $error = array('error' => $this->upload->display_errors(' '));
+          $tittle['subtittle'] = "Halaman Guru";
+          $tittle['dashboard'] = "guru";
+          $data['gr'] = $this->Admin_model->tampildata('tb_guru', 'id_guru');
           $this->load->view('template/header', $tittle);
-          $this->load->view('template/navbar', $tittle);
-          $this->load->view('formulir/f_guru', array('error' => ''));
+          $this->load->view('template/navbar');
+          $this->load->view('template/t_guru', $data);
           $this->load->view('template/footer');
         } else {
+
           $gbr = $this->upload->data();
-          unlink("./assets/guru/" . $ft_guru);
+          unlink("./assets/guru/" . $foto);
+          // $id = $this->input->post('gr');
+          // $foto = $gbr['file_name'];
           // compress gambar
           $config['image_library'] = 'gd2';
           $config['source_image'] = './assets/guru/' . $gbr['file_name'];
           $config['create_thumb'] = FALSE;
           $config['maintain_ration'] = FALSE;
           $config['quality'] = '50%';
-          $config['width'] = 400;
-          $config['height'] = 600;
+          $config['width'] = 512;
+          $config['height'] = 512;
           $config['new_image'] = './assets/guru/' . $gbr['file_name'];
           $this->load->library('image_lib', $config);
           $this->image_lib->resize('file_name');
           // compress gambar
           $foto = $gbr['file_name'];
+          unlink("./assets/guru/" . $foto);
+
           // simpan
-          $id = $this->input->post('gr');
+
           $data = array(
             'niup' => $this->input->post('niup'),
             'nm_guru' => $this->input->post('nm_guru'),
@@ -390,6 +395,7 @@ class Admin extends CI_Controller
             'jk_guru' => $this->input->post('jk_guru'),
             'ft_guru' => $foto
           );
+          // $query = $this->Admin_model->simpandata('tb_guru', $data);
           $query = $this->Admin_model->editdata('tb_guru', 'id_guru', $id, $data);
           if ($query) {
             $this->session->set_flashdata('info', 'Data guru Berhasil Tersimpan');
@@ -409,6 +415,7 @@ class Admin extends CI_Controller
           'mapel' => $this->input->post('mapel'),
           'jk_guru' => $this->input->post('jk_guru')
         );
+        // $query = $this->Admin_model->simpandata('tb_guru', $data);
         $query = $this->Admin_model->editdata('tb_guru', 'id_guru', $id, $data);
         if ($query) {
           $this->session->set_flashdata('info', 'Data guru Berhasil Tersimpan');
@@ -425,14 +432,8 @@ class Admin extends CI_Controller
   {
     $tittle['subtittle'] = "Halaman Edit Guru";
     $tittle['dashboard'] = "Form Edit Guru ";
-    // $data['gr'] = $this->Admin_model->formedit('tb_guru', 'id_guru', $id);
-    $data['niup'] = $this->Admin_model->formedit('tb_guru', 'niup', $id);
-    $data['nm_guru'] = $this->Admin_model->formedit('tb_guru', 'nm_guru', $id);
-    $data['sekolah'] = $this->Admin_model->formedit('tb_guru', 'sekolah', $id);
-    $data['kelas'] = $this->Admin_model->formedit('tb_guru', 'kelas', $id);
-    $data['jurusan'] = $this->Admin_model->formedit('tb_guru', 'jurusan', $id);
-    $data['jk_guru'] = $this->Admin_model->formedit('tb_guru', 'jk_guru', $id);
-    $data['foto'] = $this->Admin_model->formedit('tb_guru', 'ft_guru', $id);
+    $data['gr'] = $this->Admin_model->formedit('tb_guru', 'id_guru', $id);
+    $data['errors'] = " ";
     $this->load->view('template/header', $tittle);
     $this->load->view('template/navbar');
     $this->load->view('formulir/E_guru', $data);
@@ -441,8 +442,8 @@ class Admin extends CI_Controller
 
   public function hapusguru($id)
   {
-    $data = $this->admin_model->formedit('tb_guru', 'id_guru', $id);
-    $this->Admin_model->hapusdata('tb_guru', $id, 'id_guru');
+    $data = $this->Admin_model->formedit('tb_guru', 'id_guru', $id);
+    $this->Admin_model->hapusdata('tb_guru', $id, 'id_guru', $data);
     // $this->Admin_model->hapusdata('tb_guru', 'niup'); //permasalahgannya pada $id
     // $this->Admin_model->hapusdata('tb_guru', 'nm_guru'); //permasalahgannya pada $id
     // $this->Admin_model->hapusdata('tb_guru',  'sekolah');
@@ -484,32 +485,7 @@ class Admin extends CI_Controller
     $this->load->view('template/footer');
   }
 
-  // public function sm_siswa()
-  // {
-  //   $this->form_validation->set_rules('kl', '', 'required');
-  //   if ($this->form_validation->run() == FALSE) {
-  //     # code...
-  //     $tittle['subtittle'] = "Halaman form Kelas";
-  //     $tittle['dashboard'] = "Form Kelas ";
-  //     $this->load->view('template/header', $tittle);
-  //     $this->load->view('template/navbar');
-  //     $this->load->view('formulir/f_kelas');
-  //     $this->load->view('template/footer');
-  //   } else {
-  //     $data = array(
-  //       'kelas_jurusan' => $this->input->post('kl')
-  //     );
-  //     $query = $this->Admin_model->simpandata('tb_kelas', $data);
 
-  //     if ($query) {
-  //       $this->session->set_flashdata('info', 'Data Tersimpan');
-  //       redirect('admin/t_kelas');
-  //     } else {
-  //       $this->session->set_flashdata('danger', 'Gagal Tersimpan');
-  //       redirect('admin/t_kelas');
-  //     }
-  //   }
-  // }
   public function sm_siswa()
   {
     $this->form_validation->set_rules('nm', 'nama lengkap', 'required', array('required' => ' Nama WAJIB di ISI'));
