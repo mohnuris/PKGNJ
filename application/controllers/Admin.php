@@ -381,7 +381,7 @@ class Admin extends CI_Controller
           $this->image_lib->resize('file_name');
           // compress gambar
           $foto = $gbr['file_name'];
-          unlink("./assets/guru/" . $foto);
+          // unlink("./assets/guru/" . $foto);
 
           // simpan
 
