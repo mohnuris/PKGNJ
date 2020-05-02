@@ -55,8 +55,16 @@
                                     if ($si->num_rows() > 0) {
                                         // data ada
                                         $no = 1;
+                                        // $query = "SELECT * FROM tb_siswa 
+                                        // INNER JOIN tb_sekolah ON tb_siswa.id_sekolah = tb_sekolah.id_sekolah";
+
+                                        // $sql_rm = mysqli_query($si, $query) or die(mysqli_error($si));
+                                        // while ($data = mysqli_fetch_array($sql_rm)) {
+
                                         foreach ($si->result_object() as $s) {
+
                                     ?>
+
                                             <tr>
                                                 <th scope="row"><?= $no ?></th>
                                                 <td><?= $s->nm_siswa ?></td>
