@@ -84,8 +84,8 @@
                 <label for="foto" class="alert-link">Foto Guru*)</label><br>
                 <?php echo form_upload('foto', '', $gr->ft_guru, array('class' => 'foto')); ?><br>
                 <small class="text-danger">
-                  <?php echo $errors; ?>
-                  <!-- <?php echo form_error(('ft_guru')); ?> -->
+                  <!-- <?php echo $errors; ?> -->
+                  <?php echo form_error(('ft_guru')); ?>
                 </small>
                 <div><br>
                   <?php
