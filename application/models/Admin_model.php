@@ -58,11 +58,47 @@ class Admin_model extends CI_Model
 
   public function comboxdinamis()
   {
-    $query = $this->db->get('tb_siswa');
-    $tambah[set_value('s_guru')] = "---Pilih Guru---";
+    $query = $this->db->get('tb_kelas');
+    $tambah[set_value('id_kelas')] = "---Pilih---";
     if ($query->num_rows() > 0) {
       foreach ($query->result() as $row) {
-        $tambah[$row->s_guru] = $row->gr;
+        $tambah[$row->id_kelas] = $row->kelas;
+      }
+    }
+    return $tambah;
+  }
+
+  public function comboxdinamis1()
+  {
+    $query = $this->db->get('tb_sekolah');
+    $tambah[set_value('nm_sekolah')] = "---Pilih ---";
+    if ($query->num_rows() > 0) {
+      foreach ($query->result() as $row) {
+        $tambah[$row->id_sekolah] = $row->nm_sekolah;
+      }
+    }
+    return $tambah;
+  }
+
+  public function comboxdinamis2()
+  {
+    $query = $this->db->get('tb_kelas');
+    $tambah[set_value('jurusan')] = "---Pilih ---";
+    if ($query->num_rows() > 0) {
+      foreach ($query->result() as $row) {
+        $tambah[$row->id_kelas] = $row->jurusan;
+      }
+    }
+    return $tambah;
+  }
+
+  public function comboxdinamis3()
+  {
+    $query = $this->db->get('tb_guru');
+    $tambah[set_value('nm_guru')] = "---Pilih ---";
+    if ($query->num_rows() > 0) {
+      foreach ($query->result() as $row) {
+        $tambah[$row->id_guru] = $row->nm_guru;
       }
     }
     return $tambah;
