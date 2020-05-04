@@ -24,7 +24,21 @@
             </a>
             <!-- interface -->
 
-            <div class="sb-sidenav-menu-heading">Interface</div>
+            <div class="sb-sidenav-menu-heading">Lembaga</div>
+            <a class="nav-link" href="<?= base_url('admin/t_kepalasekolah') ?>">
+              <div class="sb-nav-link-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+              Kepala Sekolah
+            </a>
+            <a class="nav-link" href="<?= base_url('admin/sekolah') ?>">
+              <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
+              Sekolah
+            </a>
+            <a class="nav-link" href="<?= base_url('admin/jurusan') ?>">
+              <div class="sb-nav-link-icon"><i class="fab fa-black-tie"></i></div>
+              Jurusan
+            </a>
+
+            <!-- <div class="sb-sidenav-menu-heading">Interface</div> -->
             <a class="nav-link" href="<?= base_url('admin/guru') ?>">
               <div class="sb-nav-link-icon"><i class="fas fa-user-tie"></i></div>
               Guru
@@ -36,16 +50,17 @@
             </a>
 
             <a class="nav-link" href="<?= base_url('admin/t_kelas') ?>">
-              <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
+              <div class="sb-nav-link-icon"><i class="fas fa-archway"></i></div>
               Kelas
             </a>
+
 
             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
               <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
               </nav>
             </div>
 
-            <div class="sb-sidenav-menu-heading">Addons</div>
+            <div class="sb-sidenav-menu-heading">Data</div>
             <a class="nav-link" href="<?= base_url('admin/t_rekap') ?>">
               <div class="sb-nav-link-icon"><i class="fas fa fa-database"></i></div>
               Rekap
@@ -61,12 +76,9 @@
             </a>
 
 
-            <div class="sb-sidenav-menu-heading">Auth</div>
-            <a class="nav-link" href="<?= base_url('admin/t_kepalasekolah') ?>">
-              <div class="sb-nav-link-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-              Kepala Sekolah
-            </a>
-            
+            <div class="sb-sidenav-menu-heading">Adminstator</div>
+
+
             <a class="nav-link" href="<?= base_url('admin/users') ?>">
               <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
               Users
