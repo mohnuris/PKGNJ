@@ -14,6 +14,7 @@
       <div class="card mb-5 shadow p-3 mb-5 bg-white rounded">
         <?php echo form_open_multipart('admin/sm_siswa'); ?>
 
+
         <!-- <div class="modal-body"> -->
         <div class="card-body">
 
@@ -51,6 +52,13 @@
             </small>
           </div>
           <br>
+          <label for="mp" class="alert-link">Mata Pelajaran </label>
+          <?php echo form_dropdown("mp", $combo4, set_value('mp'), array('class' => 'form-control', 'id' => 'mp')); ?>
+          <small class="text-danger">
+            <?php echo form_error('mp', ' '); ?>
+          </small>
+
+          <br>
           <div class="from-group">
             <label for="gr" class="alert-link">Guru</label>
             <?php echo form_dropdown("gr", $combo3, set_value('gr'), array('class' => 'form-control', 'id' => 'gr')); ?>
@@ -59,48 +67,6 @@
             </small>
           </div>
 
-          <!-- <div class="form-grup">
-            <label for="sk" class="alert-link">Sekolah / lembaga</label>
-            <?php echo form_dropdown("sk", "", array('class' => 'form-control', 'id' => 'sk', 'placeholder' => 'Sekolah / lembaga')); ?>
-            <small class="text-danger">
-              <?php echo form_error('sk', ' '); ?>
-            </small>
-          </div>
-
-          <div class="form-group">
-            <label for="sk" class="alert-link">Sekolah / lembaga</label>
-            <?php echo form_dropdown("sk", "", array('class' => 'form-control', 'id' => 'sk', 'placeholder' => 'Sekolah / lembaga')); ?>
-            <small class="text-danger">
-              <?php echo form_error('sk', ' '); ?>
-            </small>
-          </div>
-
-          <div class="modal-group">
-            <label for="kl" class="alert-link">Kelas</label>
-            <label class="mr-sm-2 sr-only form-control-lg" for="kl"></label>
-            <?php echo form_dropdown("kl", "", array('class' => 'form-control', 'id' => 'kl', 'placeholder' => 'Kelas')); ?>
-            <small class="text-danger">
-              <?php echo form_error('kl', ' '); ?>
-            </small>
-          </div>
-          <br>
-          <div class="modal-group">
-            <label for="jr" class="alert-link"> Jurusan</label>
-            <label class="mr-sm-2 sr-only form-control-lg" for="kl"></label>
-            <?php echo form_dropdown("jr", "", array('class' => 'form-control', 'id' => 'jr')); ?>
-            <small class="text-danger">
-              <?php echo form_error('jr', ' '); ?>
-            </small>
-          </div>
-
-          <div class="modal-group">
-            <label for="gr" class="alert-link">Pilih Guru</label>
-            <?php echo form_dropdown("gr", "", array('class' => 'form-control', 'id' => 'gr', 'placeholder' => ' Jurusan')); ?>
-            <small class="text-danger">
-              <?php echo form_error('gr', ' '); ?>
-            </small>
-
-          </div> -->
 
           <div class="modal-body">
             <label for="jk" class="alert-link">Jenis Kelamin</label><br>
