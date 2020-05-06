@@ -6,7 +6,7 @@
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href=" <?= base_url('admin') ?>">Dashboard</a></li>
                 <li class="breadcrumb-item">Siswa</a></li>
-                <li class="breadcrumb-item"><a href=" <?= base_url('admin/f_siswa') ?>">Formulir</a></li>
+                <li class="breadcrumb-item"><a href=" <?= base_url('admin/f_siswa') ?>">Tambah Siswa</a></li>
 
 
             </ol>
@@ -44,6 +44,7 @@
                                         <th>Sekolah</th>
                                         <th>Kelas</th>
                                         <th>Jurusan</th>
+                                        <th>Mata Pelajaran</th>
                                         <th>Guru</th>
                                         <th>Jenis Kelamin</th>
                                         <th>foto</th>
@@ -52,16 +53,11 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                    if ($si->num_rows() > 0) {
+                                    if ($sis->num_rows() > 0) {
                                         // data ada
                                         $no = 1;
-                                        // $query = "SELECT * FROM tb_siswa 
-                                        // INNER JOIN tb_sekolah ON tb_siswa.id_sekolah = tb_sekolah.id_sekolah";
 
-                                        // $sql_rm = mysqli_query($si, $query) or die(mysqli_error($si));
-                                        // while ($data = mysqli_fetch_array($sql_rm)) {
-
-                                        foreach ($si->result_object() as $s) {
+                                        foreach ($sis->result_object() as $s) {
 
                                     ?>
 
@@ -71,6 +67,7 @@
                                                 <td><?= $s->nm_sekolah ?></td>
                                                 <td><?= $s->kelas ?></td>
                                                 <td><?= $s->nm_jurusan ?></td>
+                                                <td><?= $s->mapel ?></td>
                                                 <td><?= $s->id_guru ?></td>
                                                 <td><?= $s->jk_siswa ?></td>
                                                 <td align="center">
