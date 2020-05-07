@@ -48,9 +48,12 @@ class Admin_model extends CI_Model
   public function joinguru()
   {
     $query = $this->db->select('*')
-      ->from('tb_siswa')
-      ->join('tb_guru', 'tb_siswa.id_guru=tb_guru.id_guru', 'left')
-      ->order_by('id_siswa', 'DESC')
+      ->from('tb_guru')
+      // ->join('tb_siswa', 'tb_guru.id_siswa=tb_guru.id_guru', 'left')
+      ->join('tb_kelas', 'tb_guru.id_kelas=tb_kelas.id_kelas', 'left')
+      ->join('tb_sekolah', 'tb_guru.id_sekolah=tb_sekolah.id_sekolah', 'right')
+      ->join('tb_jurusan', 'tb_guru.id_jurusan=tb_jurusan.id_jurusan', 'left')
+      ->order_by('id_guru', 'DESC')
       ->get();
 
     return $query;
@@ -99,6 +102,30 @@ class Admin_model extends CI_Model
     if ($query->num_rows() > 0) {
       foreach ($query->result() as $row) {
         $tambah[$row->id_guru] = $row->nm_guru;
+      }
+    }
+    return $tambah;
+  }
+  public function comboxdinamis4()
+  {
+    $query = $this->db->get('tb_guru');
+    $tambah[set_value('mapel')] = "---Pilih ---";
+    if ($query->num_rows() > 0) {
+      foreach ($query->result() as $row) {
+        $tambah[$row->id_guru] = $row->mapel;
+      }
+    }
+    return $tambah;
+  }
+
+  // comboxdinamis Guru
+  public function comboxdinamis5()
+  {
+    $query = $this->db->get('tb_kelas');
+    $tambah[set_value('id_kelas')] = "---Pilih---";
+    if ($query->num_rows() > 0) {
+      foreach ($query->result() as $row) {
+        $tambah[$row->id_kelas] = $row->id_kelas;
       }
     }
     return $tambah;
