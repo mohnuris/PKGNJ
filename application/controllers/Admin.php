@@ -15,9 +15,9 @@ class Admin extends CI_Controller
     $tittle['dashboard'] = "MENU";
     $data['si'] = $this->db->get('tb_siswa')->num_rows();
     $data['gr'] = $this->db->get('tb_guru')->num_rows();
-    $data['tw'] = $this->db->get('tb_triwulan')->num_rows(); //triwulan
+    // $data['tw'] = $this->db->get('tb_triwulan')->num_rows(); //triwulan
     $data['ks'] = $this->db->get('tb_kepalasekolah')->num_rows(); //prestasi
-    // $data['jr'] = $this->db->get('tb_jurusan')->num_rows(); //jurusan
+    $data['jr'] = $this->db->get('tb_jurusan')->num_rows(); //jurusan
     $data['kl'] = $this->db->get('tb_kelas')->num_rows(); //kelas
     $data['mp'] = $this->db->get('tb_mapel')->num_rows(); //mata pelajaran
     $data['ni'] = $this->db->get('tb_nilai')->num_rows(); //table
@@ -197,6 +197,7 @@ class Admin extends CI_Controller
   {
     $tittle['subtittle'] = "Halaman Guru";
     $tittle['dashboard'] = "guru";
+    // $data['gr'] = $this->Admin_model->joinguru();
     $data['gr'] = $this->Admin_model->tampildata('tb_guru', 'id_guru');
     $this->load->view('template/header', $tittle);
     $this->load->view('template/navbar');
@@ -413,7 +414,9 @@ class Admin extends CI_Controller
           'kelas' => $this->input->post('kelas'),
           'jurusan' => $this->input->post('jurusan'),
           'mapel' => $this->input->post('mapel'),
-          'jk_guru' => $this->input->post('jk_guru')
+          'jk_guru' => $this->input->post('jk_guru'),
+          'ft_guru' => $this->input->post('ft_guru')
+
         );
         // $query = $this->Admin_model->simpandata('tb_guru', $data);
         $query = $this->Admin_model->editdata('tb_guru', 'id_guru', $id, $data);
@@ -467,7 +470,9 @@ class Admin extends CI_Controller
   {
     $tittle['subtittle'] = "Halaman Data Siswa";
     $tittle['dashboard'] = "Siswa";
-    $data['si'] = $this->Admin_model->tampildata('tb_siswa', 'id_siswa');
+    $data['si'] = $this->Admin_model->joinsiswa();
+    $data['sis'] = $this->Admin_model->tampildata('tb_guru', 'id_guru');
+    // 'tb_siswa', 'id_siswa'
     $this->load->view('template/header', $tittle);
     $this->load->view('template/navbar');
     $this->load->view('template/t_siswa', $data);
@@ -478,10 +483,14 @@ class Admin extends CI_Controller
     $tittle['subtittle'] = "Halaman Tambah Siswa";
     $tittle['dashboard'] = "formulir";
     $this->load->view('template/header', $tittle);
-    // $data['combo'] = $this->Admin_model->comboxdinamis();
-    // $data['error'] = "";
+    $data['combo'] = $this->Admin_model->comboxdinamis();
+    $data['combo1'] = $this->Admin_model->comboxdinamis1();
+    $data['combo2'] = $this->Admin_model->comboxdinamis2();
+    $data['combo3'] = $this->Admin_model->comboxdinamis3();
+    $data['combo4'] = $this->Admin_model->comboxdinamis4();
+    $data['error'] = " ";
     $this->load->view('template/navbar');
-    $this->load->view('formulir/f_siswa');
+    $this->load->view('formulir/f_siswa', $data);
     $this->load->view('template/footer');
   }
 
@@ -544,9 +553,10 @@ class Admin extends CI_Controller
           // simpan
           $data = array(
             'nm_siswa' => $this->input->post('nm'),
-            's_sekolah' => $this->input->post('sk'),
-            's_kelas' => $this->input->post('kl'),
-            's_guru' => $this->input->post('gr'),
+            'id_sekolah' => $this->input->post('sk'),
+            'id_kelas' => $this->input->post('kl'),
+            'id_jurusan' => $this->input->post('j'),
+            'id_guru' => $this->input->post('gr'),
             'jk_siswa' => $this->input->post('jk'),
             // 'alt_siswa' => $this->input->post('alt_siswa'),
             'ft_siswa' => $foto
@@ -741,5 +751,189 @@ class Admin extends CI_Controller
       $this->session->set_flashdata('danger', 'Gagal Teredit');
       redirect('admin/t_kelas');
     }
+  }
+
+  public function jurusan()
+  {
+    $tittle['subtittle'] = "Halaman Data Kelas";
+    $data['sekolah'] = $this->Admin_model->tampildata('tb_jurusan', 'nm_jurusan');
+    $data['jr'] = $this->Admin_model->tampildata('tb_jurusan', 'id_jurusan');
+    $this->load->view('template/header', $tittle);
+    $this->load->view('template/navbar');
+    $this->load->view('template/t_jurusan', $data);
+    $this->load->view('template/footer');
+  }
+
+  public function ed_jurusan()
+  {
+    $id = $this->input->post('id');
+    $data = array(
+
+      'nm_jurusan' => $this->input->post('j')
+    );
+    $query = $this->Admin_model->editdata('tb_jurusan', 'id_jurusan', $id, $data);
+
+    if ($query) {
+      $this->session->set_flashdata('info', 'Data Teredit');
+      redirect('admin/jurusan');
+    } else {
+      $this->session->set_flashdata('danger', 'Gagal Teredit');
+      redirect('admin/jurusan');
+    }
+  }
+  public function f_jurusan()
+  {
+
+    $tittle['subtittle'] = "Halaman form jurusan";
+    $tittle['dashboard'] = "Form jurusan ";
+    $this->load->view('template/header', $tittle);
+    $this->load->view('template/navbar');
+    $this->load->view('formulir/f_jurusan');
+    $this->load->view('template/footer');
+  }
+  public function sm_jurusan()
+  {
+
+    $this->form_validation->set_rules('j', 'Jurusan', 'required', array('required' => 'Jurusan Wajib di Isi'));
+    if ($this->form_validation->run() == FALSE) {
+      # code...
+      $tittle['subtittle'] = "Halaman form jurusan";
+      $tittle['dashboard'] = "Form jurusan ";
+      $this->load->view('template/header', $tittle);
+      $this->load->view('template/navbar');
+      $this->load->view('formulir/f_jurusan');
+      $this->load->view('template/footer');
+    } else {
+      $data = array(
+        // 'sekolah' => $this->input->post('sk'),
+        // 'jurusan' => $this->input->post('kl'),
+        'nm_jurusan' => $this->input->post('j')
+      );
+      $query = $this->Admin_model->simpandata('tb_jurusan', $data);
+
+      if ($query) {
+        $this->session->set_flashdata('info', 'Data Tersimpan');
+        redirect('admin/jurusan');
+      } else {
+        $this->session->set_flashdata('danger', 'Gagal Tersimpan');
+        redirect('admin/jurusan');
+      }
+    }
+  }
+  public function hapusjurusan($id)
+  {
+    // $this->Admin_model->hapusdata('tb_jurusan', 'nm_jurusan'); //permasalahgannya pada $id
+    $this->Admin_model->hapusdata('tb_jurusan', $id, 'id_jurusan');
+    if ($this->db->affected_rows()) {
+      $this->session->set_flashdata('info', 'Data jurusan Berhasil Dihapus');
+      redirect('admin/jurusan');
+    } else {
+      $this->session->set_flashdata('error', 'Data jurusan Gagal Terhapus');
+      redirect('admin/jurusan');
+    }
+  }
+  public function edjurusan($id)
+  {
+    $tittle['subtittle'] = "Halaman Edit jurusan";
+    $tittle['dashboard'] = "Form Edit jurusan ";
+    $data['sk'] = $this->Admin_model->formedit('tb_jurusan', 'nm_jurusan', $id);
+    $data['ek'] = $this->Admin_model->formedit('tb_jurusan', 'id_jurusan', $id);
+    $this->load->view('template/header', $tittle);
+    $this->load->view('template/navbar');
+    $this->load->view('formulir/E_jurusan', $data);
+    $this->load->view('template/footer');
+  }
+
+  // SEKOLAH
+
+  public function sekolah()
+  {
+    $tittle['subtittle'] = "Halaman Data Kelas";
+    $data['sekolah'] = $this->Admin_model->tampildata('tb_sekolah', 'nm_sekolah');
+    $data['sk'] = $this->Admin_model->tampildata('tb_sekolah', 'id_sekolah');
+    $this->load->view('template/header', $tittle);
+    $this->load->view('template/navbar');
+    $this->load->view('template/t_sekolah', $data);
+    $this->load->view('template/footer');
+  }
+
+  public function ed_sekolah()
+  {
+    $id = $this->input->post('id');
+    $data = array(
+
+      'nm_sekolah' => $this->input->post('s')
+    );
+    $query = $this->Admin_model->editdata('tb_sekolah', 'id_sekolah', $id, $data);
+
+    if ($query) {
+      $this->session->set_flashdata('info', 'Data Teredit');
+      redirect('admin/sekolah');
+    } else {
+      $this->session->set_flashdata('danger', 'Gagal Teredit');
+      redirect('admin/sekolah');
+    }
+  }
+  public function f_sekolah()
+  {
+
+    $tittle['subtittle'] = "Halaman form sekolah";
+    $tittle['dashboard'] = "Form sekolah ";
+    $this->load->view('template/header', $tittle);
+    $this->load->view('template/navbar');
+    $this->load->view('formulir/f_sekolah');
+    $this->load->view('template/footer');
+  }
+  public function sm_sekolah()
+  {
+
+    $this->form_validation->set_rules('j', 'sekolah', 'required', array('required' => 'sekolah Wajib di Isi'));
+    if ($this->form_validation->run() == FALSE) {
+      # code...
+      $tittle['subtittle'] = "Halaman form sekolah";
+      $tittle['dashboard'] = "Form sekolah ";
+      $this->load->view('template/header', $tittle);
+      $this->load->view('template/navbar');
+      $this->load->view('formulir/f_sekolah');
+      $this->load->view('template/footer');
+    } else {
+      $data = array(
+        // 'sekolah' => $this->input->post('sk'),
+        // 'sekolah' => $this->input->post('kl'),
+        'nm_sekolah' => $this->input->post('j')
+      );
+      $query = $this->Admin_model->simpandata('tb_sekolah', $data);
+
+      if ($query) {
+        $this->session->set_flashdata('info', 'Data Tersimpan');
+        redirect('admin/sekolah');
+      } else {
+        $this->session->set_flashdata('danger', 'Gagal Tersimpan');
+        redirect('admin/sekolah');
+      }
+    }
+  }
+  public function hapussekolah($id)
+  {
+    // $this->Admin_model->hapusdata('tb_sekolah', 'nm_sekolah'); //permasalahgannya pada $id
+    $this->Admin_model->hapusdata('tb_sekolah', $id, 'id_sekolah');
+    if ($this->db->affected_rows()) {
+      $this->session->set_flashdata('info', 'Data sekolah Berhasil Dihapus');
+      redirect('admin/sekolah');
+    } else {
+      $this->session->set_flashdata('error', 'Data sekolah Gagal Terhapus');
+      redirect('admin/sekolah');
+    }
+  }
+  public function edsekolah($id)
+  {
+    $tittle['subtittle'] = "Halaman Edit sekolah";
+    $tittle['dashboard'] = "Form Edit sekolah ";
+    $data['sk'] = $this->Admin_model->formedit('tb_sekolah', 'nm_sekolah', $id);
+    $data['ek'] = $this->Admin_model->formedit('tb_sekolah', 'id_sekolah', $id);
+    $this->load->view('template/header', $tittle);
+    $this->load->view('template/navbar');
+    $this->load->view('formulir/E_sekolah', $data);
+    $this->load->view('template/footer');
   }
 }
