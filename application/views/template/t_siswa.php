@@ -53,20 +53,17 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                    if ($sis->num_rows() > 0) {
+                                    if ($si->num_rows() > 0) {
                                         // data ada
                                         $no = 1;
-
-                                        foreach ($sis->result_object() as $s) {
-
+                                        foreach ($si->result_object() as $s) {
                                     ?>
-
                                             <tr>
                                                 <th scope="row"><?= $no ?></th>
                                                 <td><?= $s->nm_siswa ?></td>
-                                                <td><?= $s->nm_sekolah ?></td>
+                                                <td><?= $s->sekolah ?></td>
                                                 <td><?= $s->kelas ?></td>
-                                                <td><?= $s->nm_jurusan ?></td>
+                                                <td><?= $s->id_jurusan ?></td>
                                                 <td><?= $s->mapel ?></td>
                                                 <td><?= $s->id_guru ?></td>
                                                 <td><?= $s->jk_siswa ?></td>
