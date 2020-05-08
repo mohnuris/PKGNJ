@@ -19,39 +19,39 @@
         <div class="card-body">
 
           <div class="form-group">
-            <label for="nm" class="alert-link">Nama Siswa</label>
-            <?php echo form_input("nm_siswa", set_value('nm_siswa'), array('class' => 'form-control', 'id' => 'nm', 'placeholder' => 'Nama Lengkap')); ?>
+            <label for="nm_siswa" class="alert-link">Nama Siswa</label>
+            <?php echo form_input("nm_siswa", set_value('nm_siswa'), array('class' => 'form-control', 'id' => 'nm_siswa', 'placeholder' => 'Nama Lengkap')); ?>
             <small class="text-danger">
               <?php echo form_error('nm', ' '); ?>
             </small>
           </div>
 
           <div class="from-group">
-            <label for="sk" class="alert-link">Sekolah</label>
-            <?php echo form_dropdown("sk", $combo1, set_value('sk'), array('class' => 'form-control', 'id' => 'sk')); ?>
+            <label for="sekolah" class="alert-link">Sekolah</label>
+            <?php echo form_dropdown("sekolah", $combo1, set_value('sekolah'), array('class' => 'form-control', 'id' => 'sekolah')); ?>
             <small class="text-danger">
-              <?php echo form_error('sk', ' '); ?>
+              <?php echo form_error('sekolah', ' '); ?>
             </small>
           </div>
           <br>
           <div class="from-group">
-            <label for="kl" class="alert-link">kelas</label>
-            <?php echo form_dropdown("kl", $combo, set_value('kl'), array('class' => 'form-control', 'id' => 'kl')); ?>
+            <label for="kelas" class="alert-link">kelas</label>
+            <?php echo form_dropdown("kelas", $combo, set_value('kelas'), array('class' => 'form-control', 'id' => 'kelas')); ?>
             <small class="text-danger">
-              <?php echo form_error('kl', ' '); ?>
+              <?php echo form_error('kelas', ' '); ?>
             </small>
           </div>
-
 
           <br>
           <div class="from-group">
-            <label for="jr" class="alert-link">Jurusan</label>
-            <?php echo form_dropdown("jr", $combo2, set_value('jr'), array('class' => 'form-control', 'id' => 'jr')); ?>
+            <label for="jurusan" class="alert-link">Jurusan</label>
+            <?php echo form_dropdown("jurusan", $combo2, set_value('jurusan'), array('class' => 'form-control', 'id' => 'jurusan')); ?>
             <small class="text-danger">
-              <?php echo form_error('jr', ' '); ?>
+              <?php echo form_error('jurusan', ' '); ?>
             </small>
           </div>
           <br>
+
           <label for="mp" class="alert-link">Mata Pelajaran </label>
           <?php echo form_dropdown("mp", $combo4, set_value('mp'), array('class' => 'form-control', 'id' => 'mp')); ?>
           <small class="text-danger">
@@ -60,16 +60,16 @@
 
           <br>
           <div class="from-group">
-            <label for="gr" class="alert-link">Guru</label>
-            <?php echo form_dropdown("gr", $combo3, set_value('gr'), array('class' => 'form-control', 'id' => 'gr')); ?>
+            <label for="guru" class="alert-link">Guru</label>
+            <?php echo form_dropdown("guru", $combo3, set_value('guru'), array('class' => 'form-control', 'id' => 'guru')); ?>
             <small class="text-danger">
-              <?php echo form_error('gr', ' '); ?>
+              <?php echo form_error('guru', ' '); ?>
             </small>
           </div>
 
 
           <div class="modal-body">
-            <label for="jk" class="alert-link">Jenis Kelamin</label><br>
+            <label for="jk_siswa" class="alert-link">Jenis Kelamin</label><br>
             <?php echo form_radio('jk_siswa', 'laki-laki', set_value('jk')) ?>Laki-Laki
             <?php echo form_radio('jk_siswa', 'perempuan', set_value('jk')) ?>Perempuan
             <br>
