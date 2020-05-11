@@ -28,7 +28,7 @@
 
           <div class="from-group">
             <label for="sekolah" class="alert-link">Sekolah</label>
-            <?php echo form_dropdown("sekolah", $combo1, set_value('sekolah'), array('class' => 'form-control', 'id' => 'sekolah')); ?>
+            <?php echo form_dropdown("sekolah", set_value('sekolah'), array('class' => 'form-control', 'id' => 'sekolah')); ?>
             <small class="text-danger">
               <?php echo form_error('sekolah', ' '); ?>
             </small>
@@ -45,7 +45,7 @@
           <br>
           <div class="from-group">
             <label for="jurusan" class="alert-link">Jurusan</label>
-            <?php echo form_dropdown("jurusan", $combo2, set_value('jurusan'), array('class' => 'form-control', 'id' => 'jurusan')); ?>
+            <?php echo form_dropdown("jurusan", set_value('jurusan'), array('class' => 'form-control', 'id' => 'jurusan')); ?>
             <small class="text-danger">
               <?php echo form_error('jurusan', ' '); ?>
             </small>
@@ -53,7 +53,7 @@
           <br>
 
           <label for="mp" class="alert-link">Mata Pelajaran </label>
-          <?php echo form_dropdown("mp", $combo4, set_value('mp'), array('class' => 'form-control', 'id' => 'mp')); ?>
+          <?php echo form_dropdown("mp", set_value('mp'), array('class' => 'form-control', 'id' => 'mp')); ?>
           <small class="text-danger">
             <?php echo form_error('mp', ' '); ?>
           </small>
