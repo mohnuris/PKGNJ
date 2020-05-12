@@ -471,7 +471,7 @@ class Admin extends CI_Controller
     $tittle['subtittle'] = "Halaman Data Siswa";
     $tittle['dashboard'] = "Siswa";
     $data['si'] = $this->Admin_model->joinsiswa();
-    $data['sis'] = $this->Admin_model->tampildata('tb_guru', 'id_guru');
+    // $data['sis'] = $this->Admin_model->tampildata('tb_siswa', 'id_siswa');
     // 'tb_siswa', 'id_siswa'
     $this->load->view('template/header', $tittle);
     $this->load->view('template/navbar');
@@ -484,10 +484,10 @@ class Admin extends CI_Controller
     $tittle['dashboard'] = "formulir";
     $this->load->view('template/header', $tittle);
     $data['combo'] = $this->Admin_model->comboxdinamis();
-    $data['combo1'] = $this->Admin_model->comboxdinamis1();
-    $data['combo2'] = $this->Admin_model->comboxdinamis2();
+    // $data['combo1'] = $this->Admin_model->comboxdinamis1();
+    // $data['combo2'] = $this->Admin_model->comboxdinamis2();
     $data['combo3'] = $this->Admin_model->comboxdinamis3();
-    $data['combo4'] = $this->Admin_model->comboxdinamis4();
+    // $data['combo4'] = $this->Admin_model->comboxdinamis4();
     $data['error'] = " ";
     $this->load->view('template/navbar');
     $this->load->view('formulir/f_siswa', $data);
@@ -497,25 +497,28 @@ class Admin extends CI_Controller
 
   public function sm_siswa()
   {
-    $this->form_validation->set_rules('nm', 'nama lengkap', 'required', array('required' => ' Nama WAJIB di ISI'));
-    // $this->form_validation->set_rules('jk_siswa', '', 'required', array('required' => 'Kelas WAJIB di ISI'));
-    $this->form_validation->set_rules('sk', '', 'required', array('required' => 'Sekolah WAJIB di ISI'));
-    $this->form_validation->set_rules('kl', '', 'required', array('required' => 'Sekolah WAJIB di ISI'));
-    $this->form_validation->set_rules('gr', '', 'required', array('required' => 'Sekolah WAJIB di ISI'));
-    $this->form_validation->set_rules('jk', '', 'required', array('required' => 'Jenis Kelamin WAJIB di ISI'));
-    // $this->form_validation->set_rules('alt_siswa', '', 'required', array('required' => 'Alamat WAJIB di ISI'));
+    $this->form_validation->set_rules('nm_siswa', 'nama lengkap', 'required', array('required' => ' Nama WAJIB di ISI'));
+    $this->form_validation->set_rules('sekolah', '', 'required', array('required' => 'Sekolah WAJIB di ISI'));
+    $this->form_validation->set_rules('id_kelas', '', 'required', array('required' => 'Kelas WAJIB di ISI'));
+    $this->form_validation->set_rules('jurusan', '', 'required', array('required' => 'Jurusan WAJIB di ISI'));
+    $this->form_validation->set_rules('mp', '', 'required', array('required' => 'Mata Pelajaran WAJIB di ISI'));
+    $this->form_validation->set_rules('guru', '', 'required', array('required' => 'Guru WAJIB di ISI'));
+    $this->form_validation->set_rules('jk_siswa', '', 'required', array('required' => 'Jenis Kelamin WAJIB di ISI'));
+
     if ($this->form_validation->run() == FALSE) {
 
       // gagal
-      $tittle['subtittle'] = "Halaman Tambah siswa";
-      $tittle['dashboard'] = "From Tambah siswa";
+      $tittle['subtittle'] = "Halaman Tambah Siswa";
+      $tittle['dashboard'] = "formulir";
       $this->load->view('template/header', $tittle);
-      $this->load->view('template/navbar');
-      // $this->load->view('template/t_siswa', $data);
-      $this->load->view('template/footer');
       $data['combo'] = $this->Admin_model->comboxdinamis();
-      $data['error'] = "";
-      $this->load->view('template/t_siswa', $data);
+      // $data['combo1'] = $this->Admin_model->comboxdinamis1();
+      // $data['combo2'] = $this->Admin_model->comboxdinamis2();
+      // $data['combo3'] = $this->Admin_model->comboxdinamis3();
+      // $data['combo4'] = $this->Admin_model->comboxdinamis4();
+      $data['error'] = " ";
+      $this->load->view('template/navbar');
+      $this->load->view('formulir/f_siswa', $data);
       $this->load->view('template/footer');
     } else {
       # BERHASIL
@@ -528,11 +531,19 @@ class Admin extends CI_Controller
         $config['encrypt_name'] = True;
         $this->load->library('upload', $config);
         if (!$this->upload->do_upload('foto')) {
-          $error = array('error' => $this->upload->display_errors(' '));
+          // $error = array('error' => $this->upload->display_errors(' '));
+
           $tittle['subtittle'] = "Halaman Tambah Siswa";
-          $tittle['dashboard'] = "form Tambah Siswa ";
-          $this->load->view('tempalte/header', $tittle);
-          $this->load->view('formulir/f_siswa', $error);
+          $tittle['dashboard'] = "formulir";
+          $this->load->view('template/header', $tittle);
+          $data['combo'] = $this->Admin_model->comboxdinamis();
+          // $data['combo1'] = $this->Admin_model->comboxdinamis1();
+          // $data['combo2'] = $this->Admin_model->comboxdinamis2();
+          // $data['combo3'] = $this->Admin_model->comboxdinamis3();
+          // $data['combo4'] = $this->Admin_model->comboxdinamis4();
+          $data['error'] = $this->upload->display_errors(' ');
+          $this->load->view('template/navbar');
+          $this->load->view('formulir/f_siswa', $data);
           $this->load->view('template/footer');
         } else {
           $gbr = $this->upload->data();
@@ -552,16 +563,17 @@ class Admin extends CI_Controller
           $foto = $gbr['file_name'];
           // simpan
           $data = array(
-            'nm_siswa' => $this->input->post('nm'),
-            'id_sekolah' => $this->input->post('sk'),
-            'id_kelas' => $this->input->post('kl'),
-            'id_jurusan' => $this->input->post('j'),
-            'id_guru' => $this->input->post('gr'),
-            'jk_siswa' => $this->input->post('jk'),
+            'nm_siswa' => $this->input->post('nm_siswa'),
+            'id_sekolah' => $this->input->post('sekolah'),
+            'id_kelas' => $this->input->post('kelas'),
+            'id_jurusan' => $this->input->post('jurusan'),
+            'mapel' => $this->input->post('mp'),
+            'id_guru' => $this->input->post('guru'),
+            'jk_siswa' => $this->input->post('jk_siswa'),
             // 'alt_siswa' => $this->input->post('alt_siswa'),
             'ft_siswa' => $foto
           );
-          $query = $this->Admin_model->simpandata('siswa', $data);
+          $query = $this->Admin_model->simpandata('tb_siswa', $data);
 
           if ($query) {
             $this->session->set_flashdata('info', 'Data siswa Berhasil Tersimpan');
@@ -574,14 +586,16 @@ class Admin extends CI_Controller
       } else {
 
         $data = array(
-          'nm_siswa' => $this->input->post('nm'),
-          's_sekolah' => $this->input->post('sk'),
-          's_kelas' => $this->input->post('kl'),
-          's_guru' => $this->input->post('gr'),
-          'jk_siswa' => $this->input->post('jk'),
-          // 'alt_siswa' => $this->input->post('alt_siswa')
+          'nm_siswa' => $this->input->post('nm_siswa'),
+          'id_sekolah' => $this->input->post('sekolah'),
+          'id_kelas' => $this->input->post('kelas'),
+          'id_jurusan' => $this->input->post('jurusan'),
+          'mapel' => $this->input->post('mp'),
+          'id_guru' => $this->input->post('guru'),
+          'jk_siswa' => $this->input->post('jk_siswa')
+
         );
-        $query = $this->Admin_model->simpandata('t_siswa', $data);
+        $query = $this->Admin_model->simpandata('tb_siswa', $data);
 
         if ($query) {
           $this->session->set_flashdata('info', 'Data siswa Berhasil Tersimpan');
@@ -596,11 +610,115 @@ class Admin extends CI_Controller
 
   public function ed_siswa()
   {
+    $id = $this->input->post('id_siswa');
+    $foto = $this->input->post('foto');
+    if ($this->form_validation->run() == FALSE) {
+
+      // gagal
+      $tittle['subtittle'] = "Halaman Form Edit siswa";
+      $tittle['dashboard'] = "From Edit siswa";
+      $data['si'] = $this->Admin_model->formedit('tb_siswa', 'id_siswa', $id);
+      $this->load->view('template/header', $tittle);
+      $data['combo'] = $this->Admin_model->comboxdinamis();
+      $data['error'] = "";
+      $this->load->view('template/navbar');
+      $this->load->view('formulir/E_siswa', $data);
+      $this->load->view('template/footer');
+    } else {
+      # BERHASIL
+      if ($_FILES['foto']['name']) {
+        $config['upload_path'] = './assets/siswa/';
+        $config['allowed_types'] = 'gif|JPG|PNG|jpg|png|jpeg';
+        $config['max_size'] = 1024;
+        $config['max_width'] = 1600;
+        $config['max_height'] = 1600;
+        $config['encrypt_name'] = true;
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('ft_siswa')) {
+          $tittle['subtittle'] = "Halaman Tambah siswa";
+          $tittle['dashboard'] = "From Tambah siswa";
+          $this->load->view('template/header', $tittle);
+          $data['s'] = $this->Admin_model->formedit('tb_siswa', 'id_siswa', $id);
+          $data['combo'] = $this->Admin_model->comboxdinamis();
+          $data['error'] = $this->upload->display_errors(' ');
+          $this->load->view('formulir/f_siswa', $data);
+          $this->load->view('template/footer');
+        } else {
+
+          $gbr = $this->upload->data();
+          // unlink("./assets/siswa/" . $ft_siswa);
+          // crop gambar
+          $config['image_library'] = 'gd2';
+          $config['source_image'] = './assets/siswa/' . $gbr['file_name'];
+          $config['create_thumb'] = FALSE;
+          $config['maintain_ration'] = FALSE;
+          $config['quality'] = '50%';
+          $config['width'] = 400;
+          $config['height'] = 600;
+          $config['new_image'] = './assets/siswa/' . $gbr['file_name'];
+          $this->load->library('image_lib', $config);
+          $this->image_lib->resize('file_name');
+          // compress gambar
+          $foto = $gbr['file_name'];
+          // simpan
+          $id = $this->input->post('id_siswa');
+          $data = array(
+            'id_tahun_pelajaran' => $this->input->post('th'),
+            'nisn' => $this->input->post('nisn'),
+            'nm_siswa' => $this->input->post('nm_siswa'),
+            'jk_siswa' => $this->input->post('jk_siswa'),
+            'alt_siswa' => $this->input->post('alt_siswa'),
+            'ft_siswa' => $foto
+          );
+          $query = $this->Admin_model->editdata('tb_siswa', 'id_siswa', $id, $data);
+
+          if ($query) {
+            $this->session->set_flashdata('info', 'Data siswa Berhasil Tersimpan');
+            redirect('Admin/siswa');
+          } else {
+            $this->session->set_flashdata('info', 'Data siswa Gagal Tersimpan');
+            redirect('Admin/siswa');
+          }
+        }
+      } else {
+
+        $data = array(
+          'id_tahun_pelajaran' => $this->input->post('th'),
+          'nisn' => $this->input->post('nisn'),
+          'nm_siswa' => $this->input->post('nm_siswa'),
+          'jk_siswa' => $this->input->post('jk_siswa'),
+          'alt_siswa' => $this->input->post('alt_siswa')
+        );
+        $query = $this->Admin_model->editdata('tb_siswa', 'id_siswa', $id, $data);
+
+        if ($query) {
+          $this->session->set_flashdata('info', 'Data siswa Berhasil Tersimpan');
+          redirect('Admin/siswa');
+        } else {
+          $this->session->set_flashdata('info', 'Data siswa Gagal Tersimpan');
+          redirect('Admin/siswa');
+        }
+      }
+    }
   }
 
 
-  public function hs_siswa()
+  public function hs_siswa($id)
   {
+
+
+    $data = $this->Admin_model->formedit('siswa', 'id_siswa', $id);
+    // echo $data->ft_siswa;
+    $this->Admin_model->hapusdata('siswa', $id, 'id_siswa');
+    if ($this->db->affected_rows()) {
+      unlink("./assets/siswa/" . $data->ft_siswa);
+      $this->session->set_flashdata('info', 'Data siswa Berhasil Dihapus');
+      redirect('Admin/siswa');
+    } else {
+      $this->session->set_flashdata('info', 'Data siswa Gagal Terhapus');
+      redirect('Admin/siswa');
+    }
   }
 
   public function t_pengguna()
