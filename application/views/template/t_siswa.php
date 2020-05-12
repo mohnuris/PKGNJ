@@ -63,7 +63,7 @@
                                                 <td><?= $s->nm_siswa ?></td>
                                                 <td><?= $s->sekolah ?></td>
                                                 <td><?= $s->kelas ?></td>
-                                                <td><?= $s->id_jurusan ?></td>
+                                                <td><?= $s->jurusan ?></td>
                                                 <td><?= $s->mapel ?></td>
                                                 <td><?= $s->id_guru ?></td>
                                                 <td><?= $s->jk_siswa ?></td>
