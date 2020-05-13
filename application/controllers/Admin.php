@@ -539,7 +539,7 @@ class Admin extends CI_Controller
           $data['combo'] = $this->Admin_model->comboxdinamis();
           // $data['combo1'] = $this->Admin_model->comboxdinamis1();
           // $data['combo2'] = $this->Admin_model->comboxdinamis2();
-          // $data['combo3'] = $this->Admin_model->comboxdinamis3();
+          $data['combo3'] = $this->Admin_model->comboxdinamis3();
           // $data['combo4'] = $this->Admin_model->comboxdinamis4();
           $data['error'] = $this->upload->display_errors(' ');
           $this->load->view('template/navbar');
@@ -547,7 +547,7 @@ class Admin extends CI_Controller
           $this->load->view('template/footer');
         } else {
           $gbr = $this->upload->data();
-          // $id = $this->input->post('gr');
+          $id = $this->input->post('si');
           // compress gambar
           $config['image_library'] = 'gd2';
           $config['source_image'] = './assets/siswa/' . $gbr['file_name'];
@@ -664,11 +664,12 @@ class Admin extends CI_Controller
           // simpan
           $id = $this->input->post('id_siswa');
           $data = array(
-            'id_tahun_pelajaran' => $this->input->post('th'),
-            'nisn' => $this->input->post('nisn'),
             'nm_siswa' => $this->input->post('nm_siswa'),
-            'jk_siswa' => $this->input->post('jk_siswa'),
-            'alt_siswa' => $this->input->post('alt_siswa'),
+            'sekolah' => $this->input->post('sekolah'),
+            'kelas' => $this->input->post('kelas'),
+            'jurusan' => $this->input->post('jurusan'),
+            'mapel' => $this->input->post('mp'),
+            'guru' => $this->input->post('guru'),
             'ft_siswa' => $foto
           );
           $query = $this->Admin_model->editdata('tb_siswa', 'id_siswa', $id, $data);
@@ -684,11 +685,12 @@ class Admin extends CI_Controller
       } else {
 
         $data = array(
-          'id_tahun_pelajaran' => $this->input->post('th'),
-          'nisn' => $this->input->post('nisn'),
           'nm_siswa' => $this->input->post('nm_siswa'),
-          'jk_siswa' => $this->input->post('jk_siswa'),
-          'alt_siswa' => $this->input->post('alt_siswa')
+          'sekolah' => $this->input->post('sekolah'),
+          'kelas' => $this->input->post('kelas'),
+          'jurusan' => $this->input->post('jurusan'),
+          'mapel' => $this->input->post('mp'),
+          'guru' => $this->input->post('guru')
         );
         $query = $this->Admin_model->editdata('tb_siswa', 'id_siswa', $id, $data);
 
