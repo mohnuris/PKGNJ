@@ -514,7 +514,7 @@ class Admin extends CI_Controller
       $data['combo'] = $this->Admin_model->comboxdinamis();
       // $data['combo1'] = $this->Admin_model->comboxdinamis1();
       // $data['combo2'] = $this->Admin_model->comboxdinamis2();
-      // $data['combo3'] = $this->Admin_model->comboxdinamis3();
+      $data['combo3'] = $this->Admin_model->comboxdinamis3();
       // $data['combo4'] = $this->Admin_model->comboxdinamis4();
       $data['error'] = " ";
       $this->load->view('template/navbar');
