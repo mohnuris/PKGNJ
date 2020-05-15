@@ -564,13 +564,12 @@ class Admin extends CI_Controller
           // simpan
           $data = array(
             'nm_siswa' => $this->input->post('nm_siswa'),
-            'id_sekolah' => $this->input->post('sekolah'),
-            'id_kelas' => $this->input->post('kelas'),
-            'id_jurusan' => $this->input->post('jurusan'),
+            'sekolah' => $this->input->post('sekolah'),
+            'kelas' => $this->input->post('kelas'),
+            'jurusan' => $this->input->post('jurusan'),
             'mapel' => $this->input->post('mp'),
-            'id_guru' => $this->input->post('guru'),
+            'guru' => $this->input->post('guru'),
             'jk_siswa' => $this->input->post('jk_siswa'),
-            // 'alt_siswa' => $this->input->post('alt_siswa'),
             'ft_siswa' => $foto
           );
           $query = $this->Admin_model->simpandata('tb_siswa', $data);
@@ -587,12 +586,13 @@ class Admin extends CI_Controller
 
         $data = array(
           'nm_siswa' => $this->input->post('nm_siswa'),
-          'id_sekolah' => $this->input->post('sekolah'),
-          'id_kelas' => $this->input->post('kelas'),
-          'id_jurusan' => $this->input->post('jurusan'),
+          'sekolah' => $this->input->post('sekolah'),
+          'kelas' => $this->input->post('kelas'),
+          'jurusan' => $this->input->post('jurusan'),
           'mapel' => $this->input->post('mp'),
-          'id_guru' => $this->input->post('guru'),
-          'jk_siswa' => $this->input->post('jk_siswa')
+          'guru' => $this->input->post('guru'),
+          'jk_siswa' => $this->input->post('jk_siswa'),
+
 
         );
         $query = $this->Admin_model->simpandata('tb_siswa', $data);
@@ -670,6 +670,7 @@ class Admin extends CI_Controller
             'jurusan' => $this->input->post('jurusan'),
             'mapel' => $this->input->post('mp'),
             'guru' => $this->input->post('guru'),
+            'jk_siswa' => $this->input->post('jk_siswa'),
             'ft_siswa' => $foto
           );
           $query = $this->Admin_model->editdata('tb_siswa', 'id_siswa', $id, $data);
@@ -690,7 +691,9 @@ class Admin extends CI_Controller
           'kelas' => $this->input->post('kelas'),
           'jurusan' => $this->input->post('jurusan'),
           'mapel' => $this->input->post('mp'),
-          'guru' => $this->input->post('guru')
+          'guru' => $this->input->post('guru'),
+          'jk_siswa' => $this->input->post('jk_siswa')
+
         );
         $query = $this->Admin_model->editdata('tb_siswa', 'id_siswa', $id, $data);
 
