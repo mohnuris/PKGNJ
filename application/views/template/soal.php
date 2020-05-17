@@ -49,7 +49,7 @@
 
 
                     <br>
-                    <label form="" class="alert-link">1 Soal </label><br>
+                    <label form="" class="alert-link">2 Soal </label><br>
 
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
@@ -71,7 +71,7 @@
 
 
                     <br>
-                    <label form="" class="alert-link">1 Soal </label><br>
+                    <label form="" class="alert-link">3 Soal </label><br>
 
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
