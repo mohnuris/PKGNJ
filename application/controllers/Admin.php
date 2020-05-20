@@ -878,7 +878,7 @@ class Admin extends CI_Controller
 
   public function jurusan()
   {
-    $tittle['subtittle'] = "Halaman Data Kelas";
+    $tittle['subtittle'] = " Data Jurusan";
     $data['sekolah'] = $this->Admin_model->tampildata('tb_jurusan', 'nm_jurusan');
     $data['jr'] = $this->Admin_model->tampildata('tb_jurusan', 'id_jurusan');
     $this->load->view('template/header', $tittle);
