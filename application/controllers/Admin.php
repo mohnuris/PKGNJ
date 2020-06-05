@@ -63,31 +63,6 @@ class Admin extends CI_Controller
 
   public function smprofil()
   {
-    $this->form_validation->set_rules('nl', 'Nama Lengkap', 'required');
-    $this->form_validation->set_rules('ks', 'Kepala Sekolah', 'required');
-    if ($this->form_validation->run() == FALSE) {
-      # code...
-      $tittle['subtittle'] = "Halaman form Kepala Sekolah";
-      $tittle['dashboard'] = "Form Kepala Sekolah ";
-      $this->load->view('template/header', $tittle);
-      $this->load->view('template/navbar');
-      $this->load->view('formulir/f_kepalasekolah');
-      $this->load->view('template/footer');
-    } else {
-      $data = array(
-        'nm_kepala' => $this->input->post('nl'),
-        'kepala_sekolah' => $this->input->post('ks')
-      );
-      $query = $this->Admin_model->simpandata('tb_kepalasekolah', $data);
-
-      if ($query) {
-        $this->session->set_flashdata('info', 'Data Tersimpan');
-        redirect('admin/t_kepalasekolah');
-      } else {
-        $this->session->set_flashdata('danger', 'Gagal Tersimpan');
-        redirect('admin/t_kepalasekolah');
-      }
-    }
   }
 
 
@@ -114,6 +89,9 @@ class Admin extends CI_Controller
     $this->load->view('template/footer');
   }
 
+  public function edituser()
+  {
+  }
 
   public function charts()
   {
