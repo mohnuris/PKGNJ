@@ -23,7 +23,7 @@ class Admin extends CI_Controller
     $data['ni'] = $this->db->get('tb_nilai')->num_rows(); //table
     $data['cr'] = $this->db->get('charts')->num_rows(); //charts
     $data['tb'] = $this->db->get('tables')->num_rows(); //table
-    $data['us'] = $this->db->get('user')->num_rows(); //user
+    $data['us'] = $this->db->get('tb_users')->num_rows(); //user
     // $data['sl'] = $this->db->get('soal')->num_rows(); //soal
     $this->load->view('template/header', $tittle);
     $this->load->view('template/navbar');
@@ -61,15 +61,46 @@ class Admin extends CI_Controller
     $this->load->view('template/footer');
   }
 
+  public function smprofil()
+  {
+    $this->form_validation->set_rules('nl', 'Nama Lengkap', 'required');
+    $this->form_validation->set_rules('ks', 'Kepala Sekolah', 'required');
+    if ($this->form_validation->run() == FALSE) {
+      # code...
+      $tittle['subtittle'] = "Halaman form Kepala Sekolah";
+      $tittle['dashboard'] = "Form Kepala Sekolah ";
+      $this->load->view('template/header', $tittle);
+      $this->load->view('template/navbar');
+      $this->load->view('formulir/f_kepalasekolah');
+      $this->load->view('template/footer');
+    } else {
+      $data = array(
+        'nm_kepala' => $this->input->post('nl'),
+        'kepala_sekolah' => $this->input->post('ks')
+      );
+      $query = $this->Admin_model->simpandata('tb_kepalasekolah', $data);
+
+      if ($query) {
+        $this->session->set_flashdata('info', 'Data Tersimpan');
+        redirect('admin/t_kepalasekolah');
+      } else {
+        $this->session->set_flashdata('danger', 'Gagal Tersimpan');
+        redirect('admin/t_kepalasekolah');
+      }
+    }
+  }
+
+
+
   public function users()
   {
     // if ($this->sesion->userdata('level') == 'admin') {
-    $tittle['subtittle'] = "halaman Admin";
+    $tittle['subtittle'] = "halaman Users";
     $tittle['dashboard'] = "Admin";
-
+    $data['us'] = $this->Admin_model->tampildata('tb_users', 'id_users');
     $this->load->view('template/header', $tittle);
     $this->load->view('template/navbar');
-    $this->load->view('template/t_user');
+    $this->load->view('template/t_user', $data);
     $this->load->view('template/footer');
     // // } else {
     // }
