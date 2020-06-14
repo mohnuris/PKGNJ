@@ -111,6 +111,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-3">
                     <div class="card bg-info text-white mb-4 ">
                         <div class="col-xl-5 align-left">
@@ -120,9 +121,9 @@
                             <i class="align-left"></i>
                             <h5>KELAS JURUSAN </h5>
 
-                            <div class="d-flex justify-content-between pb-2">
-                                <!-- <h2><?= $k ?></h2> -->
-                            </div>
+                            <!-- <div class="d-flex justify-content-between pb-2">
+                                <h2><?= $k ?></h2>
+                            </div> -->
 
                         </div>
 
