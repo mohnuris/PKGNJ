@@ -21,19 +21,21 @@
         <br>
         <!-- content -->
 
-        <div class="card mb-5 shadow p-3 mb-5 bg-white rounded">
+        <div class="card mb-5 shadow p-3 mb-6 bg-white rounded">
           <div class="row">
             <div class="col-6 col-md-6">
               <div class="card">
                 <form method="post" class="needs-validation" novalidate="">
                   <div class="card-header">
                     <h4>Profil</h4>
+                    <div class="text-right">
+                      <li class="mr-3"><a href="" class="text-success"><i class="fa fa-edit"></i></a></li>
+                      <!-- <button class="btn btn-success"><i class="fas fa-edit"></i></button> -->
+                    </div>
                   </div>
                   <div class="card-body">
                     <div class="row">
                       <form class="form-inline">
-
-
                         <div class="row">
                           <div class="form-group col-md-6 col-6">
                             <label>Nama Lengkap </label>
@@ -65,57 +67,89 @@
                             </div>
                           </div>
                         </div>
+
+                        <div class="row">
+                          <div class="form-group col-md-6 col-6">
+                            <label>Jurusan</label>
+                            <input type="text" class="form-control" value="RPL 2" required="">
+                            <div class="invalid-feedback">
+                            </div>
+                          </div>
+
+                          <div class="form-group col-md-6 col-6">
+                            <label>Guru</label>
+                            <input type="text" class="form-control" value="" required="">
+                            <div class="invalid-feedback">
+                            </div>
+                          </div>
+                        </div>
                     </div>
-                    <div class="card-footer text-right">
-                      <button class="btn btn-success"><i class="fas fa-edit"></i> Edit</button>
-                    </div>
+                  </div>
                 </form>
               </div>
             </div>
-          </div>
 
 
-          <div class="col-6 col-md-6 ">
-            <div class="card">
-              <form method="post" class="needs-validation" novalidate="">
-                <div class="card-header">
-                  <h4>Edit Profil</h4>
-                </div>
-                <div class="card-body">
-                  <div class="row">
-                    <div class="form-group col-md-6 col-6">
-                      <label>Nama Lengkap </label>
-                      <input type="text" class="form-control" value="" required="">
-                      <div class="invalid-feedback">
 
+
+            <div class="col-6 col-md-6 ">
+              <div class="card">
+                <form method="post" class="needs-validation" novalidate="">
+                  <div class="card-header">
+                    <h4>Edit Profil</h4>
+                    <div class="text-right">
+                      <li class="mr-3"><a href="" class="text-primary"><i class="fas fa-save"></i></a></li>
+                      <!-- <button class="btn btn-primary"><i class="fas fa-save"></i></button> -->
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="form-group col-md-6 col-6">
+                        <label>Nama Lengkap </label>
+                        <input type="text" class="form-control" value="" required="">
+                        <div class="invalid-feedback">
+
+                        </div>
+                      </div>
+                      <div class="form-group col-md-6 col-6">
+                        <label>Kelas</label>
+                        <input type="text" class="form-control" value="" required="">
+                        <div class="invalid-feedback">
+
+                        </div>
                       </div>
                     </div>
-                    <div class="form-group col-md-6 col-6">
-                      <label>Kelas</label>
-                      <input type="text" class="form-control" value="" required="">
-                      <div class="invalid-feedback">
+                    <div class="row">
+                      <div class="form-group col-md-6 col-6">
+                        <label>Jurusan</label>
+                        <input type="email" class="form-control" value="" required="">
+                        <div class="invalid-feedback">
 
+                        </div>
+                      </div>
+                      <div class="form-group col-md-6 col-6">
+                        <label>Guru</label>
+                        <input type="tel" class="form-control" value="">
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="form-group col-md-6 col-6">
+                        <label>Jurusan</label>
+                        <input type="text" class="form-control" value="RPL 2" required="">
+                        <div class="invalid-feedback">
+                        </div>
+                      </div>
+
+                      <div class="form-group col-md-6 col-6">
+                        <label>Guru</label>
+                        <input type="text" class="form-control" value="" required="">
+                        <div class="invalid-feedback">
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="form-group col-md-6 col-6">
-                      <label>Jurusan</label>
-                      <input type="email" class="form-control" value="" required="">
-                      <div class="invalid-feedback">
+              </div>
 
-                      </div>
-                    </div>
-                    <div class="form-group col-md-6 col-6">
-                      <label>Guru</label>
-                      <input type="tel" class="form-control" value="">
-                    </div>
-                  </div>
-
-                </div>
-                <div class="card-footer text-right">
-                  <button class="btn btn-primary"><i class="fas fa-save"></i> Simpan</button>
-                </div>
               </form>
             </div>
           </div>
