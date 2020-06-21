@@ -1,4 +1,6 @@
 <div id="layoutSidenav_content">
+
+
     <main>
         <div class="container-fluid">
             <h1 class="mt-4">Soal Siswa</h1>
@@ -26,6 +28,10 @@
                             </li>
                         </ul>
                     </nav>
+
+
+
+
 
                     <label form="" class="alert-link">1 Soal </label><br>
 
