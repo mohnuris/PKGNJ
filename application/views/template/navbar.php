@@ -22,9 +22,10 @@
                 Formulir
               </a>
             </a>
-            <!-- interface -->
 
-            <div class="sb-sidenav-menu-heading">Lembaga</div>
+
+            <a class="sb-sidenav-menu-heading"><span>Data Lembaga</span></a>
+
             <a class="nav-link" href="<?= base_url('admin/t_kepalasekolah') ?>">
               <div class="sb-nav-link-icon"><i class="fas fa-chalkboard-teacher"></i></div>
               Kepala Sekolah
@@ -60,7 +61,7 @@
               </nav>
             </div>
 
-            <div class="sb-sidenav-menu-heading">Data</div>
+            <div class="sb-sidenav-menu-heading">Data Ujian</div>
             <a class="nav-link" href="<?= base_url('admin/t_rekap') ?>">
               <div class="sb-nav-link-icon"><i class="fas fa fa-database"></i></div>
               Rekap
@@ -99,7 +100,7 @@
               </div>
               Login
             </a> -->
-          </a>
+
         </div>
       </div>
   </div>
