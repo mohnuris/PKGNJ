@@ -56,7 +56,7 @@
 
                                 <div class="card-body">
                                     <form method="POST" action="#" class="needs-validation" novalidate="">
-                                        <div class="form-group">
+                                        <div class="form-group has-feedback">
                                             <label for="email">Email</label>
                                             <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
                                             <div class="invalid-feedback">
@@ -85,11 +85,10 @@
                                         </div>
                                     </form>
 
-                                    <div class="mt-5 text-muted text-center">
-                                        <!-- Don't have an account? <a href="auth-register.html">Create One</a> -->
+                                    <!-- <div class="mt-5 text-muted text-center"> -->
+                                    <!-- </div> -->
+                                    <div class="simple-footer align-center text-center">
                                         BirPenNJ &copy;2020
-                                    </div>
-                                    <div class="simple-footer align-center">
                                     </div>
                                 </div>
                             </div>
