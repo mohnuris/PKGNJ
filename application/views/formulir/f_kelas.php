@@ -17,11 +17,13 @@
         <div class="modal-body align-center">
           <?php echo form_open('admin/sm_kelas'); ?>
           <!-- form input -->
-          <label for="sk" class="alert-link">Lembaga / Sekolah</label>
-          <?php echo form_input("sk", "", array('class' => 'form-control', 'id' => 'sk', 'placeholder' => 'Sekolah / Lembaga')); ?>
-          <small class="text-danger">
-            <?php echo form_error('sk', ' '); ?>
-          </small>
+          <div class="from-group">
+            <label for="sekolah" class="alert-link">Sekolah</label>
+            <?php echo form_dropdown("sekolah", $dinasmis1, set_value('sekolah'), array('class' => 'form-control', 'id' => 'sekolah')); ?>
+            <small class="text-danger">
+              <?php echo form_error('sekolah', ' '); ?>
+            </small>
+          </div>
           <br>
           <label for="kl" class="alert-link">Kelas</label>
           <?php echo form_input("kl", "", array('class' => 'form-control', 'id' => 'kl', 'placeholder' => 'Kelas')); ?>
