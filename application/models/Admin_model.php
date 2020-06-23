@@ -59,6 +59,21 @@ class Admin_model extends CI_Model
     return $query;
   }
 
+  // combokelas
+  public function dinamis1()
+  {
+    $query = $this->db->get('tb_sekolah');
+    $tambah[set_value('id_sekolah')] = "---Pilih---";
+    if ($query->num_rows() > 0) {
+      foreach ($query->result() as $row) {
+        $tambah[$row->id_sekolah] = $row->nm_sekolah;
+      }
+    }
+    return $tambah;
+  }
+
+
+
   public function comboxdinamis()
   {
     $query = $this->db->get('tb_kelas');
@@ -66,6 +81,66 @@ class Admin_model extends CI_Model
     if ($query->num_rows() > 0) {
       foreach ($query->result() as $row) {
         $tambah[$row->id_kelas] = $row->kelas;
+      }
+    }
+    return $tambah;
+  }
+
+
+  public function combox1()
+  {
+    $query = $this->db->get('tb_sekolah');
+    $tambah[set_value('id_sekolah')] = "---Pilih---";
+    if ($query->num_rows() > 0) {
+      foreach ($query->result() as $row) {
+        $tambah[$row->id_sekolah] = $row->nm_sekolah;
+      }
+    }
+    return $tambah;
+  }
+  public function combox2()
+  {
+    $query = $this->db->get('tb_jurusan');
+    $tambah[set_value('id_jurusan')] = "---Pilih---";
+    if ($query->num_rows() > 0) {
+      foreach ($query->result() as $row) {
+        $tambah[$row->id_jurusan] = $row->nm_jurusan;
+      }
+    }
+    return $tambah;
+  }
+  public function combox3()
+  {
+    $query = $this->db->get('tb_mapel');
+    $tambah[set_value('id_pelajaran')] = "---Pilih---";
+    if ($query->num_rows() > 0) {
+      foreach ($query->result() as $row) {
+        $tambah[$row->id_pelajaran] = $row->nama_pelajaran;
+      }
+    }
+    return $tambah;
+  }
+
+
+  public function combox4()
+  {
+    $query = $this->db->get('tb_mapel');
+    $tambah[set_value('id_pelajaran')] = "---Pilih---";
+    if ($query->num_rows() > 0) {
+      foreach ($query->result() as $row) {
+        $tambah[$row->id_pelajaran] = $row->nama_pelajaran;
+      }
+    }
+    return $tambah;
+  }
+
+  public function combox5()
+  {
+    $query = $this->db->get('tb_guru');
+    $tambah[set_value('id_guru')] = "---Pilih---";
+    if ($query->num_rows() > 0) {
+      foreach ($query->result() as $row) {
+        $tambah[$row->id_guru] = $row->nm_guru;
       }
     }
     return $tambah;
