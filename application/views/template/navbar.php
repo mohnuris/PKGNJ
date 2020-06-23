@@ -55,6 +55,11 @@
               Kelas
             </a>
 
+            <a class="nav-link" href="<?= base_url('admin/mapel') ?>">
+              <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
+              Mata Pelajaran
+            </a>
+
 
             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
               <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
