@@ -1,7 +1,7 @@
 <div id="layoutSidenav_content">
   <main>
     <div class="container-fluid">
-      <h3 class="mt-5"></h3>
+      <h3 class="mt-5">Form Tambah Siswa</h3>
       <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href=" <?= base_url('admin/t_siswa') ?>">Data Siswa</a></li>
         <li class="breadcrumb-item active">Tambah Data Siswa</li>
@@ -26,9 +26,10 @@
             </small>
           </div>
 
+          <!-- end -->
           <div class="from-group">
             <label for="sekolah" class="alert-link">Sekolah</label>
-            <?php echo form_dropdown("sekolah", set_value('sekolah'), array('class' => 'form-control', 'id' => 'sekolah')); ?>
+            <?php echo form_dropdown("sekolah", $combo1, set_value('sekolah'), array('class' => 'form-control', 'id' => 'sekolah')); ?>
             <small class="text-danger">
               <?php echo form_error('sekolah', ' '); ?>
             </small>
@@ -45,23 +46,27 @@
           <br>
           <div class="from-group">
             <label for="jurusan" class="alert-link">Jurusan</label>
-            <?php echo form_dropdown("jurusan", set_value('jurusan'), array('class' => 'form-control', 'id' => 'jurusan')); ?>
+            <?php echo form_dropdown("jurusan", $combo2, set_value('jurusan'), array('class' => 'form-control', 'id' => 'jurusan')); ?>
             <small class="text-danger">
               <?php echo form_error('jurusan', ' '); ?>
             </small>
           </div>
           <br>
 
-          <label for="mp" class="alert-link">Mata Pelajaran </label>
-          <?php echo form_dropdown("mp", set_value('mp'), array('class' => 'form-control', 'id' => 'mp')); ?>
-          <small class="text-danger">
-            <?php echo form_error('mp', ' '); ?>
-          </small>
+          <!-- Mapel -->
 
-          <br>
+          <div class="form-group">
+            <label for="mapel" class="alert-link">Mata Pelajaran</label>
+            <?php echo form_dropdown("mapel", $combo4, set_value('mapel'), array('class' => 'form-control', 'id' => 'mapel', 'placeholder' => 'Mata Pelajaran')); ?>
+            <small class="text-danger">
+              <?php echo form_error('mapel', ' '); ?>
+            </small>
+          </div>
+
+
           <div class="from-group">
             <label for="guru" class="alert-link">Guru</label>
-            <?php echo form_dropdown("guru", $combo3, set_value('guru'), array('class' => 'form-control', 'id' => 'guru')); ?>
+            <?php echo form_dropdown("guru", $combo5, set_value('guru'), array('class' => 'form-control', 'id' => 'guru')); ?>
             <small class="text-danger">
               <?php echo form_error('guru', ' '); ?>
             </small>
@@ -70,11 +75,11 @@
 
           <div class="modal-body">
             <label for="jk_siswa" class="alert-link">Jenis Kelamin</label><br>
-            <?php echo form_radio('jk_siswa', 'laki-laki', set_value('jk')) ?>Laki-Laki
-            <?php echo form_radio('jk_siswa', 'perempuan', set_value('jk')) ?>Perempuan
+            <?php echo form_radio('jk_siswa', 'laki-laki', set_value('jk_siswa')) ?>Laki-Laki
+            <?php echo form_radio('jk_siswa', 'perempuan', set_value('jk_siswa')) ?>Perempuan
             <br>
             <small class="text-danger">
-              <?php echo form_error('jk', ' '); ?>
+              <?php echo form_error('jk_siswa', ' '); ?>
             </small>
           </div>
 

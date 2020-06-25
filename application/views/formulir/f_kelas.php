@@ -8,10 +8,7 @@
       </ol>
 
       <div class="card mb-5 shadow p-3 mb-5 bg-white rounded">
-        <!-- <div class="modal-header bg-primary text-white">
 
-          <h3 class="modal-title" id="exampleModalLabel"></h3>
-        </div> -->
         <div class="flash-data" data-flashdata="<?= $this->session->flashdata('info') ?>"></div>
 
         <div class="modal-body align-center">
@@ -19,7 +16,7 @@
           <!-- form input -->
           <div class="from-group">
             <label for="sekolah" class="alert-link">Sekolah</label>
-            <?php echo form_dropdown("sekolah", $dinasmis1, set_value('sekolah'), array('class' => 'form-control', 'id' => 'sekolah')); ?>
+            <?php echo form_dropdown("sekolah", set_value('sekolah'), array('class' => 'form-control', 'id' => 'sekolah')); ?>
             <small class="text-danger">
               <?php echo form_error('sekolah', ' '); ?>
             </small>
@@ -36,9 +33,7 @@
           <small class="text-danger">
             <?php echo form_error('j', ' '); ?>
           </small>
-
-
-
+          <!-- save -->
           <div class="modal-footer">
             <button type="submit" id="simpan" onclick="Swal.fire('SUKSES','Data Tersimpan','success')" class="btn btn-primary">SIMPAN</button>
             <!-- <?php echo form_submit('save', 'SIMPAN', array('class' => 'btn btn-primary  mt-4 pr-4 pl-4')); ?> -->
