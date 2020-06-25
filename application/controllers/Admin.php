@@ -246,6 +246,7 @@ class Admin extends CI_Controller
 
         if (!$this->upload->do_upload('foto')) {
           $error = array('error' => $this->upload->display_errors(' '));
+
           $tittle['subtittle'] = "Halaman Guru";
           $tittle['dashboard'] = "guru";
           $data['gr'] = $this->Admin_model->tampildata('tb_guru', 'id_guru');
@@ -480,8 +481,6 @@ class Admin extends CI_Controller
     $tittle['subtittle'] = "Halaman Data Siswa";
     $tittle['dashboard'] = "Siswa";
     $data['si'] = $this->Admin_model->joinsiswa();
-    // $data['sis'] = $this->Admin_model->tampildata('tb_siswa', 'id_siswa');
-    // 'tb_siswa', 'id_siswa'
     $this->load->view('template/header', $tittle);
     $this->load->view('template/navbar');
     $this->load->view('template/t_siswa', $data);
@@ -492,11 +491,12 @@ class Admin extends CI_Controller
     $tittle['subtittle'] = "Halaman Tambah Siswa";
     $tittle['dashboard'] = "formulir";
     $this->load->view('template/header', $tittle);
-    $data['combo'] = $this->Admin_model->comboxdinamis();
-    // $data['combo1'] = $this->Admin_model->comboxdinamis1();
-    // $data['combo2'] = $this->Admin_model->comboxdinamis2();
-    $data['combo3'] = $this->Admin_model->comboxdinamis3();
-    // $data['combo4'] = $this->Admin_model->comboxdinamis4();
+    $data['combo'] = $this->Admin_model->combox();
+    $data['combo1'] = $this->Admin_model->combox1(); // kelas
+    $data['combo2'] = $this->Admin_model->combox2(); //sekolah
+    $data['combo3'] = $this->Admin_model->combox3(); // Jurusan
+    $data['combo4'] = $this->Admin_model->combox4(); // Mata Pelajaran
+    $data['combo5'] = $this->Admin_model->combox5(); // guru
     $data['error'] = " ";
     $this->load->view('template/navbar');
     $this->load->view('formulir/f_siswa', $data);
@@ -506,11 +506,11 @@ class Admin extends CI_Controller
 
   public function sm_siswa()
   {
-    $this->form_validation->set_rules('nm_siswa', 'nama lengkap', 'required', array('required' => ' Nama WAJIB di ISI'));
+    $this->form_validation->set_rules('nm_siswa', '', 'required', array('required' => ' Nama WAJIB di ISI'));
     $this->form_validation->set_rules('sekolah', '', 'required', array('required' => 'Sekolah WAJIB di ISI'));
     $this->form_validation->set_rules('id_kelas', '', 'required', array('required' => 'Kelas WAJIB di ISI'));
     $this->form_validation->set_rules('jurusan', '', 'required', array('required' => 'Jurusan WAJIB di ISI'));
-    $this->form_validation->set_rules('mp', '', 'required', array('required' => 'Mata Pelajaran WAJIB di ISI'));
+    $this->form_validation->set_rules('mapel', '', 'required', array('required' => 'Mata Pelajaran WAJIB di ISI'));
     $this->form_validation->set_rules('guru', '', 'required', array('required' => 'Guru WAJIB di ISI'));
     $this->form_validation->set_rules('jk_siswa', '', 'required', array('required' => 'Jenis Kelamin WAJIB di ISI'));
 
@@ -520,11 +520,13 @@ class Admin extends CI_Controller
       $tittle['subtittle'] = "Halaman Tambah Siswa";
       $tittle['dashboard'] = "formulir";
       $this->load->view('template/header', $tittle);
-      $data['combo'] = $this->Admin_model->comboxdinamis();
-      // $data['combo1'] = $this->Admin_model->comboxdinamis1();
-      // $data['combo2'] = $this->Admin_model->comboxdinamis2();
-      $data['combo3'] = $this->Admin_model->comboxdinamis3();
-      // $data['combo4'] = $this->Admin_model->comboxdinamis4();
+      $data['combo'] = $this->Admin_model->combox();
+      $data['combo1'] = $this->Admin_model->combox1();
+      $data['combo2'] = $this->Admin_model->combox2();
+      $data['combo3'] = $this->Admin_model->combox3();
+      $data['combo4'] = $this->Admin_model->combox4();
+      $data['combo5'] = $this->Admin_model->combox5(); // guru
+
       $data['error'] = " ";
       $this->load->view('template/navbar');
       $this->load->view('formulir/f_siswa', $data);
@@ -543,20 +545,22 @@ class Admin extends CI_Controller
           // $error = array('error' => $this->upload->display_errors(' '));
 
           $tittle['subtittle'] = "Halaman Tambah Siswa";
-          $tittle['dashboard'] = "formulir";
+          $tittle['dashboard'] = "Halaman Siswa";
+          $data['si'] = $this->Admin_model->tampildata('tb_siswa', 'id_siswa');
           $this->load->view('template/header', $tittle);
-          $data['combo'] = $this->Admin_model->comboxdinamis();
-          // $data['combo1'] = $this->Admin_model->comboxdinamis1();
-          // $data['combo2'] = $this->Admin_model->comboxdinamis2();
-          $data['combo3'] = $this->Admin_model->comboxdinamis3();
-          // $data['combo4'] = $this->Admin_model->comboxdinamis4();
+          $data['combo'] = $this->Admin_model->combox();
+          $data['combo1'] = $this->Admin_model->combox1();
+          $data['combo2'] = $this->Admin_model->combox2();
+          $data['combo3'] = $this->Admin_model->combox3();
+          $data['combo4'] = $this->Admin_model->combox4();
+          $data['combo5'] = $this->Admin_model->combox5();
           $data['error'] = $this->upload->display_errors(' ');
           $this->load->view('template/navbar');
           $this->load->view('formulir/f_siswa', $data);
           $this->load->view('template/footer');
         } else {
           $gbr = $this->upload->data();
-          $id = $this->input->post('si');
+          // $id = $this->input->post('si');
           // compress gambar
           $config['image_library'] = 'gd2';
           $config['source_image'] = './assets/siswa/' . $gbr['file_name'];
@@ -576,7 +580,7 @@ class Admin extends CI_Controller
             'sekolah' => $this->input->post('sekolah'),
             'kelas' => $this->input->post('kelas'),
             'jurusan' => $this->input->post('jurusan'),
-            'mapel' => $this->input->post('mp'),
+            'mapel' => $this->input->post('mapel'),
             'guru' => $this->input->post('guru'),
             'jk_siswa' => $this->input->post('jk_siswa'),
             'ft_siswa' => $foto
@@ -598,12 +602,11 @@ class Admin extends CI_Controller
           'sekolah' => $this->input->post('sekolah'),
           'kelas' => $this->input->post('kelas'),
           'jurusan' => $this->input->post('jurusan'),
-          'mapel' => $this->input->post('mp'),
+          'mapel' => $this->input->post('mapel'),
           'guru' => $this->input->post('guru'),
-          'jk_siswa' => $this->input->post('jk_siswa'),
-
-
+          'jk_siswa' => $this->input->post('jk_siswa')
         );
+
         $query = $this->Admin_model->simpandata('tb_siswa', $data);
 
         if ($query) {
@@ -677,7 +680,7 @@ class Admin extends CI_Controller
             'sekolah' => $this->input->post('sekolah'),
             'kelas' => $this->input->post('kelas'),
             'jurusan' => $this->input->post('jurusan'),
-            'mapel' => $this->input->post('mp'),
+            'mapel' => $this->input->post('mapel'),
             'guru' => $this->input->post('guru'),
             'jk_siswa' => $this->input->post('jk_siswa'),
             'ft_siswa' => $foto
@@ -797,6 +800,7 @@ class Admin extends CI_Controller
     $tittle['subtittle'] = "Halaman Data Kelas";
     $data['sekolah'] = $this->Admin_model->tampildata('tb_kelas', 'sekolah');
     $data['kl'] = $this->Admin_model->tampildata('tb_kelas', 'id_kelas');
+
     $this->load->view('template/header', $tittle);
     $this->load->view('template/navbar');
     $this->load->view('template/t_kelas', $data);
@@ -808,8 +812,11 @@ class Admin extends CI_Controller
     $tittle['subtittle'] = "Halaman form Kelas";
     $tittle['dashboard'] = "Form Kelas ";
     $this->load->view('template/header', $tittle);
+    $data['dinamis1'] = $this->Admin_model->dinamis1();
+
+    $data['error'] = "";
     $this->load->view('template/navbar');
-    $this->load->view('formulir/f_kelas');
+    $this->load->view('formulir/f_kelas', $data);
     $this->load->view('template/footer');
   }
   public function sm_kelas()
@@ -844,7 +851,7 @@ class Admin extends CI_Controller
   }
   public function hapuskelas($id)
   {
-    $this->Admin_model->hapusdata('tb_kelas', 'sekolah'); //permasalahgannya pada $id
+    // $this->Admin_model->hapusdata('tb_kelas', 'kelas'); //permasalahgannya pada $id
     $this->Admin_model->hapusdata('tb_kelas', $id, 'id_kelas');
     if ($this->db->affected_rows()) {
       $this->session->set_flashdata('info', 'Data Kelas Berhasil Dihapus');
@@ -885,6 +892,98 @@ class Admin extends CI_Controller
     }
   }
 
+  public function t_mapel()
+  {
+    $tittle['subtittle'] = " Data Mata Pelajaran";
+    $data['mp'] = $this->Admin_model->tampildata('tb_mapel', 'nama_pelajaran');
+    $data['mp'] = $this->Admin_model->tampildata('tb_mapel', 'id_pelajaran');
+    $this->load->view('template/header', $tittle);
+    $this->load->view('template/navbar');
+    $this->load->view('template/t_mapel', $data);
+    $this->load->view('template/footer');
+  }
+
+  public function ed_mapel()
+  {
+    $id = $this->input->post('id');
+    $data = array(
+
+      'nama_pelajaran' => $this->input->post('mp')
+    );
+    $query = $this->Admin_model->editdata('tb_mapel', 'id_pelajaran', $id, $data);
+
+    if ($query) {
+      $this->session->set_flashdata('info', 'Data Teredit');
+      redirect('admin/t_mapel');
+    } else {
+      $this->session->set_flashdata('danger', 'Gagal Teredit');
+      redirect('admin/t_mapel');
+    }
+  }
+  public function f_mapel()
+  {
+
+    $tittle['subtittle'] = "Halaman form Mata Pelajaran";
+    $tittle['dashboard'] = "Form Mata Pelajaran ";
+    $this->load->view('template/header', $tittle);
+    $this->load->view('template/navbar');
+    $this->load->view('formulir/f_mapel');
+    $this->load->view('template/footer');
+  }
+  public function sm_mapel()
+  {
+
+    $this->form_validation->set_rules('mp', 'mapel', 'required', array('required' => 'Mata Pelajaran Wajib di Isi'));
+    if ($this->form_validation->run() == FALSE) {
+      # code...
+      $tittle['subtittle'] = "Halaman form Mata Pelajaran";
+      $tittle['dashboard'] = "Form Mata Pelajaran";
+      $this->load->view('template/header', $tittle);
+      $this->load->view('template/navbar');
+      $this->load->view('formulir/f_mapel');
+      $this->load->view('template/footer');
+    } else {
+      $data = array(
+
+        'nama_pelajaran' => $this->input->post('mp')
+      );
+      $query = $this->Admin_model->simpandata('tb_mapel', $data);
+
+      if ($query) {
+        $this->session->set_flashdata('info', 'Data Tersimpan');
+        redirect('admin/t_mapel');
+      } else {
+        $this->session->set_flashdata('danger', 'Gagal Tersimpan');
+        redirect('admin/t_mapel');
+      }
+    }
+  }
+  public function hapusmapel($id)
+  {
+    // $this->Admin_model->hapusdata('tb_jurusan', 'nm_jurusan'); //permasalahgannya pada $id
+    $this->Admin_model->hapusdata('tb_mapel', $id, 'id_pelajaran');
+    if ($this->db->affected_rows()) {
+      $this->session->set_flashdata('info', 'Data Mata Pelajaran Berhasil Dihapus');
+      redirect('admin/t_mapel');
+    } else {
+      $this->session->set_flashdata('error', 'Data Mata Pelajaran Gagal Terhapus');
+      redirect('admin/t_mapel');
+    }
+  }
+  public function edmapel($id)
+  {
+    $tittle['subtittle'] = "Halaman Edit Mata Pelajaran";
+    $tittle['dashboard'] = "Form Edit Mata Pelajaran ";
+    $data['mp'] = $this->Admin_model->formedit('tb_mapel', 'nama_pelajaran', $id);
+    $data['mp'] = $this->Admin_model->formedit('tb_mapel', 'id_pelajaran', $id);
+    $this->load->view('template/header', $tittle);
+    $this->load->view('template/navbar');
+    $this->load->view('formulir/E_mapel', $data);
+    $this->load->view('template/footer');
+  }
+
+
+  // JURUSAN
   public function jurusan()
   {
     $tittle['subtittle'] = " Data Jurusan";
@@ -896,6 +995,7 @@ class Admin extends CI_Controller
     $this->load->view('template/footer');
   }
 
+  // 
   public function ed_jurusan()
   {
     $id = $this->input->post('id');
