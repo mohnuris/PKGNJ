@@ -53,4 +53,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['default_controller'] = 'admin';
+$route['default_controller'] = 'guru';
+$route['default_controller'] = 'siswa';
 $route['users'] = 'Admin/users';
