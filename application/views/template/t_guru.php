@@ -83,11 +83,15 @@
                                                             ?>
                                                         </td>
                                                         <td>
-                                                            <ul class="d-flex justify-content-center">
+                                                            <a type="button" class="btn btn-outline-success btn-sm sm-3" href="<?= base_url('Guru/edguru/' . $g->id_guru) ?>" class="text-success"><i class="fa fa-edit"></i></a>
+
+                                                            <a type="button" class="btn btn-outline-danger btn-sm sm-3 tombol-hapus" href="<?= base_url('Guru/hapusguru/' . $g->id_guru) ?>" class="text-danger"><i class="fa fa-trash"></i></a>
+
+                                                            <!-- <ul class="d-flex justify-content-center">
                                                                 <li class="mr-3"><a href="<?= base_url('Guru/edguru/' . $g->id_guru) ?>" class="text-success"><i class="fa fa-edit"></i></a></li>
 
                                                                 <li><a href="<?= base_url('Guru/hapusguru/' . $g->id_guru) ?>" class="text-danger tombol-hapus"><i class="fa fa-trash-alt"></i></a></li>
-                                                            </ul>
+                                                            </ul> -->
                                                         </td>
                                                         <!-- <td>$86,500</td> -->
                                                     </tr>
