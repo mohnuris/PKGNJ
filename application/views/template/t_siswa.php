@@ -6,7 +6,7 @@
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href=" <?= base_url('admin') ?>">Dashboard</a></li>
                 <li class="breadcrumb-item">Siswa</a></li>
-                <li class="breadcrumb-item"><a href=" <?= base_url('admin/f_siswa') ?>">Tambah Siswa</a></li>
+                <li class="breadcrumb-item"><a href=" <?= base_url('Siswa/f_siswa') ?>">Tambah Siswa</a></li>
 
 
             </ol>
@@ -93,9 +93,9 @@
                                                 </td>
                                                 <td>
                                                     <ul class="d-flex justify-content-center">
-                                                        <li class="mr-3"><a href="<?= base_url('admin/ed_siswa' . $s->id_siswa) ?>" class="text-success"><i class="fa fa-edit"></i></a></li>
+                                                        <li class="mr-3"><a href="<?= base_url('siswa/ed_siswa' . $s->id_siswa) ?>" class="text-success"><i class="fa fa-edit"></i></a></li>
 
-                                                        <li><a href="<?= base_url('admin/hs_siswa' . $s->id_siswa) ?>" class="text-danger tombol-hapus"><i class="fa fa-trash-alt"></i></a></li>
+                                                        <li><a href="<?= base_url('siswa/hs_siswa' . $s->id_siswa) ?>" class="text-danger tombol-hapus"><i class="fa fa-trash-alt"></i></a></li>
                                                     </ul>
                                                 </td>
                                             </tr>

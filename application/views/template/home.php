@@ -14,13 +14,16 @@
                             <i style="margin-left: auto; margin-top: 15px" class="fa fa-user-tie fa-4x text-gray"></i>
                         </div>
                         <div class="card-body">
+                            <div class="d-flex justify-content-between pb-2">
+                                <!-- <h5><?= $gr ?></h5> -->
+                            </div>
 
                             <i class="align-right"></i>
                             <h5>GURU</h5>
                         </div>
 
                         <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link" href="<?= base_url('admin/t_pengajar') ?>">View Details</a>
+                            <a class="small text-white stretched-link" href="<?= base_url('guru/guru') ?>">View Details</a>
 
                         </div>
                     </div>
@@ -37,7 +40,7 @@
                         </div>
 
                         <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link" href="<?= base_url('admin/t_siswa') ?>">View Details</a>
+                            <a class="small text-white stretched-link" href="<?= base_url('siswa/t_siswa') ?>">View Details</a>
 
                         </div>
                     </div>

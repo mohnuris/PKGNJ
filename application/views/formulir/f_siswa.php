@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <h3 class="mt-5">Form Tambah Siswa</h3>
       <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href=" <?= base_url('admin/t_siswa') ?>">Data Siswa</a></li>
+        <li class="breadcrumb-item"><a href=" <?= base_url('siswa/t_siswa') ?>">Data Siswa</a></li>
         <li class="breadcrumb-item active">Tambah Data Siswa</li>
       </ol>
 
@@ -12,7 +12,7 @@
       <!-- <div class="modal"> -->
       <!-- <div class="modal-body align-center"> -->
       <div class="card mb-5 shadow p-3 mb-5 bg-white rounded">
-        <?php echo form_open_multipart('admin/sm_siswa'); ?>
+        <?php echo form_open_multipart('siswa/sm_siswa'); ?>
 
 
         <!-- <div class="modal-body"> -->

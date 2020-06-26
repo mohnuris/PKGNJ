@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <h3 class="mt-5"></h3>
       <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href=" <?= base_url('admin/t_siswa') ?>">Data Siswa</a></li>
+        <li class="breadcrumb-item"><a href=" <?= base_url('siswa/t_siswa') ?>">Data Siswa</a></li>
         <li class="breadcrumb-item active">Tambah Data Siswa</li>
       </ol>
 
@@ -12,7 +12,7 @@
       <!-- <div class="modal"> -->
       <!-- <div class="modal-body align-center"> -->
       <div class="card mb-5 shadow p-3 mb-5 bg-white rounded">
-        <?php echo form_open_multipart('admin/sm_siswa'); ?>
+        <?php echo form_open_multipart('siswa/sm_siswa'); ?>
         <?php echo form_hidden("id_siswa", $si->id_siswa); ?>
         <?php echo form_hidden("foto", $si->ft_siswa); ?>
 
@@ -29,7 +29,7 @@
 
           <div class="from-group">
             <label for="sekolah" class="alert-link">Sekolah</label>
-            <?php echo form_input("sekolah", set_value('sekolah'), array('class' => 'form-control', 'id' => 'sekolah', 'placeholder' => 'Sekolah')); ?>
+            <?php echo form_dropdown("sekolah", $combo1, set_value('sekolah'), array('class' => 'form-control', 'id' => 'sekolah', 'placeholder' => 'Sekolah')); ?>
             <small class="text-danger">
               <?php echo form_error('sekolah', ' '); ?>
             </small>
@@ -46,7 +46,7 @@
           <br>
           <div class="from-group">
             <label for="jurusan" class="alert-link">Jurusan</label>
-            <?php echo form_input("jurusan", set_value('jurusan'), array('class' => 'form-control', 'id' => 'jurusan', 'placeholder' => 'Jurusan')); ?>
+            <?php echo form_dropdown("jurusan", $combo2, set_value('jurusan'), array('class' => 'form-control', 'id' => 'jurusan', 'placeholder' => 'Jurusan')); ?>
             <small class="text-danger">
               <?php echo form_error('jurusan', ' '); ?>
             </small>
@@ -54,7 +54,7 @@
           <br>
 
           <label for="mp" class="alert-link">Mata Pelajaran </label>
-          <?php echo form_input("mp", set_value('mp'), array('class' => 'form-control', 'id' => 'mp', 'placeholder' => 'Mata Pelajaran')); ?>
+          <?php echo form_dropdown("mp", set_value('mp'), array('class' => 'form-control', 'id' => 'mp', 'placeholder' => 'Mata Pelajaran')); ?>
           <small class="text-danger">
             <?php echo form_error('mp', ' '); ?>
           </small>
@@ -62,7 +62,7 @@
           <br>
           <div class="from-group">
             <label for="guru" class="alert-link">Guru</label>
-            <?php echo form_input("guru", set_value('guru'), array('class' => 'form-control', 'id' => 'guru', 'placeholder' => 'Silahkan isi guru mata pelajaran')); ?>
+            <?php echo form_dropdown("guru", $combo5, set_value('guru'), array('class' => 'form-control', 'id' => 'guru', 'placeholder' => 'Silahkan isi guru mata pelajaran')); ?>
             <small class="text-danger">
               <?php echo form_error('guru', ' '); ?>
             </small>

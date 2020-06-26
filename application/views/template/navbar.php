@@ -40,12 +40,12 @@
             </a>
 
             <!-- <div class="sb-sidenav-menu-heading">Interface</div> -->
-            <a class="nav-link" href="<?= base_url('admin/guru') ?>">
+            <a class="nav-link" href="<?= base_url('guru/guru') ?>">
               <div class="sb-nav-link-icon"><i class="fas fa-user-tie"></i></div>
               Guru
             </a>
 
-            <a class="nav-link" href="<?= base_url('admin/t_siswa') ?>">
+            <a class="nav-link" href="<?= base_url('siswa/t_siswa') ?>">
               <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
               Siswa
             </a>
