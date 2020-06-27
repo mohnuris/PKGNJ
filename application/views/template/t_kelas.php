@@ -46,6 +46,11 @@
 
                         <td>
                           <ul class="d-flex justify-content-center">
+
+                            <a type="button" class="btn btn-outline-success btn-sm mr-2" href="<?= base_url('Admin/edkelas/' . $k->id_kelas) ?>" class="text-success"><i class="fa fa-edit"></i></a>
+
+                            <a type="button" class="btn btn-outline-danger btn-sm mr-2 tombol-hapus" href="<?= base_url('Admin/hapuskelas/' . $k->id_kelas) ?>" class="text-danger"><i class="fa fa-trash"></i></a>
+                            <!--                             
                             <li class="mr-3"><a href="<?= base_url('Admin/edkelas/' . $k->id_kelas) ?>" class="text-success"><i class="fa fa-edit"></i></a></li>
 
                             <li>
