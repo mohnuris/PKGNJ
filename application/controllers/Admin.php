@@ -64,9 +64,6 @@ class Admin extends CI_Controller
   public function smprofil()
   {
   }
-
-
-
   public function users()
   {
     // if ($this->sesion->userdata('level') == 'admin') {
