@@ -200,17 +200,6 @@ class Admin extends CI_Controller
 
   // GURU
 
-
-
-
-
-
-
-
-
-
-
-
   public function t_pengguna()
   {
     $tittle['subtittle'] = "Table Pengguna";
