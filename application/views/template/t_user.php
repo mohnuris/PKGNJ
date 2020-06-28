@@ -47,6 +47,9 @@
                                 <th>Foto</th>
                                 <th>
                                     <ul class="d-flex justify-content-center">
+
+
+
                                         <li class="mr-3"><a href="<?= base_url('') ?>" class="text-success"><i class="fa fa-edit"></i></a></li>
 
                                         <li><a href="<?= base_url() ?>" class="text-danger" onclick="return confirm('yakin menghapus data?')"><i class="fa fa-trash-alt"></i></a></li>
