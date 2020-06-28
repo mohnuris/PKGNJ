@@ -62,7 +62,7 @@
         <div class="dropdown-menu dropdown-menu-right shadow btn-white active">
           <!-- <div class="card mb-5  bg-white rounded"> -->
           <div class="dropdown-title"></div>
-          <a href="<?= base_url('admin/profil') ?>" class="dropdown-item has-icon">
+          <a href="<?= base_url('Profil/profil') ?>" class="dropdown-item has-icon">
             <i class="far fa-user"></i> Profile
           </a>
           <a href="features-activities.html" class="dropdown-item has-icon">
