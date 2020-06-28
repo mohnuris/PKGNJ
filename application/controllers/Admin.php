@@ -40,30 +40,7 @@ class Admin extends CI_Controller
     $this->load->view('auth/login');
     // $this->load->view('template/footer');
   }
-  public function profil()
-  {
-    $tittle['subtittle'] = "halaman Profil";
-    $tittle['dashboard'] = "Profil";
 
-    $this->load->view('template/header', $tittle);
-    $this->load->view('template/navbar');
-    $this->load->view('users/profil');
-    $this->load->view('template/footer');
-  }
-  public function editprofil()
-  {
-    $tittle['subtittle'] = "halaman Profil";
-    $tittle['dashboard'] = "Profil";
-
-    $this->load->view('template/header', $tittle);
-    $this->load->view('template/navbar');
-    $this->load->view('users/editprofil');
-    $this->load->view('template/footer');
-  }
-
-  public function smprofil()
-  {
-  }
   public function users()
   {
     // if ($this->sesion->userdata('level') == 'admin') {
