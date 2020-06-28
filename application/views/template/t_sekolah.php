@@ -45,11 +45,17 @@
 
                         <td>
                           <ul class="d-flex justify-content-center">
-                            <li class="mr-3"><a href="<?= base_url('Admin/edsekolah/' . $s->id_sekolah) ?>" class="text-success"><i class="fa fa-edit"></i></a></li>
+
+
+                            <a type="button" class="btn btn-outline-success btn-sm mr-2" href="<?= base_url('Admin/edsekolah/' . $s->id_sekolah) ?>" class="text-success"><i class="fa fa-edit"></i></a>
+
+                            <a type="button" class="btn btn-outline-danger btn-sm tombol-hapus" href="<?= base_url('Admin/hapussekolah/' . $s->id_sekolah) ?>" class=" text-danger"><i class="fa fa-trash"></i></a>
+
+                            <!-- <li class="mr-3"><a href="<?= base_url('Admin/edsekolah/' . $s->id_sekolah) ?>" class="text-success"><i class="fa fa-edit"></i></a></li>
 
                             <li>
-                              <a href="<?= base_url('Admin/hapussekolah/' . $s->id_sekolah) ?>" class="text-danger tombol-hapus"><i class="fa fa-trash"></i></a>
-                              <!-- <button type="submit" class="text-danger tombol-hapus" id="hapusKelas"> Hapus</button> -->
+                              <a href="<?= base_url('Admin/hapussekolah/' . $s->id_sekolah) ?>" class="text-danger tombol-hapus"><i class="fa fa-trash"></i></a> -->
+                            <!-- <button type="submit" class="text-danger tombol-hapus" id="hapusKelas"> Hapus</button> -->
                             </li>
 
                           </ul>

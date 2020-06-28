@@ -93,9 +93,18 @@
                                                 </td>
                                                 <td>
                                                     <ul class="d-flex justify-content-center">
-                                                        <li class="mr-3"><a href="<?= base_url('siswa/ed_siswa' . $s->id_siswa) ?>" class="text-success"><i class="fa fa-edit"></i></a></li>
+                                                        <!-- <li class="mr-3"> -->
+                                                        <!-- <button type="button" class="btn btn-success"><a href="href=" <?= base_url('siswa/ed_siswa' . $s->id_siswa) ?>"" class="text-white"><i class="fa fa-edit"></i></a></button> -->
 
-                                                        <li><a href="<?= base_url('siswa/hs_siswa' . $s->id_siswa) ?>" class="text-danger tombol-hapus"><i class="fa fa-trash-alt"></i></a></li>
+                                                        <a type="button" class="btn btn-outline-success btn-sm mr-2" href="<?= base_url('siswa/ed_siswa' . $s->id_siswa) ?>" class="text-success"><i class="fa fa-edit"></i></a>
+
+                                                        <a type="button" class="btn btn-outline-danger btn-sm mr-2 tombol-hapus" href="<?= base_url('siswa/hs_siswa' . $s->id_siswa) ?>" class="text-danger"><i class="fa fa-trash"></i></a>
+
+                                                        <!-- <a type="button" class="btn btn-outline-primary btn-sm mr-1" href="<?= base_url('siswa/ed_siswa' . $s->id_siswa) ?>" class="text-success"><i class="fa fa-edit"></i></a> -->
+                                                        <!-- 
+                                                        <a type="button" class="btn btn-outline-success btn-sm tombol-hapus" href="<?= base_url('siswa/hs_siswa' . $s->id_siswa) ?> " class="text-danger"><i class="fa fa-edit"></i></a> -->
+
+                                                        <!-- <a href="<?= base_url('siswa/hs_siswa' . $s->id_siswa) ?>" class="text-danger tombol-hapus"><i class="fa fa-trash-alt"></i></a> -->
                                                     </ul>
                                                 </td>
                                             </tr>
