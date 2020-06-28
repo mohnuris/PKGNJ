@@ -29,8 +29,8 @@
                   <div class="card-header">
                     <h4>Profil</h4>
                     <div class="text-right">
-                      <li class="mr-3"><a href="" class="text-success"><i class="fa fa-edit"></i></a></li>
-                      <!-- <button class="btn btn-success"><i class="fas fa-edit"></i></button> -->
+                      <button type="button" class="btn btn-success"><a href="" class="text-white"><i class="fa fa-edit"></i></a></button>
+
                     </div>
                   </div>
                   <div class="card-body">
@@ -98,8 +98,11 @@
                   <div class="card-header">
                     <h4>Edit Profil</h4>
                     <div class="text-right">
-                      <li class="mr-3"><a href="" class="text-primary"><i class="fas fa-save"></i></a></li>
-                      <!-- <button class="btn btn-primary"><i class="fas fa-save"></i></button> -->
+
+                      <!-- <li class="mr-3"> -->
+                      <button type="button" class="btn btn-primary"><a href="" class="text-white"><i class="fa fa-edit"></i></a></button>
+
+
                     </div>
                   </div>
                   <div class="card-body">
