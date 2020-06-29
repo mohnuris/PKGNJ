@@ -124,8 +124,8 @@
                             <i class="align-left"></i>
                             <h5>KELAS JURUSAN </h5>
 
+                            <!-- <h5><?= $jr ?></h5> -->
                             <!-- <div class="d-flex justify-content-between pb-2">
-                                <h2><?= $k ?></h2>
                             </div> -->
 
                         </div>
