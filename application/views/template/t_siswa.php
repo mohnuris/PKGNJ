@@ -11,14 +11,8 @@
 
             </ol>
             <h3 class="mt-4">Data Siswa</h3>
-            <!-- Button trigger modal -->
-
             <div class="card mb-5 shadow p-3 mb-5 bg-white rounded">
-
                 <div class="content">
-
-                    <!-- <a class="btn btn-primary" href=" <?= base_url('admin/f_siswa') ?>"><i class="fa fa-plus-circle"></i> Tambah Siswa </a> -->
-                    <!-- <a class="btn btn-success float-right" href=""><i class="fa fa-upload"></i> Export Data </a> -->
                     <div class="dropdown float-right dropleft">
                         <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Exports Data <i class="fa fa-file-download"></i>

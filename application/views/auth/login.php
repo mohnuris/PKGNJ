@@ -39,13 +39,7 @@
                 <div class="row ">
                     <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
                         <div class="login-brand">
-
-
-
-                            <div class="card card-primary card mb-4 mt-5  shadow bg-white rounded ">
-                                <!-- 
-                                    <div>
-                                        <!-- <li class="login100-form-title p-b-20 align-center"> -->
+                            <div class="card-primary card mb-4 mt-5  shadow bg-white rounded ">
                                 <a>
                                     <img src="../template/icons/logo.png" alt="logo" width="80" class="center" style="display: block; margin: auto;  margin-top:20px">
                                 </a>
@@ -55,43 +49,52 @@
                                 </div>
 
                                 <div class="card-body">
-                                    <form method="POST" action="#" class="needs-validation" novalidate="">
-                                        <div class="form-group has-feedback">
-                                            <label for="email">Email</label>
-                                            <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
+                                    <?php echo form_open('Login_admin/proses_login'); ?>
+                                    <!-- <form method="POST" action="#" class="needs-validation" novalidate=""> -->
+                                    <div class="form-group has-feedback">
+                                        <label for="username">username</label>
+                                        <?php echo form_input("username", '', array('class' => 'form-control', 'id' => 'username', 'placeholder' => 'username')); ?>
+                                        <!-- <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
                                             <div class="invalid-feedback">
                                                 Please fill in your email
-                                            </div>
-                                        </div>
+                                            </div> -->
+                                    </div>
 
-                                        <div class="form-group">
-                                            <div class="d-block">
-                                                <label for="password" class="control-label">Password</label>
-                                                <div class="float-right">
-                                                    <a href="auth-forgot-password.html" class="text-small">
-                                                        Forgot Password?
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
-                                            <div class="invalid-feedback">
-                                                please fill in your password
+                                    <div class="form-group">
+                                        <div class="d-block">
+                                            <label for="password" class="control-label">Password</label>
+                                            <div class="float-right">
+                                                <a href="auth-forgot-password.html" class="text-small">
+                                                    Forgot Password?
+                                                </a>
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
-                                                Login
-                                            </button>
+                                        <?php echo form_password("password", '', array('class' => 'form-control', 'id' => 'password', 'placeholder' => 'password')); ?>
+                                        <!-- <input id="password" type="password" class="form-control" name="password" tabindex="2" required> -->
+                                        <div class="invalid-feedback">
+                                            please fill in your password
                                         </div>
-                                    </form>
+                                    </div>
 
-                                    <!-- <div class="mt-5 text-muted text-center"> -->
-                                    <!-- </div> -->
+                                    <div class="submit-btn-area">
+                                        <button id="form-submit" type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
+                                            Login
+                                        </button>
+                                    </div>
+                                    <!-- </form> -->
+                                    <?php echo form_close(); ?>
+                                    <!-- <div class="form-footer text-center mt-5">
+
+                                    </div> -->
                                     <div class="simple-footer align-center text-center">
+                                        <p class="text-muted">
+                                            <?= $pesan ?>
+                                        </p>
                                         BirPenNJ &copy;2020
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>

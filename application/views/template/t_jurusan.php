@@ -62,12 +62,7 @@
 
                             <a type="button" class="btn btn-outline-danger btn-sm mr-2 tombol-hapus" href="<?= base_url('Admin/hapusjurusan/' . $j->id_jurusan) ?>" class="text-danger"><i class="fa fa-trash"></i></a>
 
-                            <!-- 
-                              <a href="<?= base_url('Admin/edjurusan/' . $j->id_jurusan) ?>" class="text-success"><i class="fa fa-edit"></i></a></li>
 
-                            <li>
-                              <a href="<?= base_url('Admin/hapusjurusan/' . $j->id_jurusan) ?>" class="text-danger tombol-hapus"><i class="fa fa-trash"></i></a>
-                              <!-- <button type="submit" class="text-danger tombol-hapus" id="hapusKelas"> Hapus</button> -->
                             </li>
 
                           </ul>

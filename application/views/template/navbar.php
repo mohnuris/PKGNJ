@@ -85,7 +85,7 @@
             <div class="sb-sidenav-menu-heading">Adminstator</div>
 
 
-            <a class="nav-link" href="<?= base_url('admin/users') ?>">
+            <a class="nav-link" href="<?= base_url('users/users') ?>">
               <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
               Users
             </a>
