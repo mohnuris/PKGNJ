@@ -7,9 +7,11 @@ class Users extends CI_Controller
   {
     parent::__construct();
     $this->load->model('Admin_model');
-    // if (empty($this->session->userdata('username')) and empty($this->session->userdata('password'))) {
-    //   redirect('auth/login');
-    // } else {public function users()
+    if (empty($this->session->userdata('username')) and empty($this->session->userdata('password'))) {
+      redirect('auth/login');
+    } else {
+      $nama_lengkap = ($this->session->userdata('nama_lengkap'));
+    }
   }
   public function index()
   {
@@ -43,8 +45,72 @@ class Users extends CI_Controller
     $this->load->view('template/footer');
   }
 
-  public function edituser()
+  public function editusers()
   {
+    $id = $this->input->post('id');
+
+    $this->form_validation->set_rules('nama_lengkap', '', 'required', array('required' => 'Nama Lengkap Wajib di ISI'));
+
+    $this->form_validation->set_rules('username', '', 'trim|required|min_length[5]|max_length[12]', array('required' => 'Username Wajib di ISI', 'trim' => '', 'min_length' => 'Minimal 5 Huruf', 'max_length' => 'Maksimal 12 Huruf'));
+
+    $this->form_validation->set_rules('password', '', 'trim|min_length[5]|max_length[8]', array('trim' => '', 'min_length' => 'Minimal 5 Huruf', 'max_length' => 'Maksimal 8 Huruf'));
+
+    $this->form_validation->set_rules('conpassword', '', 'matches[password]', array('matches' => 'Confirmasi Password TIDAK SAMA silahkan isi Kembali Password dan Confirmasi Password'));
+
+    $this->form_validation->set_rules('email', '', 'required|valid_email');
+    $this->form_validation->set_rules('level', '', 'required', array('required' => 'Level Wajib di ISI'));
+
+
+    if ($this->form_validation->run() == FALSE) {
+      # code...
+      $tittle['subtittle'] = "Halaman Edit Users";
+      $tittle['dashboard'] = "Edit Users ";
+      $data['es'] = $this->Admin_model->formedit('tb_users', 'id_users', $id);
+      $this->load->view('template/header', $tittle);
+      $this->load->view('template/navbar');
+      $this->load->view('formulir/E_users', $data);
+      $this->load->view('template/footer');
+    } else {
+
+      if ($this->input->post('password')) {
+        // echo "password ada";
+        $data = array(
+          'nama_lengkap' => $this->input->post('nama_lengkap'),
+          'username' => $this->input->post('username'),
+          'password' => md5($this->input->post('password')),
+          'email' => $this->input->post('email'),
+          'level' => $this->input->post('level')
+        );
+
+        $query = $this->Admin_model->editdata('tb_users', 'id_users', $id, $data);
+
+        if ($query) {
+          $this->session->set_flashdata('info', 'Data Teredit');
+          redirect('users/users');
+        } else {
+          $this->session->set_flashdata('danger', 'Gagal Teredit');
+          redirect('users/users');
+        }
+      } else {
+
+        // echo "password tidak ada";
+        $data = array(
+          'nama_lengkap' => $this->input->post('nama_lengkap'),
+          'username' => $this->input->post('username'),
+          'email' => $this->input->post('email'),
+          'level' => $this->input->post('level')
+        );
+        $query = $this->Admin_model->editdata('tb_users', 'id_users', $id, $data);
+
+        if ($query) {
+          $this->session->set_flashdata('info', 'Data Teredit');
+          redirect('users/users');
+        } else {
+          $this->session->set_flashdata('danger', 'Gagal Teredit');
+          redirect('users/users');
+        }
+      }
+    }
   }
 
   public function sm_users()
@@ -77,15 +143,6 @@ class Users extends CI_Controller
         'email' => $this->input->post('email'),
         'level' => $this->input->post('level')
       );
-      $query = $this->Admin_model->simpandata('tb_users', $data);
-
-      if ($query) {
-        $this->session->set_flashdata('info', 'Data Tersimpan');
-        redirect('users/users');
-      } else {
-        $this->session->set_flashdata('danger', 'Gagal Tersimpan');
-        redirect('users/users');
-      }
     }
   }
 
@@ -105,7 +162,6 @@ class Users extends CI_Controller
   {
     $tittle['subtittle'] = "Halaman Edit Users";
     $tittle['dashboard'] = "Edit Users ";
-    // $data['sk'] = $this->Admin_model->formedit('tb_users', 'nm_sekolah', $id);
     $data['es'] = $this->Admin_model->formedit('tb_users', 'id_users', $id);
     $this->load->view('template/header', $tittle);
     $this->load->view('template/navbar');
