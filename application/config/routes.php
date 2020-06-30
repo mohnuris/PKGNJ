@@ -51,6 +51,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 */
 
 $route['default_controller'] = 'admin';
+$route['default_controller'] = 'admin';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['default_controller'] = 'guru/guru';
@@ -58,5 +59,6 @@ $route['default_controller'] = 'siswa/siswa';
 $route['default_controller'] = 'Admin/jurusan';
 $route['default_controller'] = 'Admin/kelas';
 $route['default_controller'] = 'Admin/matapelajaran';
-$route['users'] = 'Admin/users';
+// $route['users'] = 'Admin/users';
+$route['users'] = 'Users/users';
 $route['login'] = 'Login_admin/index';
