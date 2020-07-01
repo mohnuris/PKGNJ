@@ -55,7 +55,8 @@
       <li class="nav-item dropdown">
       <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user ">
           <img src="<?= base_url('icon/pria.png') ?>" alt="" width="30px">
-          <div class="d-sm-none d-lg-inline-block text-white">Hi, Mohammad Nuris</div>
+          <!-- <h4 class="user-name"> -->
+          <div class="d-sm-none d-lg-inline-block text-white"><?php echo $this->session->userdata('nama_lengkap') ?></div>
         </a>
 
 
@@ -72,7 +73,7 @@
             <i class="fas fa-cog"></i> Settings
           </a>
           <!-- <div class="dropdown-divider"></div> -->
-          <a href="#" class="dropdown-item has-icon text-danger">
+          <a href="<?= base_url('admin/login') ?>" class="dropdown-item has-icon text-danger">
             <i class="fas fa-sign-out-alt"></i> Logout
           </a>
         </div>
