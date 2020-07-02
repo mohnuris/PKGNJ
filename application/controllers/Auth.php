@@ -21,12 +21,21 @@ class Auth extends CI_Controller
       $this->load->view('templates/auth_footer');
     } else {
       // Validation Sukses
-      $this->_login();
+      $this->login();
     }
   }
 
+  // public function v_login()
+  // {
+  //   $tittle['subtittle'] = "LOGIN APLIKASI PKGNJ";
+  //   $this->load->views('auth/auth_header', $tittle);
+  //   // $this->load->views('template/navbar');
+  //   $this->load->views('auth/login');
+  //   $this->load->views('auth/auth_footer');
+  // }
+
   // Method Login
-  private function _login()
+  public function login()
   {
     $username = $this->input->post('username', true);
     $password = $this->input->post('password', true);

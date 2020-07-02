@@ -30,10 +30,23 @@ class Login_admin extends CI_Controller
     if ($ceklogin) {
       foreach ($ceklogin as $r) {
         $this->session->set_userdata('id_users', $r->id_users);
-        $this->session->set_userdata('id_users', $r->id_users);
+        $this->session->set_userdata('nama_lengkap', $r->nama_lengkap);
+        $this->session->set_userdata('username', $r->username);
+        $this->session->set_userdata('password', $r->password);
+        $this->session->set_userdata('email', $r->email);
+        $this->session->set_userdata('level', $r->level);
+
+        redirect('admin/index');
       }
     } else {
-      # code...
+      $data['pesan'] = "Username dan Password Salah ";
+      $this->load->view('login', $data);
     }
+  }
+
+  public function logout()
+  {
+    $this->session->sess_destory();
+    redirect('auth/login');
   }
 }
