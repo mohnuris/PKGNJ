@@ -42,7 +42,7 @@
                                 <div class="card-primary card mb-6 mt-5  shadow bg-white rounded ">
                                     <a>
                                         <div class="">
-                                            <img src="../template/icons/logo-nj.png" alt="logo" width="90" class="center" style="display: block; margin: auto;  margin-top:-50px">
+                                            <img src="<?= base_url('template/icons/nj.png') ?>" alt="logo" width="90" class="center" style="display: block; margin: auto;  margin-top:-50px">
                                         </div>
                                     </a>
 
