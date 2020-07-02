@@ -7,11 +7,6 @@ class Login_admin extends CI_Controller
   {
     parent::__construct();
     $this->load->model('Login_model');
-    // if (empty($this->session->userdata('username')) and empty($this->session->userdata('password'))) {
-    //   redirect('login');
-    // } else {
-    //   $nama_lengkap = ($this->session->userdata('nama_lengkap'));
-    // }
   }
 
   public function index()
