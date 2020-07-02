@@ -10,7 +10,7 @@
     <meta name="author" content="" />
     <title>LOGIN APLIKASI PKGNJ</title>
     <!-- logo -->
-    <link rel="shortcut icon" href="<?= base_url('template/icons/logo-nj.png') ?>">
+    <link rel="shortcut icon" href="<?= base_url('template/icons/nj.png') ?>">
 
 
 
@@ -30,7 +30,6 @@
 
     </script>
 </head>
-
 
 <body>
     <div id="app">
@@ -72,7 +71,7 @@
                                                 </div>
                                             </div>
                                             <?php echo form_password("password", '', array('class' => 'form-control', 'id' => 'password', 'placeholder' => 'password')); ?>
-                                            <!-- <input id="password" type="password" class="form-control" name="password" tabindex="2" required> -->
+
                                             <div class="invalid-feedback">
                                                 please fill in your password
                                             </div>
@@ -85,16 +84,14 @@
                                         </div>
                                         <!-- </form> -->
                                         <?php echo form_close(); ?>
-                                        <!-- <div class="form-footer text-center mt-5">
 
-                                    </div> -->
                                         <div class="simple-footer align-center text-center">
                                             <p class="text-muted">
                                                 <?= $pesan ?>
                                             </p>
                                             <small class="text-muted">BirPenNJ &copy;2020 </small>
                                             <small class="text-italic">&copy;mohnuris </small>
-                                            <!-- <em>Text miring dengan menggunakan tag em</em> -->
+
                                         </div>
                                     </div>
                                 </div>
@@ -103,7 +100,6 @@
                     </div>
                 </div>
             </div>
-
         </section>
     </div>
     </div>
