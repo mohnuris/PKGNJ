@@ -55,7 +55,7 @@
                                         </div>
 
                                         <?php echo form_open('Login_admin/proses_login'); ?>
-                                        <!-- <form method="POST" action="#" class="needs-validation" novalidate=""> -->
+
                                         <div class="form-group has-feedback">
                                             <label for="username">username</label>
                                             <?php echo form_input("username", '', array('class' => 'form-control', 'id' => 'username', 'placeholder' => 'username')); ?>
