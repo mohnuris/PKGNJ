@@ -83,7 +83,6 @@
                                             </button>
                                         </div>
                                         <!-- </form> -->
-                                        <?php echo form_close(); ?>
 
                                         <div class="simple-footer align-center text-center">
                                             <p class="text-muted">
@@ -92,6 +91,7 @@
                                             <small class="text-muted">BirPenNJ &copy;2020 </small>
                                             <small class="text-italic">&copy;mohnuris </small>
 
+                                            <?php echo form_close(); ?>
                                         </div>
                                     </div>
                                 </div>
