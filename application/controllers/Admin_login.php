@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Login_admin extends CI_Controller
+class Admin_login extends CI_Controller
 {
   function __construct()
   {
     parent::__construct();
-    $this->load->model('Login_model');
+    $this->load->model('login_model');
   }
 
   public function index()
@@ -17,10 +17,10 @@ class Login_admin extends CI_Controller
 
   public function proses_login()
   {
-    $user = $this->input->post('username');
+    $users = $this->input->post('username');
     $pass = $this->input->post('password');
 
-    $ceklogin = $this->Login_model->akses_login($user, $pass);
+    $ceklogin = $this->Login_model->akses_login($users, $pass);
 
     if ($ceklogin) {
       foreach ($ceklogin as $r) {
@@ -31,11 +31,11 @@ class Login_admin extends CI_Controller
         $this->session->set_userdata('email', $r->email);
         $this->session->set_userdata('level', $r->level);
 
-        redirect('admin/index');
+        redirect('Admin/index');
       }
     } else {
       $data['pesan'] = "Username dan Password Salah ";
-      $this->load->view('login', $data);
+      $this->load->view('auth/login', $data);
     }
   }
 
