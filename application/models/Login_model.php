@@ -2,15 +2,15 @@
 
 class Login_model extends CI_Model
 {
-  public function akses_login($user, $pass)
+  public function akses_login($users, $pass)
   {
-    $u = htmlspecialchars($user);
+    $u = htmlspecialchars($users);
     $p = md5($pass);
     $us = $this->db->escape_str($u);
     $ps = $this->db->escape_str($p);
     $query = $this->db->select('*')
-      ->from($user)
-      ->where('username', $u)
+      ->from('tb_users')
+      ->where('username', $us)
       ->where('password', $ps)
       ->limit(1)
       ->get();
@@ -21,4 +21,7 @@ class Login_model extends CI_Model
       return false;
     }
   }
+  // public function user_data()
+  // {
+  // }
 }
