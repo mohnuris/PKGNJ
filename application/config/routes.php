@@ -61,4 +61,4 @@ $route['default_controller'] = 'Admin/kelas';
 $route['default_controller'] = 'Admin/matapelajaran';
 $route['admin'] = 'Admin/users';
 $route['users'] = 'Users/users';
-$route['login'] = 'Login_admin/index';
+$route['login'] = 'admin_login/index';
