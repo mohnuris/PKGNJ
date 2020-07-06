@@ -54,44 +54,45 @@
                                             </p>
                                         </div>
 
-                                        <?php echo form_open('Login_admin/proses_login'); ?>
+                                        <?php echo form_open('Admin_login/proses_login'); ?>
+                                        <div class="login-form-body">
+                                            <div class="form-group has-feedback">
+                                                <label for="username">username</label>
+                                                <?php echo form_input("username", '', array('class' => 'form-control', 'id' => 'username', 'placeholder' => 'username')); ?>
+                                            </div>
 
-                                        <div class="form-group has-feedback">
-                                            <label for="username">username</label>
-                                            <?php echo form_input("username", '', array('class' => 'form-control', 'id' => 'username', 'placeholder' => 'username')); ?>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <div class="d-block">
-                                                <label for="password" class="control-label">Password</label>
-                                                <div class="float-right">
+                                            <div class="form-group">
+                                                <div class="d-block">
+                                                    <label for="password" class="control-label">Password</label>
+                                                    <?php echo form_password("password", '', array('class' => 'form-control', 'id' => 'password', 'placeholder' => 'password')); ?>
+                                                    <!-- <div class="float-right">
                                                     <a href="auth-forgot-password.html" class="text-small">
                                                         Forgot Password?
                                                     </a>
+                                                </div> -->
                                                 </div>
-                                            </div>
-                                            <?php echo form_password("password", '', array('class' => 'form-control', 'id' => 'password', 'placeholder' => 'password')); ?>
 
-                                            <div class="invalid-feedback">
+                                                <!-- <div class="invalid-feedback">
                                                 please fill in your password
+                                            </div> -->
                                             </div>
-                                        </div>
 
-                                        <div class="submit-btn-area">
-                                            <button id="form-submit" type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
-                                                Login
-                                            </button>
-                                        </div>
-                                        <!-- </form> -->
+                                            <div class="submit-btn-area">
+                                                <button id="form-submit" type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
+                                                    Login
+                                                </button>
+                                            </div>
+                                            <!-- </form> -->
 
-                                        <div class="simple-footer align-center text-center">
-                                            <p class="text-muted">
-                                                <?= $pesan ?>
-                                            </p>
-                                            <small class="text-muted">BirPenNJ &copy;2020 </small>
-                                            <small class="text-italic">&copy;mohnuris </small>
+                                            <div class="simple-footer align-center text-center">
+                                                <p class="text-muted">
+                                                    <?= $pesan ?>
+                                                </p>
+                                                <small class="text-muted">BirPenNJ &copy;2020 </small>
+                                                <small class="text-italic">&copy;mohnuris </small>
 
-                                            <?php echo form_close(); ?>
+                                                <?php echo form_close(); ?>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
