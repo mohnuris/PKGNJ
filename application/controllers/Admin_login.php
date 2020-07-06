@@ -11,7 +11,7 @@ class Admin_login extends CI_Controller
 
   public function index()
   {
-    $data['pesan'] = " ";
+    $data['pesan'] = "";
     $this->load->view('auth/login', $data);
   }
 
@@ -31,7 +31,7 @@ class Admin_login extends CI_Controller
         $this->session->set_userdata('email', $r->email);
         $this->session->set_userdata('level', $r->level);
 
-        redirect('Admin/index');
+        redirect('admin/index');
       }
     } else {
       $data['pesan'] = "Username dan Password Salah ";
