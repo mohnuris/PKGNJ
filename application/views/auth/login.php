@@ -85,8 +85,11 @@
                                             <!-- </form> -->
 
                                             <div class="simple-footer align-center text-center">
-                                                <p class="text-muted">
+                                                <div class="form-group  text-danger">
+                                                    <!-- <label for="conpassword">*) Kosongi jika tidak mau di ubah</label> -->
                                                     <?= $pesan ?>
+                                                </div>
+                                                <p class="text-muted text-danger">
                                                 </p>
                                                 <small class="text-muted">BirPenNJ &copy;2020 </small>
                                                 <small class="text-italic">&copy;mohnuris </small>
