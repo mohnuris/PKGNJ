@@ -6,6 +6,13 @@ class Users extends CI_Controller
   function __construct()
   {
     parent::__construct();
+    $this->load->model('Admin_model', 'users');
+    if (empty($this->session->userdata('username')) and empty($this->session->userdata('password'))) {
+      redirect('auth/login');
+    } else {
+      $nama_lengkap = ($this->session->userdata('nama_lengkap'));
+    }
+
     $this->load->model('Admin_model');
     if (empty($this->session->userdata('username')) and empty($this->session->userdata('password'))) {
       redirect('auth/login');
@@ -13,27 +20,46 @@ class Users extends CI_Controller
       $nama_lengkap = ($this->session->userdata('nama_lengkap'));
     }
   }
+
+
   public function index()
   {
-    $data['us'] = $this->db->get('tb_users')->num_rows();
-    $this->load->view('template/header');
+    $tittle['subtittle'] = "DASBOARD";
+    $tittle['dashboard'] = "MENU";
+    $data['si'] = $this->db->get('tb_siswa')->num_rows();
+    $data['gr'] = $this->db->get('tb_guru')->num_rows();
+    // $data['tw'] = $this->db->get('tb_triwulan')->num_rows(); //triwulan
+    $data['ks'] = $this->db->get('tb_kepalasekolah')->num_rows(); //prestasi
+    $data['jr'] = $this->db->get('tb_jurusan')->num_rows(); //jurusan
+    $data['kl'] = $this->db->get('tb_kelas')->num_rows(); //kelas
+    $data['mp'] = $this->db->get('tb_mapel')->num_rows(); //mata pelajaran
+    $data['ni'] = $this->db->get('tb_nilai')->num_rows(); //table
+    $data['cr'] = $this->db->get('charts')->num_rows(); //charts
+    $data['tb'] = $this->db->get('tables')->num_rows(); //table
+    $data['us'] = $this->db->get('tb_users')->num_rows(); //user
+    // $data['sl'] = $this->db->get('soal')->num_rows(); //soal
+    $this->load->view('template/header', $tittle);
     $this->load->view('template/navbar');
-    $this->load->view('template/t_users');
+    $this->load->view('template/home');
     $this->load->view('template/footer');
   }
 
+
   public function users()
   {
-    // if ($this->sesion->userdata('level') == 'admin') {
-    $tittle['subtittle'] = "halaman Users";
-    $tittle['dashboard'] = "Admin";
-    $data['us'] = $this->Admin_model->tampildata('tb_users', 'id_users');
-    $this->load->view('template/header', $tittle);
-    $this->load->view('template/navbar');
-    $this->load->view('template/t_user', $data);
-    $this->load->view('template/footer');
-    // // } else {
-    // }
+    //level admin
+    if ($this->sesion->userdata('level') == 'admin') {
+      $tittle['subtittle'] = "halaman Users";
+      $tittle['dashboard'] = "Admin";
+      $data['us'] = $this->Admin_model->tampildata('tb_users', 'id_users');
+      $this->load->view('template/header', $tittle);
+      $this->load->view('template/navbar');
+      $this->load->view('template/t_user', $data);
+      $this->load->view('template/footer');
+    } else {
+      // level users
+
+    }
   }
   public function tb_users()
   {

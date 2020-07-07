@@ -15,11 +15,12 @@
                 <div class="content">
                     <div class="dropdown float-right dropleft">
                         <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Exports Data <i class="fa fa-file-download"></i>
+                            Exports Data <i class="fa fa-file-export"></i>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Excel</a>
-                            <a class="dropdown-item" href="#">PDF</a>
+                            <a class="dropdown-item" href="#" class="fa fa-file-excel">Excel</a>
+                            <a class="dropdown-item" href="#" class="fa fa-file-pdf">PDF</a>
+                            <!-- <a class="dropdown-item" href="#"></a> -->
                             <a class="dropdown-item" href="#">Something else here</a>
                         </div>
                     </div>
