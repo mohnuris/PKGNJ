@@ -87,7 +87,7 @@
                                             <div class="simple-footer align-center text-center">
                                                 <div class="form-group  text-danger">
                                                     <!-- <label for="conpassword">*) Kosongi jika tidak mau di ubah</label> -->
-                                                    <?= $pesan ?>
+                                                    <!-- <?= $pesan ?> -->
                                                 </div>
                                                 <p class="text-muted text-danger">
                                                 </p>
