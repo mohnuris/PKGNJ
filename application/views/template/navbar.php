@@ -85,17 +85,17 @@
             <div class="sb-sidenav-menu-heading">Adminstator</div>
 
 
-            <a class="nav-link" href="<?= base_url('users/users') ?>">
+            <a class="nav-link" href="<?= base_url('Users/users') ?>">
               <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
               Users
             </a>
 
-            <a class="nav-link" href="<?= base_url('admin/login') ?>">
+            <a class="nav-link" href="<?= base_url('auth/login') ?>">
               <div class="sb-nav-link-icon"><i class="fas fa-sign-in-alt"></i></div>
               Login
             </a>
 
-            <a class="nav-link" href="login.html">
+            <a class="nav-link" href="<?= base_url('logout') ?>">
               <div class="sb-nav-link-icon"><i class="fas fa-sign-out-alt"></i> Logout
             </a>
 
