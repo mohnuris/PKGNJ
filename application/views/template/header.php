@@ -70,7 +70,7 @@
             <i class="fas fa-bolt"></i> Activities
           </a>
           <a href="<?= base_url('Users/users') ?>" class="dropdown-item has-icon">
-            <i class="fas fa-cog"></i> Settings
+            <i class="fas fa-cogs"></i> Settings
           </a>
           <!-- <div class="dropdown-divider"></div> -->
           <a href="<?= base_url('admin/login') ?>" class="dropdown-item has-icon text-danger">
