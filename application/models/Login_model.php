@@ -5,7 +5,7 @@ class Login_model extends CI_Model
   public function akses_login($users, $pass)
   {
     $u = htmlspecialchars($users);
-    $p = md5($pass);
+    $p = htmlspecialchars($pass);
     $us = $this->db->escape_str($u);
     $ps = $this->db->escape_str($p);
     $query = $this->db->select('*')
@@ -21,7 +21,7 @@ class Login_model extends CI_Model
       return false;
     }
   }
-  // public function user_data()
-  // {
-  // }
+  public function user_data()
+  {
+  }
 }
