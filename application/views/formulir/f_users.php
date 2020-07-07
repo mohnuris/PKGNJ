@@ -13,15 +13,9 @@
         <div class="flash-data" data-flashdata="<?= $this->session->flashdata('info') ?>"></div>
 
         <div class="modal-body align-center">
-          <?php echo form_open('users/sm_users'); ?>
+          <?php echo form_open('Users/sm_users'); ?>
           <!-- form input -->
-          <div class="content">
-            <div class="float-right">
-              <i style="margin-top:auto;">
-                <button type="submit" id="simpan" onclick="Swal.fire('SUKSES','Data Tersimpan','success')" class="btn btn-primary ">
-                  <i class="fa fa-save"></i> SIMPAN</button>
-            </div>
-          </div>
+
           <br>
           <label for="nama_lengkap" class="">Nama Lengkap</label>
           <?php echo form_input("nama_lengkap", set_value('nama_lengkap'), array('class' => 'form-control', 'id' => 'nanme_lengkap', 'placeholder' => 'isi Nama Lengkap')); ?>
@@ -69,6 +63,13 @@
           </small>
           </br>
           <!-- save -->
+          <div class="content">
+            <div class="float-right">
+              <i style="margin-top:auto;">
+                <button type="submit" id="simpan" onclick="Swal.fire('SUKSES','Data Tersimpan','success')" class="btn btn-primary ">
+                  <i class="fa fa-save"></i> SIMPAN</button>
+            </div>
+          </div>
           <div class="modal-footer">
 
 
