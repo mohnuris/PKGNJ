@@ -6,7 +6,7 @@ class Admin_login extends CI_Controller
   function __construct()
   {
     parent::__construct();
-    $this->load->model('login_model');
+    $this->load->model('Login_model');
   }
 
   public function index()
@@ -41,7 +41,7 @@ class Admin_login extends CI_Controller
 
   public function logout()
   {
-    $this->session->sess_destory();
+    $this->session->sess_destroy();
     redirect('auth/login');
   }
 }
