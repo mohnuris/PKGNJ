@@ -50,15 +50,24 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 
-$route['default_controller'] = 'admin';
+$route['admin'] = 'Admin';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-$route['default_controller'] = 'admin';
-$route['default_controller'] = 'guru/guru';
-$route['default_controller'] = 'siswa/siswa';
-$route['default_controller'] = 'Admin/jurusan';
-$route['default_controller'] = 'Admin/kelas';
-$route['default_controller'] = 'Admin/matapelajaran';
-$route['admin'] = 'Admin/users';
+// $route['default_controller'] = 'Admin';
+$route['guru'] = 'Guru/guru';
+$route['siswa'] = 'Siswa/siswa';
+$route['Jurusan'] = 'Admin/jurusan';
+$route['kelas'] = 'Admin/t_kelas';
+$route['matapelajaran'] = 'Admin/t_mapel';
+$route['kepalasekolah'] = 'Admin/t_kepalasekolah';
+$route['pengguna'] = 'Admin/t_pengguna';
+$route['sekolah'] = 'Admin/sekolah';
+$route['coba'] = 'Admin/coba';
+$route['rekap'] = 'Admin/t_rekap';
 $route['users'] = 'Users/users';
-$route['login'] = 'admin_login/index';
+$route['soal'] = 'Users/soal';
+$route['table'] = 'Users/table';
+$route['charts'] = 'Users/charts';
+$route['triwulan'] = 'Users/c_triwulan1';
+$route['login'] = 'Admin_login/index';
+$route['logout'] = 'Admin_login/logout';
