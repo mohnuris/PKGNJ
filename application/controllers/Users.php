@@ -6,14 +6,7 @@ class Users extends CI_Controller
   function __construct()
   {
     parent::__construct();
-    $this->load->model('Admin_model', 'users');
-    if (empty($this->session->userdata('username')) and empty($this->session->userdata('password'))) {
-      redirect('auth/login');
-    } else {
-      $nama_lengkap = ($this->session->userdata('nama_lengkap'));
-    }
-
-    $this->load->model('Admin_model');
+    $this->load->model('Admin_model', 'admin');
     if (empty($this->session->userdata('username')) and empty($this->session->userdata('password'))) {
       redirect('auth/login');
     } else {
