@@ -69,6 +69,6 @@ $route['soal'] = 'Users/soal';
 $route['table'] = 'Users/table';
 $route['charts'] = 'Users/charts';
 $route['triwulan'] = 'Users/c_triwulan1';
-$route['triwulan'] = 'Users/c_triwulan1';
+// $route['triwulan'] = 'Users/c_triwulan1';
 $route['login'] = 'Admin_login/index';
 $route['logout'] = 'Admin_login/logout';
