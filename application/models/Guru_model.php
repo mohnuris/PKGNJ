@@ -118,16 +118,4 @@ class Guru_model extends CI_Model
     }
     return $tambah;
   }
-
-  public function combox5()
-  {
-    $query = $this->db->get('tb_guru');
-    $tambah[set_value('id_guru')] = "---Pilih---";
-    if ($query->num_rows() > 0) {
-      foreach ($query->result() as $row) {
-        $tambah[$row->id_guru] = $row->nm_guru;
-      }
-    }
-    return $tambah;
-  }
 }

@@ -13,8 +13,8 @@
             <div class="card mb-5 shadow p-3 mb-5 bg-white rounded">
                 <div class="content">
                     <div class="dropdown float-right dropleft">
-                        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Exports Data <i class="fa fa-file-download"></i>
+                        <button class="btn btn-success btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Exports <i class="fa fa-file-download"></i>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="#">Excel</a>

@@ -133,12 +133,13 @@ class Guru extends CI_Controller
     $data['combo1'] = $this->Guru_model->combox1();
     $data['combo2'] = $this->Guru_model->combox2();
     $data['combo3'] = $this->Guru_model->combox3();
+    // $data['combo4'] = $this->Guru_model->combox4();
     $data['combo4'] = $this->Guru_model->combox4();
     // $data['combo5'] = $this->Guru_model->combox5();
     $data['error'] = "";
     // $data['error'] = $this->upload->display_errors(' ');
     $this->load->view('template/navbar', $tittle);
-    $this->load->view('formulir/f_guru', $data, array('error' => ''));
+    $this->load->view('formulir/f_guru', $data);
     $this->load->view('template/footer');
   }
 
