@@ -14,15 +14,11 @@
             if ($this->session->userdata('level') == 'admin') {
 
             ?>
-              <a class="nav-link" href="<?= base_url('siswa/t_siswa') ?>">
-                <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
-                Siswa
-              </a>
+
             <?php
             }
 
             ?>
-
 
             <a class="nav-link" href="<?= base_url('admin/soal') ?>">
               <div class="sb-nav-link-icon"><i class="fas fa-file"></i></div>
@@ -58,7 +54,10 @@
               Guru
             </a>
 
-
+            <a class="nav-link" href="<?= base_url('siswa/t_siswa') ?>">
+              <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+              Siswa
+            </a>
 
             <a class="nav-link" href="<?= base_url('admin/t_kelas') ?>">
               <div class="sb-nav-link-icon"><i class="fas fa-archway"></i></div>
