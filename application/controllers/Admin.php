@@ -6,7 +6,7 @@ class Admin extends CI_Controller
   function __construct()
   {
     parent::__construct();
-    $this->load->model('Admin_model', 'admin'); //, '
+    $this->load->model('Admin_model'); //, '
     if (empty($this->session->userdata('username')) and empty($this->session->userdata('password'))) {
       redirect('auth/login');
     } else {
