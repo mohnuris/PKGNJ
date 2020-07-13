@@ -31,7 +31,8 @@ class Admin_login extends CI_Controller
         $this->session->set_userdata('email', $r->email);
         $this->session->set_userdata('level', $r->level);
 
-        redirect('admin/index');
+        redirect('admin', 'Users', 'siswa', 'guru');
+        // redirect('users');
       }
     } else {
       $data['pesan'] = "Username dan Password Salah ";
@@ -42,6 +43,6 @@ class Admin_login extends CI_Controller
   public function logout()
   {
     $this->session->sess_destroy();
-    redirect('auth/login');
+    redirect('login');
   }
 }
