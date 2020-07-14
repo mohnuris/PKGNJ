@@ -19,18 +19,18 @@
             }
 
             ?>
-
+            <!-- 
             <a class="nav-link" href="<?= base_url('admin/soal') ?>">
               <div class="sb-nav-link-icon"><i class="fas fa-file"></i></div>
-              Soal
+              Soal -->
 
-              <!-- formulir -->
+            <!-- formulir -->
 
-              <a class="nav-link" href="<?= base_url('admin/formulir') ?>">
+            <!-- <a class="nav-link" href="<?= base_url('admin/formulir') ?>">
                 <div class="sb-nav-link-icon"><i class="fas fa-file-alt"></i></div>
                 Formulir
               </a>
-            </a>
+            </a> -->
 
 
             <a class="sb-sidenav-menu-heading"><span>Data Lembaga</span></a>
