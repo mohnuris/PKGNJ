@@ -16,23 +16,27 @@
           <!-- form input -->
           <div class="from-group">
             <label for="sekolah" class="alert-link">Sekolah</label>
-            <?php echo form_dropdown("sekolah", set_value('sekolah'), array('class' => 'form-control', 'id' => 'sekolah')); ?>
+            <?php echo form_dropdown("sekolah", $combox1, set_value('sekolah'), array('class' => 'form-control', 'id' => 'sekolah')); ?>
             <small class="text-danger">
               <?php echo form_error('sekolah', ' '); ?>
             </small>
           </div>
           <br>
           <label for="kl" class="alert-link">Kelas</label>
-          <?php echo form_input("kl", "", array('class' => 'form-control', 'id' => 'kl', 'placeholder' => 'Kelas')); ?>
+          <?php echo form_dropdown("kl", $combox, set_value('kelas'), array('class' => 'form-control', 'id' => 'kelas')); ?>
           <small class="text-danger">
             <?php echo form_error('kl', ' '); ?>
-            <br>
           </small>
+
+
           <label for="j" class="alert-link">Jurusan</label>
-          <?php echo form_input("j", "", array('class' => 'form-control', 'id' => 'j', 'placeholder' => ' Jurusan')); ?>
+          <?php echo form_dropdown("j", $combox2, set_value('jurusan'), array('class' => 'form-control', 'id' => 'jurusan')); ?>
           <small class="text-danger">
             <?php echo form_error('j', ' '); ?>
           </small>
+
+
+
           <!-- save -->
           <div class="modal-footer">
             <button type="submit" id="simpan" onclick="Swal.fire('SUKSES','Data Tersimpan','success')" class="btn btn-primary">SIMPAN</button>
