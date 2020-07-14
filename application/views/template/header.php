@@ -10,7 +10,8 @@
   <meta name="author" content="" />
   <title><?= $subtittle ?></title>
   <!-- logo -->
-  <link rel="shortcut icon" href="<?= base_url('template/icons/logo.png') ?>">
+  <!-- <link rel="shortcut icon" href="<?= base_url('template/icons/logo.png') ?>"> -->
+  <link rel="shortcut icon" href="<?= base_url('template/icons/nj.png') ?>">
 
 
 
@@ -53,10 +54,15 @@
     <!-- Navbar-->
     <ul class="navbar-nav ml-auto ml-md-0">
       <li class="nav-item dropdown">
-      <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user ">
-          <img src="<?= base_url('icon/pria.png') ?>" alt="" width="30px">
-          <!-- <h4 class="user-name"> -->
+      <li class="dropdown">
+        <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user ">
+
           <div class="d-sm-none d-lg-inline-block text-white"><?php echo $this->session->userdata('nama_lengkap') ?></div>
+
+          <div class="d-sm-none d-lg-inline-block text-danger class=" style="display: block; margin: auto;  margin-top:-50px"><?php echo $this->session->userdata('level') ?></div>
+          <img src=" <?= base_url('icon/pria.png') ?>" alt="" width="30px">
+          <!-- <h4 align=""> Heading 4</h4> -->
+          <!-- <h4 class="user-name"> -->
         </a>
 
 
@@ -66,9 +72,9 @@
           <a href="<?= base_url('Profil/profil') ?>" class="dropdown-item has-icon">
             <i class="far fa-user"></i> Profile
           </a>
-          <a href="features-activities.html" class="dropdown-item has-icon">
+          <!-- <a href="features-activities.html" class="dropdown-item has-icon">
             <i class="fas fa-bolt"></i> Activities
-          </a>
+          </a> -->
           <a href="<?= base_url('Users/users') ?>" class="dropdown-item has-icon">
             <i class="fas fa-cogs"></i> Settings
           </a>
