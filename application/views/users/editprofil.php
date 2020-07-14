@@ -11,7 +11,7 @@
           <i style="margin-left:45%;">
 
             <img src="<?= base_url('icon/pria.png') ?>" width="100px" alt="image" width="" class="rounded-circle profile-widget-picture" class="shadow p-7 mb-5 bg-white rounded">
-            <div class="profile-widget-name">Mohammad Nuris<div class="text-muted d-inline font-weight-normal">
+            <div class="profile-widget-name"><?php echo $this->session->userdata('nama_lengkap') ?><div class="text-muted d-inline font-weight-normal">
                 <div class="slash align-center">Siswa</div>
               </div>
             </div>
