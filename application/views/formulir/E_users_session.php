@@ -1,92 +1,136 @@
 <div id="layoutSidenav_content">
   <main>
     <div class="container-fluid">
-      <h3 class="mt-5">Update Users</h3>
-      <br>
-      <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href=" <?= base_url('users/users') ?>">Table Users</a></li>
-        <li class="breadcrumb-item active">Update Users</li>
-      </ol>
+      <div class="section-body center-block">
 
-      <div class="card mb-5 shadow p-3 mb-5 bg-white rounded">
+        <div class="row mt-sm-4">
+          <i style="margin-left:45%;">
 
-        <div class="flash-data" data-flashdata="<?= $this->session->flashdata('info') ?>"></div>
+            <img src="<?= base_url('icon/pria.png') ?>" width="100px" alt="image" width="" class="rounded-circle profile-widget-picture" class="shadow p-7 mb-5 bg-white rounded">
 
-        <div class="modal-body align-center">
-          <?php echo form_open('Users/editusers_session'); ?>
-          <?php echo form_hidden("id", $es->id_users); ?>
+        </div>
+      </div>
+      </i>
+    </div>
+    <br>
 
-          <!-- form input -->
+    <div class="row justify-content-md-center">
 
-          <br>
-          <label for="nama_lengkap" class="">Nama Lengkap</label>
-          <?php echo form_input("nama_lengkap", $es->nama_lengkap, array('class' => 'form-control', 'id' => 'nanme_lengkap', 'placeholder' => 'isi Nama Lengkap')); ?>
-          <small class="text-danger">
-            <?php echo form_error('nama_lengkap', ' '); ?>
-            <br>
-          </small>
+      <div class="flash-data" data-flashdata="<?= $this->session->flashdata('info') ?>"></div>
+      <div class="col-6 col-md-6 ">
+        <div class="card align-right">
+          <?php echo form_open('profil/simpan_profil'); ?>
+          <?php echo form_open('id', 'id_users'); ?>
+          <div class="card-header">
+            <h4>Edit Profil</h4>
+            <div class="text-right">
 
-          <label for="username" class="">Username</label>
-          <?php echo form_input("username", $es->username, array('class' => 'form-control', 'id' => 'username', 'placeholder' => 'isi username')); ?>
-          <small class="text-danger">
-            <?php echo form_error('username', ' '); ?>
-            <br>
-          </small>
+              <!-- <li class="mr-3"> -->
+              <button type="button" class="btn btn-primary"><a class="text-white"><i class="fa fa-save"></i></a></button>
 
-          <label for="password" class="">Password*)</label>
-          <?php echo form_password("password", set_value('password'), array('class' => 'form-control', 'id' => 'password', 'placeholder' => ' isi Password')); ?>
-          <small class="text-danger">
-            <?php echo form_error('password', ' '); ?>
-          </small>
 
-          </br>
-          <label for="conpassword" class="">Confirmasi Password*)</label>
-          <?php echo form_password("conpassword", set_value('conpassword'), array('class' => 'form-control', 'id' => 'conpassword', 'placeholder' => ' Confirmasi Password')); ?>
-          <small class="text-danger">
-            <?php echo form_error('conpassword', ' '); ?>
-          </small>
-
-          </br>
-          <label for="email" class="">Email</label>
-          <?php echo form_input("email", $es->email, array('class' => 'form-control', 'id' => 'email', 'placeholder' => 'isi email')); ?>
-          <small class="text-danger">
-            <?php echo form_error('email', ' '); ?>
-            <br>
-          </small>
-          <br>
-
-          <div class="form-group  text-danger">
-            <label for="conpassword">*) Kosongi jika tidak mau di ubah</label>
-          </div>
-
-          <!-- save -->
-
-          <div class="content">
-            <div class="float-right">
-              <i style="margin-top:auto;">
-                <button type="submit" id="edit" onclick="Swal.fire('SUKSES','Data Tersimpan','success')" class="btn btn-primary ">
-                  <i class="fa fa-save"></i> SIMPAN</button>
             </div>
           </div>
-          <div class="modal-footer">
 
+          <div class="card-body">
+            <div class="row">
+              <div class="form-group col-md-6 col-6">
+                <?php echo form_open('Users/editusers'); ?>
+                <?php echo form_hidden("id", $es->id_users); ?>
+                <label>Nama Lengkap </label>
+                <input type="text" class="form-control" value="" required="">
+                <div class="invalid-feedback">
 
-            <?php echo form_close(); ?>
+                </div>
+              </div>
+              <div class="form-group col-md-6 col-6">
+                <label>Usernama</label>
+                <input type="text" class="form-control" value="" required="">
+                <div class="invalid-feedback">
 
-            <script>
-              const tombol = document.querySelector('#edit');
-              tombol.addEventListener('click', function() {
-                Swal({
-                  title: 'SUKSES',
-                  text: 'Edit Data Tahun',
-                  type: 'success'
-                })
-              });
-            </script>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-md-6 col-6">
+                <label>Password</label>
+                <input type="email" class="form-control" value="" required="">
+                <div class="invalid-feedback">
+
+                </div>
+              </div>
+              <div class="form-group col-md-6 col-6">
+                <label>Confirmasi Password *)</label>
+                <input type="tel" class="form-control" value="">
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-md-6 col-6">
+                <label>Email</label>
+                <input type="text" class="form-control" value="RPL 2" required="">
+                <div class="invalid-feedback">
+                </div>
+              </div>
+
+              <div class="form-group col-md-6 col-6">
+                <label>Level</label>
+                <input type="text" class="form-control" value="" required="">
+                <div class="invalid-feedback">
+                </div>
+              </div>
+
+              <!-- <label for="level" class="">Level</label>
+              <br>
+              <?php
+
+              if ($es->level == "admin") {
+                $a = true; //admin
+                $u = false; //users
+                $g = false; //guru
+              } else {
+                $a = false;
+                $u = true;
+                $g = false;
+              }
+              if ($es->level == "guru") {
+                $g = true;
+                $a = false;
+                $u = false;
+              } else {
+                $g = false;
+                $a = false;
+                $u = true;
+              }
+              if ($es->level == "users") {
+                $u = true;
+                $g = false;
+                $a = false;
+              } else {
+                $g = true;
+                $a = false;
+                $u = false;
+              }
+
+              echo form_radio('level', 'admin', $a) ?>Admin
+              <?php echo form_radio('level', 'guru', $g) ?>Guru
+              <?php echo form_radio('level', 'user', $u) ?>Users
+              <br>
+              <small class="text-danger">
+                <?php echo form_error('level', ' '); ?>
+              </small>
+              </br> -->
+              <!-- save -->
+              <div class="form-group  text-danger">
+                <label for="conpassword">*) Kosongi jika tidak mau di ubah</label>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      </form>
     </div>
 </div>
 </main>
+</div>
+</div>
 </div>
