@@ -383,7 +383,9 @@ class Admin extends CI_Controller
     $tittle['subtittle'] = "Halaman form Kelas";
     $tittle['dashboard'] = "Form Kelas ";
     $this->load->view('template/header', $tittle);
-    $data['dinamis1'] = $this->Admin_model->dinamis1();
+    $data['combox'] = $this->Admin_model->combox();
+    $data['combox1'] = $this->Admin_model->combox1();
+    $data['combox2'] = $this->Admin_model->combox2();
 
     $data['error'] = "";
     $this->load->view('template/navbar');
@@ -399,7 +401,11 @@ class Admin extends CI_Controller
       # code...
       $tittle['subtittle'] = "Halaman form Kelas";
       $tittle['dashboard'] = "Form Kelas ";
+
       $this->load->view('template/header', $tittle);
+      $data['combo'] = $this->Admin_model->combox();
+      $data['combo1'] = $this->Admin_model->combox1();
+      $data['combo2'] = $this->Admin_model->combox2();
       $this->load->view('template/navbar');
       $this->load->view('formulir/f_kelas');
       $this->load->view('template/footer');
