@@ -11,141 +11,130 @@
           <i style="margin-left:45%;">
 
             <img src="<?= base_url('icon/pria.png') ?>" width="100px" alt="image" width="" class="rounded-circle profile-widget-picture" class="shadow p-7 mb-5 bg-white rounded">
-            <div class="profile-widget-name"><?php echo $this->session->userdata('nama_lengkap') ?><div class="text-muted d-inline font-weight-normal">
-                <div class="slash align-center">Siswa</div>
-              </div>
-            </div>
-          </i>
+            <!-- <div class="profile-widget-name"><?php echo $this->session->userdata('nama_lengkap') ?><div class="text-muted d-inline font-weight-normal">
+                <div class="slash align-center">Siswa</div> -->
         </div>
-        <br>
-        <!-- content -->
+      </div>
+      </i>
+    </div>
+    <br>
 
-        <!-- <div class="card mb-5 shadow p-3 mb-5 bg-white rounded">
-          <div class="row">
-            <div class="col-6 col-md-6">
-              <div class="card">
-                <form method="post" class="needs-validation" novalidate="">
-                  <div class="card-header">
-                    <h4>Profil</h4>
-                  </div>
-                  <div class="card-body">
-                    <div class="row">
-                      <form class="form-inline">
+    <div class="row justify-content-md-center">
+      <!-- <div class="card mb-5 shadow p-3 mb-5 bg-white rounded"> -->
+      <div class="flash-data" data-flashdata="<?= $this->session->flashdata('info') ?>"></div>
+      <div class="col-6 col-md-6 ">
+        <div class="card align-right">
+          <?php echo form_open('profil/simpan_profil'); ?>
+          <?php echo form_open('id', 'id_users'); ?>
+          <div class="card-header">
+            <h4>Edit Profil</h4>
+            <div class="text-right">
+
+              <!-- <li class="mr-3"> -->
+              <button type="button" class="btn btn-primary"><a class="text-white"><i class="fa fa-save"></i></a></button>
 
 
-                        <div class="row">
-                          <div class="form-group col-md-6 col-6">
-                            <label>Nama Lengkap </label>
-                            <input type="text" class="form-control" value="Mohammad Nuris" required="">
-                            <div class="invalid-feedback">
-                            </div>
-                          </div>
-
-                          <div class="form-group col-md-6 col-6">
-                            <label>Kelas</label>
-                            <input type="text" class="form-control" value="XII" required="">
-                            <div class="invalid-feedback">
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="row">
-                          <div class="form-group col-md-6 col-6">
-                            <label>Jurusan</label>
-                            <input type="text" class="form-control" value="RPL 2" required="">
-                            <div class="invalid-feedback">
-                            </div>
-                          </div>
-
-                          <div class="form-group col-md-6 col-6">
-                            <label>Guru</label>
-                            <input type="text" class="form-control" value="" required="">
-                            <div class="invalid-feedback">
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="card-footer text-right">
-                      <button class="btn btn-success"><i class="fas fa-edit"></i> Edit</button>
-                    </div>
-                </form>
-              </div>
             </div>
-          </div> -->
-        <!-- <div class="slash align-center"> -->
-        <!-- <div class="col col-lg-6"> -->
-        <!-- <div class="card text-left">
-            <!-- <img class="card-img-top" src="holder.js/100px180/" alt=""> -->
-        <!-- <div class="card-body">
-              <h4 class="card-title">Title</h4>
-              <p class="card-text">Body</p>
-            </div>
-          </div> -->
-        <div class="row justify-content-md-center">
-          <div class="col-6 col-md-6 ">
-            <div class="card align-right">
-              <!-- <form method="post" class="needs-validation" novalidate=""> -->
-              <div class="card-header">
-                <h4>Edit Profil</h4>
-                <div class="text-right">
+          </div>
 
-                  <!-- <li class="mr-3"> -->
-                  <button type="button" class="btn btn-primary"><a class="text-white"><i class="fa fa-save"></i></a></button>
-
+          <div class="card-body">
+            <div class="row">
+              <div class="form-group col-md-6 col-6">
+                <?php echo form_open('Users/editusers'); ?>
+                <!-- <?php echo form_hidden("id", $ed->id_users); ?> -->
+                <label>Nama Lengkap </label>
+                <input type="text" class="form-control" value="" required="">
+                <div class="invalid-feedback">
 
                 </div>
               </div>
-              <div class="card-body">
-                <div class="row">
-                  <div class="form-group col-md-6 col-6">
-                    <label>Nama Lengkap </label>
-                    <input type="text" class="form-control" value="" required="">
-                    <div class="invalid-feedback">
+              <div class="form-group col-md-6 col-6">
+                <label>Usernama</label>
+                <input type="text" class="form-control" value="" required="">
+                <div class="invalid-feedback">
 
-                    </div>
-                  </div>
-                  <div class="form-group col-md-6 col-6">
-                    <label>Kelas</label>
-                    <input type="text" class="form-control" value="" required="">
-                    <div class="invalid-feedback">
-
-                    </div>
-                  </div>
                 </div>
-                <div class="row">
-                  <div class="form-group col-md-6 col-6">
-                    <label>Jurusan</label>
-                    <input type="email" class="form-control" value="" required="">
-                    <div class="invalid-feedback">
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-md-6 col-6">
+                <label>Password</label>
+                <input type="email" class="form-control" value="" required="">
+                <div class="invalid-feedback">
 
-                    </div>
-                  </div>
-                  <div class="form-group col-md-6 col-6">
-                    <label>Guru</label>
-                    <input type="tel" class="form-control" value="">
-                  </div>
                 </div>
-                <div class="row">
-                  <div class="form-group col-md-6 col-6">
-                    <label>Jurusan</label>
-                    <input type="text" class="form-control" value="RPL 2" required="">
-                    <div class="invalid-feedback">
-                    </div>
-                  </div>
+              </div>
+              <div class="form-group col-md-6 col-6">
+                <label>Confirmasi Password *)</label>
+                <input type="tel" class="form-control" value="">
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-md-6 col-6">
+                <label>Email</label>
+                <input type="text" class="form-control" value="" required="">
+                <div class="invalid-feedback">
+                </div>
+              </div>
 
-                  <div class="form-group col-md-6 col-6">
-                    <label>Guru</label>
-                    <input type="text" class="form-control" value="" required="">
-                    <div class="invalid-feedback">
-                    </div>
-                  </div>
+              <div class="form-group col-md-6 col-6">
+                <label>Level</label>
+                <input type="text" class="form-control" value="" required="">
+                <div class="invalid-feedback">
                 </div>
+              </div>
+
+              <!-- <label for="level" class="">Level</label>
+              <br>
+              <?php
+
+              if ($es->level == "admin") {
+                $a = true; //admin
+                $u = false; //users
+                $g = false; //guru
+              } else {
+                $a = false;
+                $u = true;
+                $g = false;
+              }
+              if ($es->level == "guru") {
+                $g = true;
+                $a = false;
+                $u = false;
+              } else {
+                $g = false;
+                $a = false;
+                $u = true;
+              }
+              if ($es->level == "users") {
+                $u = true;
+                $g = false;
+                $a = false;
+              } else {
+                $g = true;
+                $a = false;
+                $u = false;
+              }
+
+              echo form_radio('level', 'admin', $a) ?>Admin
+              <?php echo form_radio('level', 'guru', $g) ?>Guru
+              <?php echo form_radio('level', 'user', $u) ?>Users
+              <br>
+              <small class="text-danger">
+                <?php echo form_error('level', ' '); ?>
+              </small>
+              </br> -->
+              <!-- save -->
+              <div class="form-group  text-danger">
+                <label for="conpassword">*) Kosongi jika tidak mau di ubah</label>
               </div>
             </div>
           </div>
-          </form>
         </div>
-        <!-- <div class="col-6 col-md-6 ">
+      </div>
+      </form>
+    </div>
+    <!-- <div class="col-6 col-md-6 ">
           <div class="card">
             <form method="post" class="needs-validation" novalidate="">
               <div class="card-header">
@@ -191,9 +180,9 @@
           </div>
         </div>
       </div> -->
-      </div>
-    </div>
-  </main>
+</div>
+</div>
+</main>
 </div>
 </div>
 </div>
