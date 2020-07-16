@@ -59,7 +59,7 @@
 
           <div class="d-sm-none d-lg-inline-block text-white"><?php echo $this->session->userdata('nama_lengkap') ?></div>
 
-          <div class="d-sm-none d-lg-inline-block text-danger class=" style="display: block; margin: auto;  margin-top:-50px"><?php echo $this->session->userdata('level') ?></div>
+          <!-- <div class="d-sm-none d-lg-inline-block text-danger class=" style="display: block; margin: auto;  margin-top:-50px"><?php echo $this->session->userdata('level') ?></div> -->
           <img src=" <?= base_url('icon/pria.png') ?>" alt="" width="30px">
           <!-- <h4 align=""> Heading 4</h4> -->
           <!-- <h4 class="user-name"> -->
@@ -69,15 +69,15 @@
         <div class="dropdown-menu dropdown-menu-right shadow btn-white active">
           <!-- <div class="card mb-5  bg-white rounded"> -->
           <div class="dropdown-title"></div>
-          <a href="<?= base_url('Profil/profil') ?>" class="dropdown-item has-icon">
+          <a href="<?= base_url('users/profil') ?>" class="dropdown-item has-icon">
             <i class="far fa-user"></i> Profile
           </a>
           <!-- <a href="features-activities.html" class="dropdown-item has-icon">
             <i class="fas fa-bolt"></i> Activities
           </a> -->
-          <a href="<?= base_url('Users/users') ?>" class="dropdown-item has-icon">
+          <!-- <a href="<?= base_url('profil/editprofil') ?>" class="dropdown-item has-icon">
             <i class="fas fa-cogs"></i> Settings
-          </a>
+          </a> -->
           <!-- <div class="dropdown-divider"></div> -->
           <a href="<?= base_url('logout') ?>" class="dropdown-item has-icon text-danger">
             <i class="fas fa-sign-out-alt"></i> Logout
