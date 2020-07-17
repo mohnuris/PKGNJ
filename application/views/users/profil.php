@@ -22,14 +22,16 @@
             <div class="text-right">
 
               <!-- <li class="mr-3"> -->
-              <button type="button" class="btn btn-primary"><a class="text-white"><i class="fa fa-edit"></i></a></button>
+              <a type="button" class="btn btn-outline-success btn-sm mr-2" href="<?= base_url('Users/editprofil/') ?>" class="text-success"><i class="fa fa-edit"></i></a>
+
+              <!-- <button type="button" href="<?= base_url('users/profil') ?>" class="btn btn-primary"><a class="text-white"><i class="fa fa-edit"></i></a></button> -->
 
 
             </div>
           </div>
           <div class="card-body">
-            <!-- <?php echo form_open('Users/editusers'); ?> -->
-            <!-- <?php echo form_hidden("id", $es->id_users); ?> -->
+            <!-- <?php echo form_open('Users/editprofil'); ?>
+            <?php echo form_hidden("id", $es->id_users); ?> -->
             <div class="row">
               <div class="form-group col-md-6 col-6">
                 <label>Nama Lengkap </label>
@@ -40,7 +42,7 @@
                 </small>
               </div>
               <div class="form-group col-md-6 col-6">
-                <label>Kelas</label>
+                <label>Username</label>
                 <input type="text" class="form-control" value="" required="">
                 <div class="invalid-feedback">
 
@@ -49,18 +51,18 @@
             </div>
             <div class="row">
               <div class="form-group col-md-6 col-6">
-                <label>Jurusan</label>
+                <label>Email</label>
                 <input type="email" class="form-control" value="" required="">
                 <div class="invalid-feedback">
 
                 </div>
               </div>
               <div class="form-group col-md-6 col-6">
-                <label>Guru</label>
+                <label>Level</label>
                 <input type="tel" class="form-control" value="">
               </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
               <div class="form-group col-md-6 col-6">
                 <label>Jurusan</label>
                 <input type="text" class="form-control" value="RPL 2" required="">
@@ -72,16 +74,16 @@
                 <label>Guru</label>
                 <input type="text" class="form-control" value="" required="">
                 <div class="invalid-feedback">
-                </div>
-              </div>
-            </div>
+                </div> -->
           </div>
         </div>
       </div>
-      </form>
     </div>
+</div>
+</form>
+</div>
 
-    <!-- <content section class="content">
+<!-- <content section class="content">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-6">
@@ -91,10 +93,10 @@
               <button type="button" class="btn btn-success"><a href="<?= base_url('Profil/editprofil') ?>" class="text-white"><i class="fa fa-edit"></i></a></button>
             </div>
             <br> -->
-    <!-- <?php echo form_hidden('id', $us->id_users); ?> -->
+<!-- <?php echo form_hidden('id', $us->id_users); ?> -->
 
 
-    <!-- <form class="form-horizontal">
+<!-- <form class="form-horizontal">
               <div class="card-body">
                 <div class="row">
                   <div class="form-group col-md-6 col-6">
