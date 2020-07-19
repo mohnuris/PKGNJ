@@ -9,9 +9,9 @@
                 <li class="breadcrumb-item">Guru</a></li>
                 <li class="breadcrumb-item"><a href=" <?= base_url('Guru/f_guru') ?>">Tambah Data Guru</a></li>
             </ol>
-            <h3 class="mt-4">Data Guru</h3>
             <div class="card mb-5 shadow p-3 mb-5 bg-white rounded">
                 <div class="content">
+                    <h3 class="float-left">Data Guru</h3>
                     <div class="dropdown float-right dropleft">
                         <button class="btn btn-success btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Exports <i class="fa fa-file-download"></i>

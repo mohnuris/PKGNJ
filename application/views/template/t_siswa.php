@@ -2,7 +2,7 @@
     <main>
         <div class="container-fluid">
             <title><?= $subtittle ?></title>
-            <h3 class="mt-4"></h3>
+            <h4 class="mt-4">Halaman Siswa</h4>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href=" <?= base_url('admin') ?>">Dashboard</a></li>
                 <li class="breadcrumb-item">Siswa</a></li>
@@ -10,9 +10,10 @@
 
 
             </ol>
-            <h3 class="mt-4">Data Siswa</h3>
+
             <div class="card mb-5 shadow p-3 mb-5 bg-white rounded">
                 <div class="content">
+                    <h3 class="float-left">Data Siswa</h3>
                     <div class="dropdown float-right dropleft">
                         <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Exports Data <i class="fa fa-file-export"></i>
