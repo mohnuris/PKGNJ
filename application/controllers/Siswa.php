@@ -95,7 +95,7 @@ class Siswa extends CI_Controller
           $data['combo5'] = $this->Siswa_model->combox5();
           $data['error'] = $this->upload->display_errors(' ');
           $this->load->view('template/navbar');
-          $this->load->view('formulir/f_siswa', $data);
+          $this->load->view('formulir/t_siswa', $data);
           $this->load->view('template/footer');
         } else {
           $gbr = $this->upload->data();
