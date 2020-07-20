@@ -30,6 +30,7 @@ class Users extends CI_Controller
     $data['cr'] = $this->db->get('charts')->num_rows(); //charts
     $data['tb'] = $this->db->get('tables')->num_rows(); //table
     $data['us'] = $this->db->get('tb_users')->num_rows(); //user
+    $data['pr'] = $this->db->get('tb_users')->num_rows(); //user
     // $data['sl'] = $this->db->get('soal')->num_rows(); //soal
     $this->load->view('template/header', $tittle);
     $this->load->view('template/navbar');
@@ -96,7 +97,7 @@ class Users extends CI_Controller
       # code...
       $tittle['subtittle'] = "Halaman Edit Users";
       $tittle['dashboard'] = "Edit Users ";
-      $data['es'] = $this->Admin_model->formedit('tb_users', 'id_users', $id);
+      $data['es'] = $this->Users_model->formedit('tb_users', 'id_users', $id);
       $this->load->view('template/header', $tittle);
       $this->load->view('template/navbar');
       $this->load->view('formulir/E_users', $data);
@@ -108,12 +109,12 @@ class Users extends CI_Controller
         $data = array(
           'nama_lengkap' => $this->input->post('nama_lengkap'),
           'username' => $this->input->post('username'),
-          'password' => md5($this->input->post('password')),
+          'password' => $this->input->post('password'),
           'email' => $this->input->post('email'),
           'level' => $this->input->post('level')
         );
 
-        $query = $this->Admin_model->editdata('tb_users', 'id_users', $id, $data);
+        $query = $this->Users_model->formedit('tb_users', 'id_users', $id, $data);
 
         if ($query) {
           $this->session->set_flashdata('info', 'Data Teredit');
@@ -131,7 +132,7 @@ class Users extends CI_Controller
           'email' => $this->input->post('email'),
           'level' => $this->input->post('level')
         );
-        $query = $this->Admin_model->editdata('tb_users', 'id_users', $id, $data);
+        $query = $this->Users_model->editdata('tb_users', 'id_users', $id, $data);
 
         if ($query) {
           $this->session->set_flashdata('info', 'Data Teredit');
@@ -170,10 +171,18 @@ class Users extends CI_Controller
       $data = array(
         'nama_lengkap' => $this->input->post('nama_lengkap'),
         'username' => $this->input->post('username'),
-        'password' => md5($this->input->post('password')),
+        'password' => ($this->input->post('password')),
         'email' => $this->input->post('email'),
         'level' => $this->input->post('level')
       );
+      $query = $this->Users_model->simpandata('tb_users', $data);
+      if ($query) {
+        $this->session->set_flashdata('info', 'Data Tersimpan');
+        redirect('users/users');
+      } else {
+        $this->session->set_flashdata('info', 'Data Tersimpan');
+        redirect('users/users');
+      }
     }
   }
 
@@ -223,7 +232,7 @@ class Users extends CI_Controller
       $data['es'] = $this->Users_model->formedit('tb_users', 'id_users', $id);
       $this->load->view('template/header', $tittle);
       $this->load->view('template/navbar');
-      $this->load->view('formulir/E_users', $data);
+      $this->load->view('formulir/E_users_session', $data);
       $this->load->view('template/footer');
     } else {
 
@@ -232,7 +241,95 @@ class Users extends CI_Controller
         $data = array(
           'nama_lengkap' => $this->input->post('nama_lengkap'),
           'username' => $this->input->post('username'),
-          'password' => md5($this->input->post('password')),
+          'password' => $this->input->post('password'),
+          'email' => $this->input->post('email')
+        );
+
+        $query = $this->Users_model->editdata('tb_users', 'id_users', $id, $data);
+
+        if ($query) {
+          $this->session->set_flashdata('info', 'Data Teredit');
+          redirect('users/users');
+        } else {
+          $this->session->set_flashdata('danger', 'Gagal Teredit');
+          redirect('users/users');
+        }
+      } else {
+
+        // echo "password tidak ada";
+        $data = array(
+          'nama_lengkap' => $this->input->post('nama_lengkap'),
+          'username' => $this->input->post('username'),
+          'email' => $this->input->post('email')
+        );
+        $query = $this->Users_model->editdata('tb_users', 'id_users', $id, $data);
+
+        if ($query) {
+          $this->session->set_flashdata('info', 'Data Teredit');
+          redirect('users/users');
+        } else {
+          $this->session->set_flashdata('danger', 'Gagal Teredit');
+          redirect('users/users');
+        }
+      }
+    }
+  }
+
+  public function profil()
+  {
+    $tittle['subtittle'] = "halaman Profil";
+    $tittle['dashboard'] = "Profil";
+    $data['pr'] = $this->Users_model->tampildata('tb_users', 'id_users');
+    $this->load->view('template/header', $tittle);
+    $this->load->view('template/navbar');
+    $this->load->view('users/profil');
+    $this->load->view('template/footer');
+  }
+
+  public function editprofil($id)
+  {
+    $tittle['subtittle'] = "Halaman Edit Users";
+    $tittle['dashboard'] = "Edit Users ";
+    $data['ed'] = $this->Users_model->formedit('tb_users', 'id_users', $id);
+    $this->load->view('template/header', $tittle);
+    $this->load->view('template/navbar');
+    $this->load->view('formulir/E_profil', $data);
+    $this->load->view('template/footer');
+  }
+
+  public function edit_users()
+  {
+    $id = $this->input->post('id');
+
+    $this->form_validation->set_rules('nama_lengkap', '', 'required', array('required' => 'Nama Lengkap Wajib di ISI'));
+
+    $this->form_validation->set_rules('username', '', 'trim|required|min_length[5]|max_length[12]', array('required' => 'Username Wajib di ISI', 'trim' => '', 'min_length' => 'Minimal 5 Huruf', 'max_length' => 'Maksimal 12 Huruf'));
+
+    $this->form_validation->set_rules('password', '', 'trim|min_length[5]|max_length[8]', array('trim' => '', 'min_length' => 'Minimal 5 Huruf', 'max_length' => 'Maksimal 8 Huruf'));
+
+    $this->form_validation->set_rules('conpassword', '', 'matches[password]', array('matches' => 'Confirmasi Password TIDAK SAMA silahkan isi Kembali Password dan Confirmasi Password'));
+
+    $this->form_validation->set_rules('email', '', 'required|valid_email');
+
+
+
+    if ($this->form_validation->run() == FALSE) {
+      # code...
+      $tittle['subtittle'] = "Halaman Edit Users";
+      $tittle['dashboard'] = "Edit Users ";
+      $data['ed'] = $this->Users_model->formedit('tb_users', 'id_users', $id);
+      $this->load->view('template/header', $tittle);
+      $this->load->view('template/navbar');
+      $this->load->view('users/editprofil', $data);
+      $this->load->view('template/footer');
+    } else {
+
+      if ($this->input->post('password')) {
+        // echo "password ada";
+        $data = array(
+          'nama_lengkap' => $this->input->post('nama_lengkap'),
+          'username' => $this->input->post('username'),
+          'password' => $this->input->post('password'),
           'email' => $this->input->post('email')
         );
 
