@@ -4,6 +4,7 @@
       <h3 class="mt-5">Tambah jurusan</h3>
       <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href=" <?= base_url('admin/t_jurusan') ?>">jurusan</a></li>
+        <li class="breadcrumb-item"><a href=" <?= base_url('admin/jurusan') ?>">jurusan</a></li>
         <li class="breadcrumb-item active">Tambah Jurusan</li>
       </ol>
 
