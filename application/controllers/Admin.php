@@ -29,11 +29,13 @@ class Admin extends CI_Controller
     $data['cr'] = $this->db->get('charts')->num_rows(); //charts
     $data['tb'] = $this->db->get('tables')->num_rows(); //table
     $data['us'] = $this->db->get('tb_users')->num_rows(); //user
-    // $data['sl'] = $this->db->get('soal')->num_rows(); //soal
+    $data['sk'] = $this->db->get('tb_sekolah')->num_rows(); //soal
     $this->load->view('template/header', $tittle);
     $this->load->view('template/navbar');
-    $this->load->view('template/home');
+    $this->load->view('template/home', $data);
     $this->load->view('template/footer');
+
+    // print_r($tittle);
   }
 
   public function login()
@@ -337,6 +339,20 @@ class Admin extends CI_Controller
     $this->load->view('template/footer');
   }
 
+  public function tambahsoal()
+  {
+    $tittle['subtittle'] = "Halaman Soal";
+    $tittle['dashboard'] = "Soal ";
+    $this->load->view('template/header', $tittle);
+    $this->load->view('template/navbar');
+    $this->load->view('formulir/f_soal');
+    $this->load->view('template/footer');
+  }
+
+  public function simpansoal()
+  {
+  }
+
   public function t_rekap()
   {
     $tittle['subtittle'] = "Halaman Rekap";
@@ -365,6 +381,7 @@ class Admin extends CI_Controller
     $this->load->view('charts/coba');
     $this->load->view('template/footer');
   }
+
 
   public function t_kelas()
   {
