@@ -1,7 +1,7 @@
 <div id="layoutSidenav_content">
   <main>
     <div class="container-fluid">
-      <h3 class="mt-5">Tambah Users</h3>
+      <h3 class="mt-5">From Tambah Users</h3>
       <br>
       <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href=" <?= base_url('users/users') ?>">Table Users</a></li>
@@ -15,8 +15,8 @@
         <div class="modal-body align-center">
           <?php echo form_open('Users/sm_users'); ?>
           <!-- form input -->
-
-          <br>
+          <!-- 
+          <br> -->
           <label for="nama_lengkap" class="">Nama Lengkap</label>
           <?php echo form_input("nama_lengkap", set_value('nama_lengkap'), array('class' => 'form-control', 'id' => 'nanme_lengkap', 'placeholder' => 'isi Nama Lengkap')); ?>
           <small class="text-danger">
