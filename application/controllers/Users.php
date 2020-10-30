@@ -44,8 +44,8 @@ class Users extends CI_Controller
     //level admin
     if ($this->session->userdata('level') == 'admin') {
 
-      $tittle['subtittle'] = "halaman Users";
-      $tittle['dashboard'] = "Admin";
+      $tittle['subtittle'] = "Halaman Users Account";
+      $tittle['dashboard'] = "users";
       $data['us'] = $this->Users_model->tampildata('tb_users', 'id_users');
       $this->load->view('template/header', $tittle);
       $this->load->view('template/navbar');
