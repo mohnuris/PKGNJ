@@ -71,12 +71,20 @@
                 <div class="col-md-3">
                     <div class="card bg-danger text-white mb-4 ">
                         <div class="col-xl-5 align-left">
-                            <i style="margin-left: auto; margin-top: 15px" class="fas fa-user-graduate fa-4x text-gray"></i>
+                            <!-- <i style="margin-left: auto; margin-top: 15px" class="fas fa-user-graduate fa-4x text-gray"></i> -->
+                            <i style="margin-left: auto; margin-top: 15px" class="fas fa-home fa-4x text-gray"></i>
                         </div>
                         <div class="card-body">
-                            <i class="align-left"></i>
-                            <h5>Prestasi </h5>
+                            <div class="d-flex justify-content-between pb-2">
+                                <h3 class="float-right">Sekolah</h3>
+                                <h3 class="slash align-center"><?php echo $sk; ?></h3>
+                            </div>
                         </div>
+                        <!--                         
+                        <div class="card-body">
+                            <i class="align-left"></i>
+                            <h5>Sekolah </h5>
+                        </div> -->
 
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small text-white stretched-link" href="<?= base_url('admin/t_prestasi') ?>">View Details</a>
