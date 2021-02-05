@@ -10,14 +10,11 @@
 
                 <div class="col-md-3">
                     <div class="card bg-success text-white mb-4 ">
-                        <div class="col-xl-5 align-left">
-                            <i style="margin-left: auto; margin-top: 15px" class="fa fa-user-tie fa-4x text-gray"></i>
+                        <div class="col-xl-5 align-right">
+                            <i style="margin-left: 150px; margin-top: 15px" class="fa fa-user-tie fa-5x text-gray"></i>
                         </div>
                         <div class="card-body">
-
-                            <i class="align-right"></i>
-                            <h5>GURU</h5>
-                        </div>
+                            <i class="align-left"></i> Data Pengajar</div>
 
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small text-white stretched-link" href="<?= base_url('admin/t_pengajar') ?>">View Details</a>
@@ -25,16 +22,13 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-3">
                     <div class="card bg-primary text-white mb-4 ">
-                        <div class="col-xl-5 align-left">
-                            <i style="margin-left: auto; margin-top: 15px" class="fas fa-users fa-4x text-gray"></i>
+                        <div class="col-xl-5 align-right">
+                            <i style="margin-left: 150px; margin-top: 15px" class="fas fa-users fa-5x text-gray"></i>
                         </div>
                         <div class="card-body">
-                            <i class="align-left"></i>
-                            <h5>Data Siswa </h5>
-                        </div>
+                            <i class="align-left"></i> Data Siswa</div>
 
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small text-white stretched-link" href="<?= base_url('admin/t_siswa') ?>">View Details</a>
@@ -42,33 +36,39 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD:application/views/template/admin.php
+                <div class="col-md-3">
+                    <div class="card bg-info text-white mb-4 ">
+                        <div class="col-xl-5 align-right">
+                            <i style="margin-left: 150px; margin-top: 15px" class="fas fa-chalkboard-teacher fa-5x text-gray"></i>
+=======
 
-                <!-- <div class="col-md-3">
+                <div class="col-md-3">
                     <div class="card bg-warning text-white mb-4 ">
                         <div class="col-xl-5 align-left">
                             <i style="margin-left: auto; margin-top: 15px" class="fas fa-chalkboard-teacher fa-4x text-gray"></i>
+>>>>>>> master:application/views/template/home.php
                         </div>
                         <div class="card-body">
-                            <i class="align-left"></i>
-                            <h5>Data Pengguna </h5>
-                        </div>
+                            <i class="align-left"></i> Data Pengguna</div>
 
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small text-white stretched-link" href="<?= base_url('admin/t_pengguna') ?>">View Details</a>
 
                         </div>
                     </div>
-                </div> -->
+                </div>
+<<<<<<< HEAD:application/views/template/admin.php
+=======
 
+>>>>>>> master:application/views/template/home.php
                 <div class="col-md-3">
                     <div class="card bg-danger text-white mb-4 ">
-                        <div class="col-xl-5 align-left">
-                            <i style="margin-left: auto; margin-top: 15px" class="fas fa-user-graduate fa-4x text-gray"></i>
+                        <div class="col-xl-5 align-right">
+                            <i style="margin-left: 150px; margin-top: 15px" class="fas fa-user-graduate fa-5x text-gray"></i>
                         </div>
                         <div class="card-body">
-                            <i class="align-left"></i>
-                            <h5>Prestasi </h5>
-                        </div>
+                            <i class="align-left"></i> Prestasi</div>
 
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small text-white stretched-link" href="<?= base_url('admin/t_prestasi') ?>">View Details</a>
@@ -76,16 +76,14 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-3">
-                    <div class="card bg-danger text-white mb-4 ">
-                        <div class="col-xl-5 align-left">
-                            <i style="margin-left: auto; margin-top: 15px" class="fas fa-database fa-4x text-gray"></i>
+                    <div class="card bg-warning text-white mb-4 ">
+                        <div class="col-xl-5 align-right">
+                            <i style="margin-left: 150px; margin-top: 15px" class="fa fa-database fa-5x text-gray"></i>
+
                         </div>
                         <div class="card-body">
-                            <i class="align-left"></i>
-                            <h5>Rekap </h5>
-                        </div>
+                            <i class="align-left"></i>Rekap</div>
 
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small text-white stretched-link" href="<?= base_url('admin/t_rekap') ?>">View Details</a>
@@ -93,59 +91,59 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-3">
-                    <div class="card bg-warning text-white mb-4 ">
-                        <div class="col-xl-5 align-left">
-                            <i style="margin-left: auto; margin-top: 15px" class="fas fa-poll  fa-4x text-gray"></i>
-                        </div>
+                    <div class="card bg-danger text-white mb-4 ">
+                        <div class="col-xl-5 align-right">
+                            <i style="margin-left: 150px; margin-top: 15px" class="fas fa-book fa-5x text-gray"></i>
 
-                        <div class="card-body">
-                            <i class="align-left"></i>
-                            <h5>Presensi Guru</h5>
-                        </div>
-
-                        <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link" href="<?= base_url('admin/t_siswa') ?>">View Details</a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card bg-info text-white mb-4 ">
-                        <div class="col-xl-5 align-left">
-                            <i style="margin-left: auto; margin-top: 15px" class="fas fa-book fa-4x text-gray"></i>
                         </div>
                         <div class="card-body">
-                            <i class="align-left"></i>
-                            <h5>Data Siswa </h5>
-                        </div>
+                            <i class="align-left"></i> Prestasi</div>
 
                         <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link" href="<?= base_url('admin/t_siswa') ?>">View Details</a>
+                            <a class="small text-white stretched-link" href="<?= base_url('admin/t_pengguna') ?>">View Details</a>
 
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card bg-success text-white mb-4 ">
-                        <div class="col-xl-5 align-left">
-                            <i style="margin-left: auto; margin-top: 15px" class="fas fa-chart-area fa-4x text-gray"></i>
+                        <div class="col-xl-5 align-right">
+                            <i style="margin-left: 150px; margin-top: 15px" class="fas fa-chart-area fa-5x text-gray"></i>
+
                         </div>
                         <div class="card-body">
-                            <i class="align-left"></i>
-                            <h5>Data Siswa </h5>
-                        </div>
+                            <i class="align-left"></i> Prestasi</div>
 
                         <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link" href="<?= base_url('admin/t_siswa') ?>">View Details</a>
+<<<<<<< HEAD:application/views/template/admin.php
+                            <a class="small text-white stretched-link" href="#">View Details</a>
+=======
+                            <a class="small text-white stretched-link" href="<?= base_url('admin/siswa') ?>">View Details</a>
+>>>>>>> master:application/views/template/home.php
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-secondary text-white mb-4 ">
+                        <div class="col-xl-5 align-right">
+                            <i style="margin-left: 150px; margin-top: 15px" class="fas fa-poll fa-5x text-gray"></i>
+
+                        </div>
+                        <div class="card-body">
+                            <i class="align-left"></i> Prestasi</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link" href="#">View Details</a>
 
                         </div>
                     </div>
                 </div>
 
+<<<<<<< HEAD:application/views/template/admin.php
+=======
 
-
+>>>>>>> master:application/views/template/home.php
                 <b>
                     <main>
                         <div class="container-fluid">

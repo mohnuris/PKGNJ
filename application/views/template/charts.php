@@ -5,6 +5,8 @@
       <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href=" <?= base_url('admin') ?>">Dashboard</a></li>
         <li class="breadcrumb-item active">Charts</li>
+        <li class="breadcrumb-item"><a href=" <?= base_url('admin/t_rekap') ?>">Rekap</a></li>
+        <li class="breadcrumb-item"><a href=" <?= base_url('admin/coba') ?>">Detail</a></li>
       </ol>
 
       <!-- <div class="card mb-4">
@@ -30,5 +32,7 @@
       </div>
     </div>
   </main>
+</div>
+</div>
 </div>
 </div>

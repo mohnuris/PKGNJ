@@ -5,6 +5,8 @@
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href=" <?= base_url('admin') ?>">Dashboard</a></li>
                 <li class="breadcrumb-item active">Tables Users</li>
+                <li class="breadcrumb-item"><a href=" <?= base_url('admin/profil') ?>">Dashboard</a></li>
+                <!-- <li class="breadcrumb-item"><a href=" <?= base_url('admin') ?>">Dashboard</a></li> -->
             </ol>
 
             <!-- Button trigger modal -->
@@ -33,7 +35,7 @@
                         </div>
 
                         <div class="modal-body">
-                            <label for="" class="alert-link">Kelas Lembaga</label>
+                            <label for="" class="alert-link">Pilih Lembaga</label>
                             <label class="mr-sm-2 sr-only form-control-lg" for="inlineFormCustomSelect">Preference</label>
                             <select class="custom-select" id="inlineFormCustomSelect">
                                 <option selected>Pilih</option>
@@ -103,8 +105,24 @@
                                     <th>Action</th>
                                 </tr>
                             </thead>
+                            <tbody>
 
-                            <tfoot>
+                                <th>Name</th>
+                                <th>Lembaga</th>
+                                <th>Jabatan</th>
+                                <th>Mata Pelajaran</th>
+                                <th>Foto</th>
+                                <th>
+                                    <ul class="d-flex justify-content-center">
+                                        <li class="mr-3"><a href="<?= base_url('') ?>" class="text-success"><i class="fa fa-edit"></i></a></li>
+
+                                        <li><a href="<?= base_url() ?>" class="text-danger" onclick="return confirm('yakin menghapus data?')"><i class="fa fa-trash-alt"></i></a></li>
+                                    </ul>
+                                </th>
+
+                            </tbody>
+
+                            <!-- <tfoot>
                                 <tr>
                                     <th>Name</th>
                                     <th>Lembaga</th>
@@ -113,7 +131,7 @@
                                     <th>Foto</th>
                                     <th>action</th>
                                 </tr>
-                            </tfoot>
+                            </tfoot> -->
                         </table>
                     </div>
                 </div>
